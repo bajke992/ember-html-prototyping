@@ -1,0 +1,78 @@
+<!--<div style="border: 1px solid #ccc; padding: 10px; margin: 10px;">-->
+    <!--This is the property inspector-->
+
+    <!--{{input type="text" value=title.title action="editTitle"}}-->
+
+<!--</div>-->
+
+<div class="property-inspector">
+    <div class="property-head">
+        Inspect Element
+    </div>
+
+    <div class="property-body">
+
+        <header id="prop-insp-obj" {{action 'toggleObj'}}>Object: Component Type</header>
+        {{#if isObjExpanded}}
+            <ul>
+                <li>Name</li>
+                <li>ID</li>
+            </ul>
+        {{/if}}
+
+
+        <header id="prop-insp-attr" {{action 'toggleAttr'}}>Attributes</header>
+        {{#if isAttrExpanded}}
+            <ul>
+                <li>Width</li>
+                <li>Height</li>
+                <li>x-pos</li>
+                <li>y-pos</li>
+                <li>Enabled/Disabled</li>
+                <li>Hint</li>
+                <li>Stack Index</li>
+            </ul>
+        {{/if}}
+
+        <header id="prop-insp-style" {{action 'toggleStyle'}}>Style</header>
+        {{#if isStyleExpanded}}
+            <ul>
+                <li>Text</li>
+                <li><span {{action 'toggleFont'}}>Font</span>
+                    {{#if isFontExpanded}}
+                        <ul>
+                            <li>font-family</li>
+                            <li>font-size</li>
+                            <li>color</li>
+                            <li>style</li>
+                            <li>line-height</li>
+                        </ul>
+                    {{/if}}
+                </li>
+                <li>URL</li>
+                <li><span {{action 'toggleBg'}}>Background</span>
+                    {{#if isBgExpanded}}
+                        <ul>
+                            <li>color</li>
+                            <li>image</li>
+                        </ul>
+                    {{/if}}
+                </li>
+            </ul>
+        {{/if}}
+
+        <header {{action 'toggleEvents'}}>Events</header>
+        {{#if isEventsExpanded}}
+            <ul>
+                <li>Click</li>
+                <li>Double Click</li>
+                <li>Mouse Enter</li>
+                <li>Mouse Leave</li>
+                <li>Focus In</li>
+                <li>Focus Out</li>
+            </ul>
+        {{/if}}
+    </div>
+
+
+</div>

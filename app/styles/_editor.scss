@@ -1,0 +1,61 @@
+$editor-background: rgb(247, 247, 247);
+
+.editor {
+  background-color: $editor-background;
+  border: 1px solid #ddd;
+  height: 100%;
+
+  header {
+    background-color: rgba(225, 86, 63, 0.85);
+    color: white;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    height: 10%;
+
+    a{
+      text-decoration: none;
+      color: #ccc;
+    }
+  }
+
+  .sidebar {
+    float: left;
+    width: 20%;
+    border-right: 1px solid #ddd;
+    height: 90%;
+
+    aside{
+      height: 50%;
+    }
+  }
+
+  .workspace {
+    width: 80%;
+    height: 90%;
+    float: left;
+    position: relative;
+
+    footer {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      text-align: right;
+      background-color: #ddd;
+
+      a{
+        display: inline-block;
+        background-color: rgb(238, 238, 238);
+        height: 40px;
+        margin-bottom: 10px;
+        padding: 10px;
+        color: #696969;
+        text-decoration: none;
+        border-radius: 0 0 5px 5px;
+
+        &.active {
+         background-color: $editor-background;
+        }
+      }
+    }
+  }
+}

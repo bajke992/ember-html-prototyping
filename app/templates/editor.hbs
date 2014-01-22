@@ -1,0 +1,37 @@
+<div class="editor clearfix">
+
+    <header>
+        <h1>Proto
+            {{#link-to 'editor.design'}}Design{{/link-to}}
+            {{#link-to 'editor.code'}}Code{{/link-to}}
+        </h1>
+    </header>
+
+    <section class="sidebar">
+        <aside>
+            {{ project-tree }}
+        </aside>
+        <aside>
+            {{ property-inspector }}
+        </aside>
+    </section>
+
+    <div class="workspace">
+
+        <div class="canvas-workspace">
+            {{outlet}}
+        </div>
+
+
+        <footer>
+            {{#link-to 'editor.design'}}Design View{{/link-to}}
+            {{#link-to 'editor.code'}}Code View{{/link-to}}
+        </footer>
+    </div>
+
+
+
+
+
+</div>
+
