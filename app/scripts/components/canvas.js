@@ -86,7 +86,12 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
             });
         }
 
-        var objId = Proto.generateUniqueId();
+        //var id = this.$().attr('id', this.get('context').get('id'));
+        console.log(this.$().attr('id'));
+
+        //var objId = Proto.generateUniqueId();
+        var objId = this.$().attr('id');
+
         this.objId = objId;
 
         this.sendAction('add', {
