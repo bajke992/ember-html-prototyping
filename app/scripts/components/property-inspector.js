@@ -1,5 +1,5 @@
 Proto.PropertyInspectorComponent = Ember.Component.extend({
-    isAttrExpanded: false,
+    isAttrExpanded: true,
     isStyleExpanded: false,
     isObjExpanded: true,
     isEventsExpanded: false,
@@ -34,29 +34,53 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
             this.canvasElement.set('text', text);
         },
         updateWidth: function (width) {
-            console.log(width);
             this.canvasElement.set('width', width);
+        },
+        updateHeight: function (height) {
+            this.canvasElement.set('height', height);
+        },
+        updateX: function (x_pos) {
+            this.canvasElement.set('x_pos', x_pos);
+        },
+        updateY: function (y_pos) {
+            this.canvasElement.set('y_pos', y_pos);
+        },
+        updateHint: function (hint) {
+            this.canvasElement.set('hint', hint);
+        },
+        updateStack: function (stack) {
+            this.canvasElement.set('stack', stack);
         }
     },
 
-//    actions: {
-//        editTitle: function(){
-//            var titleObject = this.get('title');
-//            var title = titleObject.title;
-//            var id = titleObject.id;
-//            this.sendAction('action', title, id);
-//        },
-//    },
 
     update: function () {
 
+        var self = this;
         var canvasElement = Ember.View.views[this.get('elemid')];
-        this.set('canvasElement', canvasElement);
+        var fields = ['text', 'width', 'height', 'x_pos', 'y_pos', 'disabled', 'hint', 'stack'];
 
-        this.set('props.text', canvasElement.get('text'));
-        this.set('props.width', canvasElement.get('width'));
+        self.set('canvasElement', canvasElement);
 
-    }.observes('elemid')
+        $.each(fields, function (value, key) {
+            self.set('props.' + key, canvasElement.get(key));
+        });
+
+    }.observes('elemid'),
+
+    updateSize: function () {
+
+        this.set('props.width', this.canvasElement.get('width'));
+        this.set('props.height', this.canvasElement.get('height'));
+
+    }.observes('width', 'height'),
+
+    updatePosition: function () {
+
+        this.set('props.x_pos', this.canvasElement.get('x_pos'));
+        this.set('props.y_pos', this.canvasElement.get('y_pos'));
+
+    }.observes('x_pos', 'y_pos')
 
 });
 

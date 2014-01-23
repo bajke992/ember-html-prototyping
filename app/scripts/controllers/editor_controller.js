@@ -12,8 +12,9 @@ Proto.EditorController = Ember.ObjectController.extend({
             var data = Proto.Data.store.createRecord('data', params);
             data.save();
         },
-        editProperty: function (elementId) {
-            this.set('elementId', elementId);
+        editProperty: function (key, value) {
+
+            this.set(key, value);
         }
     },
     editCode: false,

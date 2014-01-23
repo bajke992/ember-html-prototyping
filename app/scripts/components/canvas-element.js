@@ -13,18 +13,30 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
 
     didInsertElement: function() {
 
-        var position = this.get('position');
+        var self = this;
+        var position = self.get('position');
 
-        this.$().css(Proto.cssData(position));
+        self.$().css(Proto.cssData(position, self));
 
-        this.$().draggable(Proto.draggableData());
+        self.$().draggable(Proto.draggableData(self));
 
-        if (this.resizable) {
-            this.$().resizable({
-                minHeight: this.minHeight,
-                maxHeight: this.maxHeight,
-                minWidth: this.minWidth,
-                maxWidth: this.maxWidth
+        if (self.resizable) {
+            self.$().resizable({
+                minHeight: self.minHeight,
+                maxHeight: self.maxHeight,
+                minWidth: self.minWidth,
+                maxWidth: self.maxWidth,
+                stop: function (event, ui ) {
+
+                    var width = ui.size.width;
+                    var height = ui.size.height;
+
+                    self.set('width', width);
+                    self.set('height', height);
+
+                    self.sendAction('editProperty', 'width', width);
+                    self.sendAction('editProperty', 'height', height);
+                }
             });
         }
 
@@ -41,10 +53,12 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
             resizable:  this.get('resizable')
         });
 
+        this.sendAction('editProperty', 'elementId', this.get('elementId'));
+
     },
     click: function () {
 
-        this.sendAction('editProperty', this.get('elementId'));
+        this.sendAction('editProperty', 'elementId', this.get('elementId'));
 
     },
     doubleClick: function () {
@@ -71,8 +85,24 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
 
     updateWidth: function () {
         this.$().css('width', this.get('width'));
+    }.observes('width'),
 
-    }.observes('width')
+    updateHeight: function () {
+        this.$().css('height', this.get('height'));
+    }.observes('height'),
+
+    updateX: function () {
+        this.$().css('left', this.get('x_pos') + 'px');
+    }.observes('x_pos'),
+
+    updateY: function () {
+        this.$().css('top', this.get('y_pos') + 'px');
+    }.observes('y_pos'),
+
+    updateStack: function () {
+        this.$().css('z-index', this.get('stack'));
+    }.observes('stack')
+
 });
 
 /**
@@ -114,7 +144,8 @@ Proto.CanvasInputComponent = Proto.CanvasElementComponent.extend({
 Proto.CanvasTextComponent = Proto.CanvasElementComponent.extend({
     classNames: ['text'],
     text: 'Text',
-    width: 100,
+//    width: 100,
+    width: null,
     height: 40,
     minHeight: 40,
     maxHeight: 40,
@@ -142,7 +173,7 @@ Proto.CanvasPanelComponent = Proto.CanvasElementComponent.extend({
  * Draggable data used by canvas components when initialized
  * @returns {{grid: Array, containment: string, cursor: string, drag: Function, stop: Function}}
  */
-Proto.draggableData = function () {
+Proto.draggableData = function (self) {
     return {
         grid: [10, 10],
         containment: "parent",
@@ -167,11 +198,20 @@ Proto.draggableData = function () {
         },
         stop: function (event, ui) {
 
-            ui.helper.css('z-index', 2);
+            ui.helper.css('z-index', self.get('stack'));
 
             var $parent = ui.helper.parent();
 
             $parent.find('.guide').hide();
+
+            var x_pos = ui.position.left;
+            var y_pos = ui.position.top;
+
+            self.set('x_pos', x_pos);
+            self.set('y_pos', y_pos);
+
+            self.sendAction('editProperty', 'x_pos', x_pos);
+            self.sendAction('editProperty', 'y_pos', y_pos);
         }
     }
 };
@@ -181,10 +221,13 @@ Proto.draggableData = function () {
  * @param data
  * @returns {{position: string, top: number, left: number}}
  */
-Proto.cssData = function (data) {
+Proto.cssData = function (data, self) {
 
     var top = Math.round(data.top / 10) * 10;
     var left = Math.round(data.left / 10) * 10;
+
+    self.set('x_pos', left);
+    self.set('y_pos', top);
 
     return {
         position: 'absolute',
