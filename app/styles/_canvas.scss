@@ -14,13 +14,12 @@
     .canvas-element {
       overflow: hidden;
       .inner {
-        span {
-          width: 90%;
-          display: block;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
+        width: 90%;
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-indent: 5px;
       }
       &.over {
         border: 1px solid #666;

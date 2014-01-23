@@ -9,18 +9,11 @@ Proto.EditorController = Ember.ObjectController.extend({
             this.set('editDesign', false);
         },
         addRecord: function (params) {
-
             var data = Proto.Data.store.createRecord('data', params);
             data.save();
-
         },
         editProperty: function (elementId) {
-
-            var canvasElement = Ember.View.views[elementId];
-
             this.set('elementId', elementId);
-            this.set('text', canvasElement.text);
-
         }
     },
     editCode: false,
