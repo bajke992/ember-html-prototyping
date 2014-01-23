@@ -4,8 +4,6 @@ Proto.EditorController = Ember.ObjectController.extend({
     actions: {
         editProperty: function (elementId) {
 
-            //var canvasElement = Ember.View.views[elementId];
-            console.log(elementId);
             this.set('elementId', elementId);
 
         },
