@@ -2,7 +2,7 @@
 
     <header class="main">
         <h1>Proto
-            {{#link-to 'editor.design'}}Design{{/link-to}}
+            {{#link-to 'editor'}}Design{{/link-to}}
         </h1>
 
         <div class="project-controls">
@@ -34,7 +34,7 @@
     <div class="workspace">
 
         <div class="canvas-workspace">
-            {{view Proto.CodeContainer isVisibleBinding="editCode"}}
+            {{view Proto.CodeContainer id="code-container" isVisibleBinding="editCode"}}
             {{view Proto.Canvas isVisibleBinding="editDesign"}}
         </div>
 
