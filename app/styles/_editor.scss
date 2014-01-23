@@ -17,15 +17,52 @@ $font: "Myriad Pro", Calibri, Helvetica, Arial, sans-serif;
     padding: 10px;
     height: 10%;
 
+    &.main {
+      height: 5%;
+      padding: 0;
+
+      h1 {
+        display: inline-block;
+        margin: 0;
+        height: 100%;
+        vertical-align: middle;
+        border-right: 1px solid #ddd;
+        padding: 15px;
+      }
+
+      .project-controls {
+        margin-left: 20px;
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+
+        .icons {
+          font-size: 2em;
+          padding: 10px;
+
+          &:hover{
+            cursor: pointer;
+            color: #ccc;
+          }
+        }
+
+      }
+    }
+
     &.label-title {
+      height: 8%;
       font-weight: bold;
-      font-size: 18px;
+      font-size: 15px;
+      border-bottom: none;
     }
 
     &.sub-label {
       background-color: $sub-label-color;
+      padding: 5px;
+
       &:hover {
         background-color: $sub-label-hover;
+        cursor: pointer;
       }
     }
 
@@ -39,20 +76,16 @@ $font: "Myriad Pro", Calibri, Helvetica, Arial, sans-serif;
     float: left;
     width: 20%;
     border-right: 1px solid #ddd;
-    height: 90%;
+    height: 95%;
 
     aside {
       height: 50%;
-    }
-
-    .property-head, .project-head {
-      height: 10%;
     }
   }
 
   .workspace {
     width: 80%;
-    height: 90%;
+    height: 95%;
     float: left;
     position: relative;
 
