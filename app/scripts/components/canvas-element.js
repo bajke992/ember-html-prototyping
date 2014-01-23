@@ -69,7 +69,8 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
     },
     actions: {
         deleteCanvasElement: function () {
-            this.sendAction('removeRecord', this.get('elementId'))
+            this.sendAction('removeRecord', this.get('elementId'));
+            this.sendAction('editProperty', 'elementId', null);
             this.destroy();
         }
     },

@@ -10,7 +10,7 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
     canvasElement: {},
     props: {},
 
-    actions:{
+    actions: {
         toggleAttr: function () {
             (this.isAttrExpanded) ? this.set('isAttrExpanded', false) : this.set('isAttrExpanded', true);
         },
@@ -57,14 +57,23 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
     update: function () {
 
         var self = this;
-        var canvasElement = Ember.View.views[this.get('elemid')];
         var fields = ['text', 'width', 'height', 'x_pos', 'y_pos', 'disabled', 'hint', 'stack'];
 
-        self.set('canvasElement', canvasElement);
+        if (this.get('elemid') !== null) {
 
-        $.each(fields, function (value, key) {
-            self.set('props.' + key, canvasElement.get(key));
-        });
+            var canvasElement = Ember.View.views[this.get('elemid')];
+
+            self.set('canvasElement', canvasElement);
+
+            $.each(fields, function (value, key) {
+                self.set('props.' + key, canvasElement.get(key));
+            });
+
+        } else {
+            $.each(fields, function (value, key) {
+                self.set('props.' + key, '');
+            });
+        }
 
     }.observes('elemid'),
 
