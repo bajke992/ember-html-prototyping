@@ -1,5 +1,5 @@
 Proto.PropertyInspectorComponent = Ember.Component.extend({
-    isAttrExpanded: false,
+    isAttrExpanded: true,
     isStyleExpanded: false,
     isObjExpanded: true,
     isEventsExpanded: false,
@@ -34,19 +34,25 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
             this.canvasElement.set('text', text);
         },
         updateWidth: function (width) {
-            console.log(width);
             this.canvasElement.set('width', width);
+        },
+        updateHeight: function (height) {
+            this.canvasElement.set('height', height);
+        },
+        updateX: function (x_pos) {
+            this.canvasElement.set('x_pos', x_pos);
+        },
+        updateY: function (y_pos) {
+            this.canvasElement.set('y_pos', y_pos);
+        },
+        updateHint: function (hint) {
+            this.canvasElement.set('hint', hint);
+        },
+        updateStack: function (stack) {
+            this.canvasElement.set('stack', stack);
         }
     },
 
-//    actions: {
-//        editTitle: function(){
-//            var titleObject = this.get('title');
-//            var title = titleObject.title;
-//            var id = titleObject.id;
-//            this.sendAction('action', title, id);
-//        },
-//    },
 
     update: function () {
 

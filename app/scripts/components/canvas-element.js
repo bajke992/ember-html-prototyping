@@ -94,16 +94,12 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
     }.observes('height'),
 
     updateX: function () {
-        var x_pos = this.get('x_posNew');
-        this.$().css('left', x_pos);
-        this.set('x_pos', x_pos);
-    }.observes('x_posNew'),
+        this.$().css('left', this.get('x_pos') + 'px');
+    }.observes('x_pos'),
 
     updateY: function () {
-        var y_pos = this.get('y_posNew');
-        this.$().css('top', y_pos);
-        this.set('y_pos', y_pos);
-    }.observes('y_posNew'),
+        this.$().css('top', this.get('y_pos') + 'px');
+    }.observes('y_pos'),
 
     updateStack: function () {
         this.$().css('z-index', this.get('stack'));
