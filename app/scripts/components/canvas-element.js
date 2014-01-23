@@ -16,7 +16,7 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
         var self = this;
         var position = self.get('position');
 
-        self.$().css(Proto.cssData(position));
+        self.$().css(Proto.cssData(position, self));
 
         self.$().draggable(Proto.draggableData(self));
 
@@ -29,7 +29,7 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
                 stop: function (event, ui ) {
 
                     var width = ui.size.width;
-                    var height = ui.size.width;
+                    var height = ui.size.height;
 
                     self.set('width', width);
                     self.set('height', height);
@@ -75,8 +75,6 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
     maxWidth: 300,
     x_pos: 0,
     y_pos: 0,
-    x_posNew: 0,
-    y_posNew: 0,
     disabled: false,
     hint: '',
     stack: 2,
@@ -146,7 +144,8 @@ Proto.CanvasInputComponent = Proto.CanvasElementComponent.extend({
 Proto.CanvasTextComponent = Proto.CanvasElementComponent.extend({
     classNames: ['text'],
     text: 'Text',
-    width: 100,
+//    width: 100,
+    width: null,
     height: 40,
     minHeight: 40,
     maxHeight: 40,
@@ -199,14 +198,14 @@ Proto.draggableData = function (self) {
         },
         stop: function (event, ui) {
 
-            ui.helper.css('z-index', 2);
+            ui.helper.css('z-index', self.get('stack'));
 
             var $parent = ui.helper.parent();
 
             $parent.find('.guide').hide();
 
-            var x_pos = ui.position.top;
-            var y_pos = ui.position.left;
+            var x_pos = ui.position.left;
+            var y_pos = ui.position.top;
 
             self.set('x_pos', x_pos);
             self.set('y_pos', y_pos);
@@ -222,10 +221,13 @@ Proto.draggableData = function (self) {
  * @param data
  * @returns {{position: string, top: number, left: number}}
  */
-Proto.cssData = function (data) {
+Proto.cssData = function (data, self) {
 
     var top = Math.round(data.top / 10) * 10;
     var left = Math.round(data.left / 10) * 10;
+
+    self.set('x_pos', left);
+    self.set('y_pos', top);
 
     return {
         position: 'absolute',

@@ -56,14 +56,15 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
 
     update: function () {
 
+        var self = this;
         var canvasElement = Ember.View.views[this.get('elemid')];
-        this.set('canvasElement', canvasElement);
+        var fields = ['text', 'width', 'height', 'x_pos', 'y_pos', 'disabled', 'hint', 'stack'];
 
-        this.set('props.text', canvasElement.get('text'));
-        this.set('props.width', canvasElement.get('width'));
-        this.set('props.height', canvasElement.get('height'));
-        this.set('props.x_pos', canvasElement.get('x_pos'));
-        this.set('props.y_pos', canvasElement.get('y_pos'));
+        self.set('canvasElement', canvasElement);
+
+        $.each(fields, function (value, key) {
+            self.set('props.' + key, canvasElement.get(key));
+        });
 
     }.observes('elemid'),
 
@@ -76,10 +77,8 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
 
     updatePosition: function () {
 
-        console.log('updatePosition');
-
-        this.set('props.x_pos', this.canvasElement.get('x_posNew'));
-        this.set('props.y_pos', this.canvasElement.get('y_posNew'));
+        this.set('props.x_pos', this.canvasElement.get('x_pos'));
+        this.set('props.y_pos', this.canvasElement.get('y_pos'));
 
     }.observes('x_pos', 'y_pos')
 

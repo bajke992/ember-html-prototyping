@@ -28,6 +28,11 @@
         $height: 99px;
         height: $height;
       }
+      &.text {
+        .inner {
+          width: auto;
+        }
+      }
     }
     /* ---- guide lines for canvas elements (when dragged across the canvas) ---- */
     .guide {
@@ -95,13 +100,13 @@
   }
 
   .text {
-    $width: 60px;
+    //$width: 60px;
     $height: 40px;
     $max-height: 40px;
     display: inline-block;
     z-index: 2;
     cursor: move;
-    width: $width;
+    //width: $width;
     height: $height;
     line-height: $height;
   }
