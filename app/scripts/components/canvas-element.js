@@ -1,6 +1,3 @@
-//var selected = $([]);
-//var offset = {top: 0, left: 0};
-
 /**
  * Canvas abstract element from which are extended others
  * @type {*}
@@ -11,6 +8,7 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
     attributeBindings: ['hint:title'],
 
     addRecord: 'addRecord',
+    removeRecord: 'removeRecord',
     editProperty: 'editProperty',
     editCode: 'setCodeView',
 
@@ -68,6 +66,12 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
 
         this.sendAction('editCode', this.get('elementId'));
 
+    },
+    actions: {
+        deleteCanvasElement: function () {
+            this.sendAction('removeRecord', this.get('elementId'))
+            this.destroy();
+        }
     },
     text: '',
     width: 100,
