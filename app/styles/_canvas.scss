@@ -109,9 +109,7 @@
 
   .panel {
     $height: 38px;
-    $max-height: 299px;
     $width: 99px;
-    $max-width: 299px;
     border: 1px solid #999;
     background-color: #f3f3f3;
     display: inline-block;
@@ -120,8 +118,6 @@
     height: $height;
     line-height: $height;
     width: $width;
-    max-width: $max-width;
-    max-height: $max-height;
     text-align: center;
     vertical-align: top;
   }

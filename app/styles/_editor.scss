@@ -78,5 +78,26 @@ $font: "Myriad Pro", Calibri, Helvetica, Arial, sans-serif;
         }
       }
     }
+
+    .canvas-workspace {
+      width: 100%;
+      height: 94%;
+
+
+      .code-container {
+        width: 100%;
+        height: 100%;
+
+        #myTextArea {
+          width: 100%;
+          height: 100%;
+        }
+        .CodeMirror {
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+    }
   }
 }

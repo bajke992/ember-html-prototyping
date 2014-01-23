@@ -1,16 +1,12 @@
-/**
- * Canvas view which hold canvas container
- * @type {*}
- */
-Proto.CodeContainer = Ember.ContainerView.extend(Ember.TargetActionSupport, {
-
+Proto.CodeContainer = Ember.View.extend({
     classNames: ['code'],
-    init: function () {
-        console.log("asd");
+
+    didInsertElement: function () {
+        var textArea = document.getElementById("myTextArea");
+        var myCodeMirror = CodeMirror.fromTextArea(textArea, {
+            lineNumbers: true,
+            mode: "javascript"
+        });
     }
-
-});
-
-Proto.CodeElementComponent = Ember.View.extend ({
 
 });
