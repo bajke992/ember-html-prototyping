@@ -24,6 +24,9 @@
       &.over {
         border: 1px solid #666;
       }
+      &.ui-selected {
+        border: 1px solid rgba(204, 0, 0, 0.5);
+      }
       &.panel {
         $height: 99px;
         height: $height;

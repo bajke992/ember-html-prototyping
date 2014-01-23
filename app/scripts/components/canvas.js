@@ -28,6 +28,10 @@ Proto.CanvasContainer = Ember.ContainerView.extend(Ember.TargetActionSupport, {
 
         var self = this;
 
+        self.$().selectable({
+            filter: ".canvas-element"
+        });
+
         self.$().droppable({
             accept: ".toolbar > div, .canvas > .canvas-element",
             activeClass: "over",

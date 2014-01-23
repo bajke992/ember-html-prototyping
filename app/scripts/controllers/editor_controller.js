@@ -1,4 +1,8 @@
 Proto.EditorController = Ember.ObjectController.extend({
+    init: function () {
+
+    },
+
     actions: {
         setDesignView: function () {
             this.set('editCode', false);
@@ -20,4 +24,5 @@ Proto.EditorController = Ember.ObjectController.extend({
     editCode: false,
     editDesign: true,
     elementId: null
+
 });
