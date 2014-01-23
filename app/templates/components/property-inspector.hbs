@@ -5,7 +5,7 @@
         <header class="sub-label" {{action 'toggleObj'}}>Object: Component Type</header>
         {{#if isObjExpanded}}
             <ul class="options-list">
-                <li>Name</li>
+                <li>Name {{view Ember.TextField valueBinding="props.text" action="updateText"}}</li>
             </ul>
         {{/if}}
 

@@ -67,7 +67,12 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
     resizable: true,
     eventList: {
         onclick: null
-    }
+    },
+
+    updateWidth: function () {
+        this.$().css('width', this.get('width'));
+
+    }.observes('width')
 });
 
 /**

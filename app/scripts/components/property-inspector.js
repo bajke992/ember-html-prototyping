@@ -6,6 +6,14 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
     isFontExpanded: false,
     isBgExpanded: false,
 
+    elemid: null,
+    canvasElement: {},
+    props: {},
+
+    didInsertElement: function () {
+        this.set('props.text', 'TEST');
+    },
+
     actions:{
         toggleAttr: function () {
             (this.isAttrExpanded) ? this.set('isAttrExpanded', false) : this.set('isAttrExpanded', true);
@@ -25,14 +33,35 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
         toggleBg: function () {
             (this.isBgExpanded) ? this.set('isBgExpanded', false) : this.set('isBgExpanded', true);
         }
-    }
+    },
 
-//    actions:{
+    actions: {
 //        editTitle: function(){
 //            var titleObject = this.get('title');
 //            var title = titleObject.title;
 //            var id = titleObject.id;
 //            this.sendAction('action', title, id);
-//        }
-//    }
+//        },
+        updateText: function (text) {
+
+//            var elemid = this.get('elemid');
+
+            this.canvasElement.set('text', text);
+            this.canvasElement.set('width', 300);
+
+
+            //console.log(params);
+            //console.log(this.get('elementId'));
+        }
+    },
+
+    update: function () {
+
+        var canvasElement = Ember.View.views[this.get('elemid')];
+        this.set('canvasElement', Ember.View.views[this.get('elemid')]);
+
+        this.set('props.text', canvasElement.get('text'));
+
+    }.observes('elemid')
 });
+

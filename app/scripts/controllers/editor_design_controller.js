@@ -4,6 +4,7 @@
 Proto.EditorDesignController = Ember.ObjectController.extend({
 
     needs: ['editor'],
+//    elementId: null,
     actions: {
         addRecord: function (params) {
 
@@ -13,10 +14,13 @@ Proto.EditorDesignController = Ember.ObjectController.extend({
         },
         editProperty: function (elementId) {
 
-            var canvasElement = Ember.View.views[elementId];
+//            var canvasElement = Ember.View.views[elementId];
 
-            this.set('elementId', elementId);
-            this.set('text', canvasElement.text);
+//            this.set('elementId', elementId);
+//            this.set('text', canvasElement.text);
+
+            console.log(elementId);
+            this.get('controllers.editor').send('editProperty', elementId);
 
         },
         editCode: function (params) {
