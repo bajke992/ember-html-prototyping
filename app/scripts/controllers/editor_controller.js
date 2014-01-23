@@ -1,10 +1,10 @@
 Proto.EditorController = Ember.ObjectController.extend({
 
     actions: {
-        editCode: function (params) {
+        editCode: function (elementId) {
 
-            console.log('editCode from editor');
-            console.log(params);
+            console.log(elementId);
+            var canvasElement = Ember.View.views[elementId];
 
         }
     }

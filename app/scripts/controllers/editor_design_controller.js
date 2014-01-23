@@ -15,8 +15,8 @@ Proto.EditorDesignController = Ember.ObjectController.extend({
         },
         editProp: function (params) {
 
-            console.log('editProp:', params.objId);
-            this.set('objId', params.objId)
+            console.log('editProp:', params.elementId);
+            this.set('elementId', params.elementId)
             this.set('text', params.text)
 
         },
@@ -30,10 +30,10 @@ Proto.EditorDesignController = Ember.ObjectController.extend({
         },
         updateText: function (text) {
 
-            console.log('Id:', this.get('objId'));
+            console.log('Id:', this.get('elementId'));
             console.log('Text:', text);
 
-            var myView = Ember.View.views[this.get('objId')];
+            var myView = Ember.View.views[this.get('elementId')];
             console.log(myView);
             myView.set('text', text);
 
