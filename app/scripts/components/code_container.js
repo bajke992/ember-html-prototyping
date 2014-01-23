@@ -3,13 +3,17 @@ Proto.CodeContainer = Ember.View.extend({
     templateName: "editor/code",
 
     didInsertElement: function () {
-        var textArea = document.getElementById("myTextArea");
-        var myCodeMirror = CodeMirror.fromTextArea(textArea, {
+        var textArea = document.getElementById("text-area");
+        this.get('controller').set('editor', CodeMirror.fromTextArea(textArea, {
             lineNumbers: true,
             mode: "javascript",
-            autofocus: true,
-            value: "asdasd"
-        });
+            autofocus: true
+        }));
+        this.get('controller').get('editor').getDoc().setValue('var msg = "Hi";');
+    },
+
+    becameVisible: function () {
+        this.get('controller').get('editor').refresh();
     }
 
 });
