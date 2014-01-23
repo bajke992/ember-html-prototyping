@@ -55,8 +55,27 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
 
         this.set('props.text', canvasElement.get('text'));
         this.set('props.width', canvasElement.get('width'));
+        this.set('props.height', canvasElement.get('height'));
+        this.set('props.x_pos', canvasElement.get('x_pos'));
+        this.set('props.y_pos', canvasElement.get('y_pos'));
 
-    }.observes('elemid')
+    }.observes('elemid'),
+
+    updateSize: function () {
+
+        this.set('props.width', this.canvasElement.get('width'));
+        this.set('props.height', this.canvasElement.get('height'));
+
+    }.observes('width', 'height'),
+
+    updatePosition: function () {
+
+        console.log('updatePosition');
+
+        this.set('props.x_pos', this.canvasElement.get('x_posNew'));
+        this.set('props.y_pos', this.canvasElement.get('y_posNew'));
+
+    }.observes('x_pos', 'y_pos')
 
 });
 

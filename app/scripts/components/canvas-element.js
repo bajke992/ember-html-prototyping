@@ -13,18 +13,30 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
 
     didInsertElement: function() {
 
-        var position = this.get('position');
+        var self = this;
+        var position = self.get('position');
 
-        this.$().css(Proto.cssData(position));
+        self.$().css(Proto.cssData(position));
 
-        this.$().draggable(Proto.draggableData());
+        self.$().draggable(Proto.draggableData(self));
 
-        if (this.resizable) {
-            this.$().resizable({
-                minHeight: this.minHeight,
-                maxHeight: this.maxHeight,
-                minWidth: this.minWidth,
-                maxWidth: this.maxWidth
+        if (self.resizable) {
+            self.$().resizable({
+                minHeight: self.minHeight,
+                maxHeight: self.maxHeight,
+                minWidth: self.minWidth,
+                maxWidth: self.maxWidth,
+                stop: function (event, ui ) {
+
+                    var width = ui.size.width;
+                    var height = ui.size.width;
+
+                    self.set('width', width);
+                    self.set('height', height);
+
+                    self.sendAction('editProperty', 'width', width);
+                    self.sendAction('editProperty', 'height', height);
+                }
             });
         }
 
@@ -41,10 +53,12 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
             resizable:  this.get('resizable')
         });
 
+        this.sendAction('editProperty', 'elementId', this.get('elementId'));
+
     },
     click: function () {
 
-        this.sendAction('editProperty', this.get('elementId'));
+        this.sendAction('editProperty', 'elementId', this.get('elementId'));
 
     },
     doubleClick: function () {
@@ -61,6 +75,8 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
     maxWidth: 300,
     x_pos: 0,
     y_pos: 0,
+    x_posNew: 0,
+    y_posNew: 0,
     disabled: false,
     hint: '',
     stack: 2,
@@ -78,12 +94,16 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
     }.observes('height'),
 
     updateX: function () {
-        this.$().css('left', this.get('x_pos'));
-    }.observes('x_pos'),
+        var x_pos = this.get('x_posNew');
+        this.$().css('left', x_pos);
+        this.set('x_pos', x_pos);
+    }.observes('x_posNew'),
 
     updateY: function () {
-        this.$().css('top', this.get('y_pos'));
-    }.observes('y_pos'),
+        var y_pos = this.get('y_posNew');
+        this.$().css('top', y_pos);
+        this.set('y_pos', y_pos);
+    }.observes('y_posNew'),
 
     updateStack: function () {
         this.$().css('z-index', this.get('stack'));
@@ -158,7 +178,7 @@ Proto.CanvasPanelComponent = Proto.CanvasElementComponent.extend({
  * Draggable data used by canvas components when initialized
  * @returns {{grid: Array, containment: string, cursor: string, drag: Function, stop: Function}}
  */
-Proto.draggableData = function () {
+Proto.draggableData = function (self) {
     return {
         grid: [10, 10],
         containment: "parent",
@@ -188,6 +208,15 @@ Proto.draggableData = function () {
             var $parent = ui.helper.parent();
 
             $parent.find('.guide').hide();
+
+            var x_pos = ui.position.top;
+            var y_pos = ui.position.left;
+
+            self.set('x_pos', x_pos);
+            self.set('y_pos', y_pos);
+
+            self.sendAction('editProperty', 'x_pos', x_pos);
+            self.sendAction('editProperty', 'y_pos', y_pos);
         }
     }
 };
