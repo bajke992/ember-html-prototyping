@@ -56,10 +56,10 @@
 
   /* ---- START canvas elements (from toolbar and canvas) ---- */
   .btn {
-    $height: 38px;
-    $max-height: 38px;
-    $width: 99px;
-    $max-width: 299px;
+    $height: 40px;
+    $max-height: 40px;
+    $width: 100px;
+    $max-width: 300px;
     border: 1px solid #999;
     background-color: #eee;
     display: inline-block;
@@ -76,10 +76,10 @@
   }
 
   .input {
-    $height: 38px;
-    $max-height: 38px;
-    $width: 99px;
-    $max-width: 299px;
+    $height: 40px;
+    $max-height: 40px;
+    $width: 100px;
+    $max-width: 300px;
     border: 1px solid #999;
     background-color: #fff;
     display: inline-block;
@@ -96,9 +96,9 @@
   }
 
   .text {
-    $width: 59px;
-    $height: 38px;
-    $max-height: 38px;
+    $width: 60px;
+    $height: 40px;
+    $max-height: 40px;
     display: inline-block;
     z-index: 2;
     cursor: move;
@@ -108,8 +108,8 @@
   }
 
   .panel {
-    $height: 38px;
-    $width: 99px;
+    $height: 40px;
+    $width: 100px;
     border: 1px solid #999;
     background-color: #f3f3f3;
     display: inline-block;
