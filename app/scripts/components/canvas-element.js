@@ -200,11 +200,12 @@ Proto.draggableData = function (self) {
                 element.data("offset", element.offset());
             });
             offset = self.$().offset();
+
+            // confirm selected element
+            self.sendAction('editProperty', 'elementId', self.get('elementId'));
         },
 
         drag: function (event, ui) {
-
-            ui.helper.css('z-index', 1000);
 
             // create guide lines for single elements
             if (!self.$().is(".ui-selected")) {
@@ -238,8 +239,6 @@ Proto.draggableData = function (self) {
 
         },
         stop: function (event, ui) {
-
-            ui.helper.css('z-index', self.get('stack'));
 
             var $parent = ui.helper.parent();
 

@@ -57,6 +57,7 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
     update: function () {
 
         var self = this;
+        // TODO: keep list of properties on one place!!!
         var fields = ['text', 'width', 'height', 'x_pos', 'y_pos', 'disabled', 'hint', 'stack'];
 
         if (this.get('elemid') !== null) {

@@ -1,4 +1,4 @@
-Proto.EditorController = Ember.ObjectController.extend({
+Proto.EditorController = Ember.ArrayController.extend({
     init: function () {
 
     },
