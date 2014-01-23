@@ -6,7 +6,9 @@ Proto.CodeContainer = Ember.View.extend({
         var textArea = document.getElementById("myTextArea");
         var myCodeMirror = CodeMirror.fromTextArea(textArea, {
             lineNumbers: true,
-            mode: "javascript"
+            mode: "javascript",
+            autofocus: true,
+            value: "asdasd"
         });
     }
 

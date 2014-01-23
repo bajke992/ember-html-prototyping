@@ -18,5 +18,9 @@ Proto.EditorController = Ember.ObjectController.extend({
     },
     editCode: false,
     editDesign: true,
-    elementId: null
+    elementId: null,
+
+    editCodeSwitched: function () {
+
+    }.observes('editCode')
 });
