@@ -14,11 +14,11 @@
         {{#if isAttrExpanded}}
             <ul class="options-list">
                 <li>Width {{view Ember.TextField valueBinding="props.width" action="updateWidth"}}</li>
-                <li>Height</li>
-                <li>x-pos</li>
-                <li>y-pos</li>
-                <li>Hint</li>
-                <li>Stack Index</li>
+                <li>Height {{view Ember.TextField valueBinding="props.height" action="updateHeight"}}</li>
+                <li>x-pos {{view Ember.TextField valueBinding="props.x_pos" action="updateX"}}</li>
+                <li>y-pos {{view Ember.TextField valueBinding="props.y_pos" action="updateY"}}</li>
+                <li>Hint {{view Ember.TextField valueBinding="props.hint" action="updateHint"}}</li>
+                <li>Stack Index {{view Ember.TextField valueBinding="props.stack" action="updateStack"}}</li>
             </ul>
         {{/if}}
 
