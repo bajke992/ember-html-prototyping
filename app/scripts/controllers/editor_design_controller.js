@@ -9,23 +9,24 @@ Proto.EditorDesignController = Ember.ObjectController.extend({
 
             //var data = this.store.createRecord('data', params);
             var data = Proto.Data.store.createRecord('data', params);
-            console.log(data.get('text'));
+//            console.log(data.get('text'));
             data.save();
 
         },
         editProp: function (params) {
 
-            console.log('editProp:', params.elementId);
+//            console.log('editProp:', params.elementId);
             this.set('elementId', params.elementId)
             this.set('text', params.text)
 
         },
         editCode: function (params) {
 
-            console.log('editCode from editor design');
-            //console.log(params);
-
-            this.get('controllers.editor').send('editCode', params);
+//            console.log('editCode from editor design');
+//            console.log(params);
+//
+//            this.get('controllers.editor').send('editCode', params);
+            this.transitionTo('editor.code');
 
         },
         updateText: function (text) {
