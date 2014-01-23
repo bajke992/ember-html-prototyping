@@ -1,19 +1,26 @@
 <div class="editor clearfix">
 
-    <header>
+    <header class="main">
         <h1>Proto
             {{#link-to 'editor.design'}}Design{{/link-to}}
-            {{#link-to 'editor.code'}}Code{{/link-to}}
         </h1>
+
+        <div class="project-controls">
+            <span class="fa fa-file-o icons" title="New"></span>
+            <span class="fa fa-folder-open-o icons" title="Open"></span>
+            <span class="fa fa-save icons" title="Save"></span>
+            <span class="fa fa-external-link-square icons" title="Export"></span>
+            <span class="fa fa-play icons" title="Run"></span>
+        </div>
     </header>
 
     <section class="sidebar">
         <aside>
-            <header class=".project-head label-title">Project Tree</header>
+            <header class="label-title">Project Tree</header>
             {{ project-tree }}
         </aside>
         <aside>
-            <header class=".property-head label-title">Element Inspector</header>
+            <header class="label-title">Element Inspector</header>
             {{ property-inspector }}
         </aside>
     </section>
