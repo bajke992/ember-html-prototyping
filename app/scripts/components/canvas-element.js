@@ -9,7 +9,7 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
 
     addRecord: 'addRecord',
     editProperty: 'editProperty',
-    editCode: 'editCode',
+    editCode: 'setCodeView',
 
     didInsertElement: function() {
 

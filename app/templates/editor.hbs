@@ -1,4 +1,4 @@
-<div class="editor clearfix">
+<div class="editor clearfix" xmlns="http://www.w3.org/1999/html">
 
     <header>
         <h1>Proto
@@ -21,18 +21,16 @@
     <div class="workspace">
 
         <div class="canvas-workspace">
-            {{outlet}}
+            {{view Proto.CodeContainer isVisibleBinding="editCode"}}
+            {{view Proto.Canvas isVisibleBinding="editDesign"}}
         </div>
 
 
         <footer>
-            {{#link-to 'editor.design'}}Design View{{/link-to}}
-            {{#link-to 'editor.code'}}Code View{{/link-to}}
+            <button {{bind-attr class="editDesign:active"}}{{action "setDesignView" on="click"}}>Design View</button>
+            <button {{bind-attr class="editCode:active"}}{{action "setCodeView" on="click"}}>Code View</button>
         </footer>
     </div>
-
-
-
 
 
 </div>
