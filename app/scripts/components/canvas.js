@@ -3,7 +3,7 @@
  * @type {*}
  */
 Proto.Canvas = Ember.View.extend({
-    templateName: 'canvas',
+    templateName: 'components/canvas',
     didInsertElement: function () {
 
         this.$('.toolbar > div').draggable({
