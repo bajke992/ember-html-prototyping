@@ -1,5 +1,6 @@
 Proto.CodeContainer = Ember.View.extend({
     classNames: ['code'],
+    templateName: "editor/code",
 
     didInsertElement: function () {
         var textArea = document.getElementById("myTextArea");

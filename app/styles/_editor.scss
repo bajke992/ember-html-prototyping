@@ -17,19 +17,56 @@ $font: "Myriad Pro", Calibri, Helvetica, Arial, sans-serif;
     padding: 10px;
     height: 10%;
 
+    &.main {
+      height: 5%;
+      padding: 0;
+
+      h1 {
+        display: inline-block;
+        margin: 0;
+        height: 100%;
+        vertical-align: middle;
+        border-right: 1px solid #ddd;
+        padding: 15px;
+      }
+
+      .project-controls {
+        margin-left: 20px;
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+
+        .icons {
+          font-size: 2em;
+          padding: 10px;
+
+          &:hover{
+            cursor: pointer;
+            color: #ccc;
+          }
+        }
+
+      }
+    }
+
     &.label-title {
+      height: 8%;
       font-weight: bold;
-      font-size: 18px;
+      font-size: 15px;
+      border-bottom: none;
     }
 
     &.sub-label {
       background-color: $sub-label-color;
+      padding: 5px;
+
       &:hover {
         background-color: $sub-label-hover;
+        cursor: pointer;
       }
     }
 
-    a{
+    a {
       text-decoration: none;
       color: #ccc;
     }
@@ -39,20 +76,16 @@ $font: "Myriad Pro", Calibri, Helvetica, Arial, sans-serif;
     float: left;
     width: 20%;
     border-right: 1px solid #ddd;
-    height: 90%;
+    height: 95%;
 
-    aside{
+    aside {
       height: 50%;
-    }
-
-    .property-head, .project-head {
-      height: 10%;
     }
   }
 
   .workspace {
     width: 80%;
-    height: 90%;
+    height: 95%;
     float: left;
     position: relative;
 
@@ -63,7 +96,7 @@ $font: "Myriad Pro", Calibri, Helvetica, Arial, sans-serif;
       text-align: right;
       background-color: #ddd;
 
-      a{
+      button {
         display: inline-block;
         background-color: rgb(238, 238, 238);
         height: 40px;
@@ -72,29 +105,39 @@ $font: "Myriad Pro", Calibri, Helvetica, Arial, sans-serif;
         color: #696969;
         text-decoration: none;
         border-radius: 0 0 5px 5px;
+        border: 0;
+
+        &:hover {
+          background-color: rgb(238, 228, 228);
+        }
 
         &.active {
-         background-color: $editor-background;
+          background-color: $editor-background;
         }
       }
     }
 
     .canvas-workspace {
+      float: right;
       width: 100%;
       height: 94%;
 
-
-      .code-container {
+      .code {
         width: 100%;
         height: 100%;
 
-        #myTextArea {
+        .code-container {
           width: 100%;
           height: 100%;
-        }
-        .CodeMirror {
-          height: 100%;
-          width: 100%;
+
+          #myTextArea {
+            width: 100%;
+            height: 100%;
+          }
+          .CodeMirror {
+            height: 100%;
+            width: 100%;
+          }
         }
       }
 
