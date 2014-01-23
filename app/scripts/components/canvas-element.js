@@ -1,3 +1,6 @@
+//var selected = $([]);
+//var offset = {top: 0, left: 0};
+
 /**
  * Canvas abstract element from which are extended others
  * @type {*}
@@ -174,26 +177,59 @@ Proto.CanvasPanelComponent = Proto.CanvasElementComponent.extend({
  * @returns {{grid: Array, containment: string, cursor: string, drag: Function, stop: Function}}
  */
 Proto.draggableData = function (self) {
+
+    var selected = $([]);
+    var offset = {top: 0, left: 0};
+
     return {
         grid: [10, 10],
         containment: "parent",
         cursor: "move",
+        start: function () {
+
+            // this block enables dragging of selectable elements
+            if (!self.$().is(".ui-selected")) { $(".ui-selected").removeClass("ui-selected"); }
+
+            selected = $(".ui-selected").each(function () {
+                var element = $(this);
+                element.data("offset", element.offset());
+            });
+            offset = self.$().offset();
+        },
+
         drag: function (event, ui) {
 
             ui.helper.css('z-index', 1000);
 
-            var $parent = ui.helper.parent();
+            // create guide lines for single elements
+            if (!self.$().is(".ui-selected")) {
 
-            if ($parent.find('.guide').size() === 0) {
+                var $parent = ui.helper.parent();
+                var left = ui.position.left;
+                var top = ui.position.top;
 
-                $parent.append('<div class="guide guide-v"></div>');
-                $parent.append('<div class="guide guide-h"></div>');
+                if ($parent.find('.guide').size() === 0) {
+
+                    $parent.append('<div class="guide guide-v"></div>');
+                    $parent.append('<div class="guide guide-h"></div>');
+                }
+
+                $parent.find('.guide').show();
+
+                $parent.find('.guide-v').css({top: 0, left: left});
+                $parent.find('.guide-h').css({top: top, left: 0});
+
             }
 
-            $parent.find('.guide').show();
+            // enabling selectable elements dragging
+            var draggedTop = ui.position.top - offset.top;
+            var draggedLeft = ui.position.left - offset.left;
 
-            $parent.find('.guide-v').css({top: 0, left: ui.position.left});
-            $parent.find('.guide-h').css({top: ui.position.top, left: 0});
+            selected.not(self).each(function () {
+                var element = $(this);
+                var off = element.data("offset");
+                element.css({top: off.top + draggedTop, left: off.left + draggedLeft});
+            });
 
         },
         stop: function (event, ui) {
