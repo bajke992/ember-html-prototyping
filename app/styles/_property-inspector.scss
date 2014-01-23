@@ -1,21 +1,11 @@
 .editor aside>div {
-  height: 100%;
+  height: 90%;
   overflow: auto;
 }
 
 .property-inspector {
   position: relative;
 
-  .property-head{
-    width: 20%;
-    border-right: 1px solid #ddd;
-    position: fixed;
-    font-weight: bold;
-    background-color: $editor-background;
-  }
 
-  .property-body{
-    padding-top: 20px;
 
-  }
 }

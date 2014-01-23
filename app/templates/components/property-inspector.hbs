@@ -1,44 +1,32 @@
-<!--<div style="border: 1px solid #ccc; padding: 10px; margin: 10px;">-->
-    <!--This is the property inspector-->
-
-    <!--{{input type="text" value=title.title action="editTitle"}}-->
-
-<!--</div>-->
-
 <div class="property-inspector">
-    <div class="property-head">
-        Inspect Element
-    </div>
 
     <div class="property-body">
 
-        <header id="prop-insp-obj" {{action 'toggleObj'}}>Object: Component Type</header>
+        <header class="sub-label" {{action 'toggleObj'}}>Object: Component Type</header>
         {{#if isObjExpanded}}
-            <ul>
+            <ul class="options-list">
                 <li>Name</li>
-                <li>ID</li>
             </ul>
         {{/if}}
 
 
-        <header id="prop-insp-attr" {{action 'toggleAttr'}}>Attributes</header>
+        <header class="sub-label" {{action 'toggleAttr'}}>Attributes</header>
         {{#if isAttrExpanded}}
-            <ul>
+            <ul class="options-list">
                 <li>Width</li>
                 <li>Height</li>
                 <li>x-pos</li>
                 <li>y-pos</li>
-                <li>Enabled/Disabled</li>
                 <li>Hint</li>
                 <li>Stack Index</li>
             </ul>
         {{/if}}
 
-        <header id="prop-insp-style" {{action 'toggleStyle'}}>Style</header>
+        <header class="sub-label" {{action 'toggleStyle'}}>Style</header>
         {{#if isStyleExpanded}}
-            <ul>
+            <ul class="options-list">
                 <li>Text</li>
-                <li><span {{action 'toggleFont'}}>Font</span>
+                <li><span {{action 'toggleFont'}}>Font <span class="caret"></span></span>
                     {{#if isFontExpanded}}
                         <ul>
                             <li>font-family</li>
@@ -50,7 +38,7 @@
                     {{/if}}
                 </li>
                 <li>URL</li>
-                <li><span {{action 'toggleBg'}}>Background</span>
+                <li><span {{action 'toggleBg'}}>Background <span class="caret"></span></span>
                     {{#if isBgExpanded}}
                         <ul>
                             <li>color</li>
@@ -61,9 +49,9 @@
             </ul>
         {{/if}}
 
-        <header {{action 'toggleEvents'}}>Events</header>
+        <header class="sub-label" {{action 'toggleEvents'}}>Events</header>
         {{#if isEventsExpanded}}
-            <ul>
+            <ul class="options-list">
                 <li>Click</li>
                 <li>Double Click</li>
                 <li>Mouse Enter</li>
@@ -73,6 +61,4 @@
             </ul>
         {{/if}}
     </div>
-
-
 </div>
