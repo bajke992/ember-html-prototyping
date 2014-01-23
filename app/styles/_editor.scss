@@ -1,16 +1,33 @@
 $editor-background: rgb(247, 247, 247);
+$header-color: rgba(225, 82, 59, 0.85);
+$sub-label-color: rgb(210, 105, 97);
+$sub-label-hover: #bd4b45;
+$font: "Myriad Pro", Calibri, Helvetica, Arial, sans-serif;
 
 .editor {
+  font-family: $font;
   background-color: $editor-background;
   border: 1px solid #ddd;
   height: 100%;
 
   header {
-    background-color: rgba(225, 86, 63, 0.85);
+    background-color: $header-color;
     color: white;
     border-bottom: 1px solid #ddd;
     padding: 10px;
     height: 10%;
+
+    &.label-title {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    &.sub-label {
+      background-color: $sub-label-color;
+      &:hover {
+        background-color: $sub-label-hover;
+      }
+    }
 
     a{
       text-decoration: none;
@@ -26,6 +43,10 @@ $editor-background: rgb(247, 247, 247);
 
     aside{
       height: 50%;
+    }
+
+    .property-head, .project-head {
+      height: 10%;
     }
   }
 
