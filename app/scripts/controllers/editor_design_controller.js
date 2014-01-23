@@ -7,7 +7,9 @@ Proto.EditorDesignController = Ember.ObjectController.extend({
     actions: {
         addToCanvas: function (params) {
 
-            var data = this.store.createRecord('data', params);
+            //var data = this.store.createRecord('data', params);
+            var data = Proto.Data.store.createRecord('data', params);
+            console.log(data.get('text'));
             data.save();
 
         },
@@ -31,9 +33,15 @@ Proto.EditorDesignController = Ember.ObjectController.extend({
             console.log('Id:', this.get('objId'));
             console.log('Text:', text);
 
-            var record = this.store.find('data', {objId: this.get('objId')}).then( function(result) {
-                console.log(result.get('objId'));
-            });
+            var myView = Ember.View.views[this.get('objId')];
+            console.log(myView);
+            myView.set('text', text);
+
+//            var record = Proto.Data.store.find('data', {objId: this.get('objId')});
+//            var objId = record.get('objId');
+//            console.log('objId', objId);
+//            record.set('text', text);
+//            record.save();
 
         }
     }
