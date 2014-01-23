@@ -7,8 +7,8 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
     templateName: 'components/canvas-element',
     attributeBindings: ['hint:title'],
 
-    addToCanvas: 'addToCanvas',
-    editProp: 'editProp',
+    addRecord: 'addRecord',
+    editProperty: 'editProperty',
     editCode: 'editCode',
 
     didInsertElement: function() {
@@ -29,14 +29,23 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
             });
         }
 
-        var objId = this.get('elementId');
-
-        this.sendAction('addToCanvas');
+        this.sendAction('addRecord', {
+            elementId:  this.get('elementId'),
+            text:       this.get('text'),
+            width:      this.get('width'),
+            height:     this.get('height'),
+            x_pos:      this.get('x_pos'),
+            y_pos:      this.get('y_pos'),
+            disabled:   this.get('disabled'),
+            hint:       this.get('hint'),
+            stack:      this.get('stack'),
+            resizable:  this.get('resizable')
+        });
 
     },
     click: function () {
 
-        this.sendAction('editProp', {elementId: this.get('elementId'), text: this.get('text')});
+        this.sendAction('editProperty', this.get('elementId'));
 
     },
     doubleClick: function () {
@@ -44,25 +53,6 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
         this.sendAction('editCode', this.get('elementId'));
 
     },
-//    actions: {
-//        add: function () {
-//
-//            var params = {
-//                elementId:  this.get('elementId'),
-//                text:       this.get('text'),
-//                width:      this.get('width'),
-//                height:     this.get('height'),
-//                x_pos:      this.get('x_pos'),
-//                y_pos:      this.get('y_pos'),
-//                disabled:   this.get('disabled'),
-//                hint:       this.get('hint'),
-//                stack:      this.get('stack'),
-//                resizable:  this.get('resizable')
-//            };
-//
-//            Proto.addElement(params, this);
-//        }
-//    },
     text: '',
     width: 99,
     height: 38,
@@ -76,7 +66,7 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
     hint: '',
     stack: 2,
     resizable: true,
-    events: {
+    eventList: {
         onclick: null
     }
 });
@@ -138,9 +128,9 @@ Proto.CanvasPanelComponent = Proto.CanvasElementComponent.extend({
     width: 99,
     height: 99,
     minHeight: 99,
-    maxHeight: 299,
+    maxHeight: null,
     minWidth: 99,
-    maxWidth: 299,
+    maxWidth: null,
     hint: 'Panel'
 });
 
