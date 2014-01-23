@@ -13,12 +13,12 @@
         <header class="sub-label" {{action 'toggleAttr'}}>Attributes</header>
         {{#if isAttrExpanded}}
             <ul class="options-list">
-                <li>Width {{view Ember.TextField valueBinding="props.width" action="updateWidth"}}</li>
-                <li>Height {{view Ember.TextField valueBinding="props.height" action="updateHeight"}}</li>
-                <li>x-pos {{view Ember.TextField valueBinding="props.x_pos" action="updateX"}}</li>
-                <li>y-pos {{view Ember.TextField valueBinding="props.y_pos" action="updateY"}}</li>
-                <li>Hint {{view Ember.TextField valueBinding="props.hint" action="updateHint"}}</li>
-                <li>Stack Index {{view Ember.TextField valueBinding="props.stack" action="updateStack"}}</li>
+                <li><label>Width</label> {{view Ember.TextField valueBinding="props.width" action="updateWidth"}}</li>
+                <li><label>Height</label> {{view Ember.TextField valueBinding="props.height" action="updateHeight"}}</li>
+                <li><label>x-pos</label> {{view Ember.TextField valueBinding="props.x_pos" action="updateX"}}</li>
+                <li><label>y-pos</label> {{view Ember.TextField valueBinding="props.y_pos" action="updateY"}}</li>
+                <li><label>Hint</label> {{view Ember.TextField valueBinding="props.hint" action="updateHint"}}</li>
+                <li><label>Stack Index</label> {{view Ember.TextField valueBinding="props.stack" action="updateStack"}}</li>
             </ul>
         {{/if}}
 

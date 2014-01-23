@@ -10,9 +10,16 @@
     padding: 0;
 
     li {
-      padding: 2px 0 2px 15px;
+      padding: 2px 15px 2px 2px;
       list-style: none;
       background-color: #eee;
+      text-align: right;
+
+      input{
+        border: 1px solid #ddd;
+        padding-left: 3px;
+
+      }
 
       ul {
         margin: 0;
