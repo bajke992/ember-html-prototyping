@@ -25,24 +25,24 @@
         <header class="sub-label" {{action 'toggleStyle'}}>Style</header>
         {{#if isStyleExpanded}}
             <ul class="options-list">
-                <li>Text</li>
-                <li><span {{action 'toggleFont'}}>Font <span class="caret"></span></span>
+                <li><label>Text</label> {{view Ember.TextField}}</li>
+                <li class="toggle"><span {{action 'toggleFont'}} class="inner-toggle"><span class="font">Font</span><span class="caret"></span></span>
                     {{#if isFontExpanded}}
                         <ul>
-                            <li>font-family</li>
-                            <li>font-size</li>
-                            <li>color</li>
-                            <li>style</li>
-                            <li>line-height</li>
+                            <li><label>font-family</label> {{view Ember.TextField}}</li>
+                            <li><label>font-size</label> {{view Ember.TextField}}</li>
+                            <li><label>color</label> {{view Ember.TextField}}</li>
+                            <li><label>style</label> {{view Ember.TextField}}</li>
+                            <li><label>line-height</label> {{view Ember.TextField}}</li>
                         </ul>
                     {{/if}}
                 </li>
-                <li>URL</li>
-                <li><span {{action 'toggleBg'}}>Background <span class="caret"></span></span>
+                <li><label>URL</label> {{view Ember.TextField}}</li>
+                <li class="toggle"><span {{action 'toggleBg'}} class="inner-toggle bg"><span class="background">Background</span><span class="caret"></span></span>
                     {{#if isBgExpanded}}
                         <ul>
-                            <li>color</li>
-                            <li>image</li>
+                            <li><label>color</label> {{view Ember.TextField}}</li>
+                            <li><label>image</label> {{view Ember.TextField}}</li>
                         </ul>
                     {{/if}}
                 </li>
@@ -52,12 +52,12 @@
         <header class="sub-label" {{action 'toggleEvents'}}>Events</header>
         {{#if isEventsExpanded}}
             <ul class="options-list">
-                <li>Click</li>
-                <li>Double Click</li>
-                <li>Mouse Enter</li>
-                <li>Mouse Leave</li>
-                <li>Focus In</li>
-                <li>Focus Out</li>
+                <li><label>Click</label> {{view Ember.Select}}</li>
+                <li><label>Double Click</label> {{view Ember.Select}}</li>
+                <li><label>Mouse Enter</label> {{view Ember.Select}}</li>
+                <li><label>Mouse Leave</label> {{view Ember.Select}}</li>
+                <li><label>Focus In</label> {{view Ember.Select}}</li>
+                <li><label>Focus Out</label> {{view Ember.Select}}</li>
             </ul>
         {{/if}}
     </div>
