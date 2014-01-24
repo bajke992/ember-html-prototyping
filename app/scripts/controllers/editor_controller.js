@@ -1,14 +1,15 @@
 Proto.EditorController = Ember.ArrayController.extend({
-    init: function () {
-
-    },
 
     actions: {
         setDesignView: function () {
             this.set('editCode', false);
             this.set('editDesign', true);
         },
-        setCodeView: function () {
+        setCodeView: function (elementId, eventType) {
+            this.set('elementId', elementId);
+            var defaultEvent = 'click';
+
+            this.set('eventType', eventType || defaultEvent);
             this.set('editCode', true);
             this.set('editDesign', false);
         },
@@ -40,13 +41,14 @@ Proto.EditorController = Ember.ArrayController.extend({
     editCode: false,
     editDesign: true,
     elementId: null,
+    eventType: '',
 
     editCodeBegin: function () {
         if(this.editCode === true) {
             this.get('editor').getDoc().markText(
                 {line: 0, ch: 0},
                 {line:3, ch: 0},
-                {readOnly: true}
+                {readOnly: true, className: 'read-only'}
             );
         }
     }.observes('editCode'),

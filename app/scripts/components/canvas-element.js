@@ -64,7 +64,7 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
     },
     doubleClick: function () {
 
-        this.sendAction('editCode', this.get('elementId'));
+        this.sendAction('editCode', this.get('elementId'), null);
 
     },
     actions: {
