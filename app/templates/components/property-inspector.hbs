@@ -7,6 +7,12 @@
             <ul class="options-list">
                 <li>Name {{view Ember.TextField valueBinding="props.text" action="updateText" }}</li>
                 <li>ID {{view Ember.TextField valueBinding="props.recordId" action="updateId" }}</li>
+                {{#if isBtn}}
+                    <li><label>URL</label> {{view Ember.TextField}}</li>
+                {{/if}}
+                {{#if isText}}
+                    <li><label>URL</label> {{view Ember.TextField}}</li>
+                {{/if}}
                 {{#if isInput}}
                    <li>Lines
                         {{view Ember.Select}}
@@ -25,7 +31,6 @@
                 <li><label>y-pos</label> {{view Ember.TextField valueBinding="props.y_pos" action="updateY"}}</li>
                 <li><label>Hint</label> {{view Ember.TextField valueBinding="props.hint" action="updateHint"}}</li>
                 <li><label>Stack Index</label> {{view Ember.TextField valueBinding="props.stack" action="updateStack"}}</li>
-                <li><label>URL</label> {{view Ember.TextField}}</li>
             </ul>
         {{/if}}
 

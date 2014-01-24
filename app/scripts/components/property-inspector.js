@@ -16,7 +16,7 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
     isInput: false,
     isText: false,
     isPanel: false,
-    isButton: false,
+    isBtn: false,
 
     canvasElement: {},
     props: {},
@@ -110,7 +110,7 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
 
         var self = this;
 
-        var isTypes = ['isButton', 'isInput', 'isText', 'isPanel'];
+        var isTypes = ['isBtn', 'isInput', 'isText', 'isPanel'];
         var type = this.canvasElement.get('type');
 
         if (self.get('elemid') !== null) {
