@@ -6,7 +6,9 @@ Proto.EditorController = Ember.ArrayController.extend({
             this.set('editDesign', true);
         },
         setCodeView: function (elementId, eventType) {
-            this.set('elementId', elementId);
+            if (elementId) {
+                this.set('elementId', elementId);
+            }
             var defaultEvent = 'click';
 
             this.set('eventType', eventType || defaultEvent);
