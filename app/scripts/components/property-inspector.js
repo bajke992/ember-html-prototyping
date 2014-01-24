@@ -1,12 +1,23 @@
 Proto.PropertyInspectorComponent = Ember.Component.extend({
     isAttrExpanded: false,
     isStyleExpanded: true,
-    isObjExpanded: false,
+    isObjExpanded: true,
     isEventsExpanded: false,
     isFontExpanded: false,
     isBgExpanded: false,
 
     elemid: null,
+    isType: [
+        {isInput: false},
+        {isText: false},
+        {isPanel: false},
+        {isButton: false}
+    ],
+    isInput: false,
+    isText: false,
+    isPanel: false,
+    isButton: false,
+
     canvasElement: {},
     props: {},
 
@@ -54,7 +65,6 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
         updateStack: function (stack) {
             this.canvasElement.set('stack', stack);
         }
-
     },
 
 
@@ -68,12 +78,7 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
 
             var canvasElement = Ember.View.views[this.get('elemid')];
 
-
             self.set('canvasElement', canvasElement);
-
-            console.log(canvasElement);
-            console.log(canvasElement.get('eventList'));
-            console.log(this.get('elemid'));
 
             $.each(fields, function (value, key) {
                 self.set('props.' + key, canvasElement.get(key));
@@ -99,7 +104,29 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
         this.set('props.x_pos', this.canvasElement.get('x_pos'));
         this.set('props.y_pos', this.canvasElement.get('y_pos'));
 
-    }.observes('x_pos', 'y_pos')
+    }.observes('x_pos', 'y_pos'),
 
+    updateType: function () {
+
+        var self = this;
+
+        var isTypes = ['isButton', 'isInput', 'isText', 'isPanel'];
+        var type = this.canvasElement.get('type');
+
+        if (self.get('elemid') !== null) {
+            $.each(isTypes, function(index, element) {
+                var typeName = "is" + type.charAt(0).toUpperCase() + type.slice(1)
+                if (typeName === element){
+                    self.set(element, true);
+                } else {
+                    self.set(element, false);
+                }
+            });
+        } else {
+            $.each(isTypes, function(index, element) {
+                self.set(element, false);
+            });
+        }
+    }.observes('elemid')
 });
 
