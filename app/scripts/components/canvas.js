@@ -13,7 +13,8 @@ Proto.Canvas = Ember.View.extend({
             cursor: "move"
         });
 
-        console.log(this.get('screen_id'));
+        var elements = this.get('content').get('model.elements');
+        console.log(elements);
 
     }
 });
@@ -54,6 +55,7 @@ Proto.CanvasContainer = Ember.ContainerView.extend(Ember.TargetActionSupport, {
 
         var elements = this.get('content').get('model.elements');
 
+        console.log(elements);
 
         $.each(elements, function (key, params) {
 

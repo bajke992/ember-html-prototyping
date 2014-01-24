@@ -43,7 +43,6 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
         }
 
         if (data.insert) {
-            console.log('do insert');
             this.sendAction('addRecord', {
                 elementId:  this.get('elementId'),
                 text:       this.get('text'),

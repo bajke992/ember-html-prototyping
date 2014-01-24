@@ -1,6 +1,8 @@
-{{view Proto.CodeContainer id="code-container" isVisibleBinding="editCode"}}
+{{ name }}
 
-{{view Proto.Canvas isVisibleBinding="editDesign" elements=elements}}
+{{view Proto.CodeContainer id="code-container" isVisibleBinding="editCode" contentBinding="this"}}
+
+{{view Proto.Canvas isVisibleBinding="editDesign" contentBinding="this"}}
 
 <footer>
     <button {{bind-attr class="editDesign:active"}}{{action "setDesignView" on="click"}}>Design View</button>
