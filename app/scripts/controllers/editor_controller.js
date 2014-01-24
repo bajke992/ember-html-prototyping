@@ -8,7 +8,13 @@ Proto.EditorController = Ember.ArrayController.extend({
         setCodeView: function (elementId, eventType) {
             if (elementId) {
                 this.set('elementId', elementId);
+            } else {
+                if (!this.get('elementId')) {
+                    this.set('elementId', 'document');
+                    eventType = "ready";
+                }
             }
+
             var defaultEvent = 'click';
 
             this.set('eventType', eventType || defaultEvent);
@@ -30,7 +36,7 @@ Proto.EditorController = Ember.ArrayController.extend({
 
             recordId = recordId.replace('element-', '');
 
-            this.get('store').find('data', recordId).then(function(record){
+            this.get('store').find('data', recordId).then(function (record) {
                 record.deleteRecord();
                 record.save();
             });
@@ -46,19 +52,27 @@ Proto.EditorController = Ember.ArrayController.extend({
     eventType: '',
 
     editCodeBegin: function () {
-        if(this.editCode === true) {
+        if (this.editCode === true) {
+            var text = "$(" + this.get('elementId') + ")." + this.get('eventType') + "(function () {\n\n});";
+            this.get('editor').getDoc().setValue(text);
             this.get('editor').getDoc().markText(
                 {line: 0, ch: 0},
-                {line:3, ch: 0},
+                {line: 0, ch: 100},
+                {readOnly: true, className: 'read-only'}
+            );
+            this.get('editor').getDoc().markText(
+                {line: 2, ch: 0},
+                {line: 2, ch: 100},
                 {readOnly: true, className: 'read-only'}
             );
         }
     }.observes('editCode'),
 
     editCodeFinish: function () {
-        if(this.editCode === false) {
+        if (this.editCode === false) {
+            var eventType = this.get('eventType');
             var eventList = Ember.View.views[this.get('elementId')].get('eventList');
-            eventList.onclick = this.get('editor').getValue();
+            eventList['on' + eventType] = this.get('editor').getValue();
             Ember.View.views[this.get('elementId')].set('eventList', eventList);
         }
     }.observes('editCode')

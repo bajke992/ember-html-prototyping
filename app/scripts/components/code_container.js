@@ -11,7 +11,6 @@ Proto.CodeContainer = Ember.View.extend({
             matchBrackets: true,
             autoCloseBrackets: true
         }));
-        this.get('controller').get('editor').getDoc().setValue('var msg = "Hi";');
     },
 
     becameVisible: function () {
