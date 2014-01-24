@@ -56,6 +56,8 @@ Proto.EditorController = Ember.ArrayController.extend({
             var eventList = Ember.View.views[this.get('elementId')].get('eventList');
             eventList.onclick = this.get('editor').getValue();
             Ember.View.views[this.get('elementId')].set('eventList', eventList);
+
+            console.log(Ember.View.views[this.get('elementId')].get('eventList'));
         }
     }.observes('editCode')
 

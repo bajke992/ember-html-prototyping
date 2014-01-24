@@ -6,6 +6,7 @@
         {{#if isObjExpanded}}
             <ul class="options-list">
                 <li>Name {{view Ember.TextField valueBinding="props.text" action="updateText" }}</li>
+                <li>ID {{view Ember.TextField valueBinding="props.recordId" action="updateId" }}</li>
             </ul>
         {{/if}}
 
