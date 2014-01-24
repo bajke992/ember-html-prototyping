@@ -2,7 +2,7 @@
 'use strict';
 
 Proto.Data = DS.Model.extend({
-    elementId:      DS.attr('string'),
+    elementId:  DS.attr('string'),
     text:       DS.attr('string'),
     width:      DS.attr('number'),
     height:     DS.attr('number'),
