@@ -2,10 +2,11 @@
 
     <div class="property-body">
 
-        <header class="sub-label" {{action 'toggleObj'}}>Object: Component Type</header>
+        <header class="sub-label" {{action 'toggleObj'}}>Object: {{props.type}}</header>
         {{#if isObjExpanded}}
             <ul class="options-list">
                 <li>Name {{view Ember.TextField valueBinding="props.text" action="updateText" }}</li>
+
             </ul>
         {{/if}}
 
@@ -19,13 +20,13 @@
                 <li><label>y-pos</label> {{view Ember.TextField valueBinding="props.y_pos" action="updateY"}}</li>
                 <li><label>Hint</label> {{view Ember.TextField valueBinding="props.hint" action="updateHint"}}</li>
                 <li><label>Stack Index</label> {{view Ember.TextField valueBinding="props.stack" action="updateStack"}}</li>
+                <li><label>URL</label> {{view Ember.TextField}}</li>
             </ul>
         {{/if}}
 
         <header class="sub-label" {{action 'toggleStyle'}}>Style</header>
         {{#if isStyleExpanded}}
             <ul class="options-list">
-                <li><label>URL</label> {{view Ember.TextField}}</li>
                 <li class="toggle"><span {{action 'toggleFont'}} class="inner-toggle"><span class="font">Font</span><span class="caret"></span></span>
                     {{#if isFontExpanded}}
                         <ul>

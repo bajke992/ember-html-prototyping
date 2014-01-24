@@ -33,6 +33,9 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
         updateText: function (text) {
             this.canvasElement.set('text', text);
         },
+        updateId: function (id) {
+            this.canvasElement.set('recordId', id);
+        },
         updateWidth: function (width) {
             this.canvasElement.set('width', width);
         },
@@ -51,6 +54,7 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
         updateStack: function (stack) {
             this.canvasElement.set('stack', stack);
         }
+
     },
 
 
@@ -58,13 +62,18 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
 
         var self = this;
         // TODO: keep list of properties on one place!!!
-        var fields = ['text', 'width', 'height', 'x_pos', 'y_pos', 'disabled', 'hint', 'stack'];
+        var fields = ['text', 'width', 'height', 'x_pos', 'y_pos', 'disabled', 'hint', 'stack', 'recordId', 'type'];
 
         if (this.get('elemid') !== null) {
 
             var canvasElement = Ember.View.views[this.get('elemid')];
 
+
             self.set('canvasElement', canvasElement);
+
+            console.log(canvasElement);
+            console.log(canvasElement.get('eventList'));
+            console.log(this.get('elemid'));
 
             $.each(fields, function (value, key) {
                 self.set('props.' + key, canvasElement.get(key));
