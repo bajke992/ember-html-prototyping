@@ -168,9 +168,10 @@
   /* ---- END canvas elements ---- */
 
   .toolbar {
-    margin: 20px 10px 10px 10px;
+//    margin: 20px 10px 10px 10px;
     padding: 10px;
-    border: 1px solid #ddd;
+//    border: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
     &>div {
       margin-right: 10px;
       &:last-child {

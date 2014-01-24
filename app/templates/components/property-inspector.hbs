@@ -25,7 +25,7 @@
         <header class="sub-label" {{action 'toggleStyle'}}>Style</header>
         {{#if isStyleExpanded}}
             <ul class="options-list">
-                <li><label>Text</label> {{view Ember.TextField}}</li>
+                <li><label>URL</label> {{view Ember.TextField}}</li>
                 <li class="toggle"><span {{action 'toggleFont'}} class="inner-toggle"><span class="font">Font</span><span class="caret"></span></span>
                     {{#if isFontExpanded}}
                         <ul>
@@ -37,7 +37,7 @@
                         </ul>
                     {{/if}}
                 </li>
-                <li><label>URL</label> {{view Ember.TextField}}</li>
+
                 <li class="toggle"><span {{action 'toggleBg'}} class="inner-toggle bg"><span class="background">Background</span><span class="caret"></span></span>
                     {{#if isBgExpanded}}
                         <ul>

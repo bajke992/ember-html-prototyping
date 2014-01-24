@@ -7,7 +7,9 @@ Proto.CodeContainer = Ember.View.extend({
         this.get('controller').set('editor', CodeMirror.fromTextArea(textArea, {
             lineNumbers: true,
             mode: "javascript",
-            autofocus: true
+            autofocus: true,
+            matchBrackets: true,
+            autoCloseBrackets: true
         }));
         this.get('controller').get('editor').getDoc().setValue('var msg = "Hi";');
     },
