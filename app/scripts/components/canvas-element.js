@@ -8,6 +8,7 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
     attributeBindings: ['hint:title'],
 
     addRecord: 'addRecord',
+    removeRecord: 'removeRecord',
     editProperty: 'editProperty',
     editCode: 'setCodeView',
 
@@ -65,6 +66,13 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
 
         this.sendAction('editCode', this.get('elementId'));
 
+    },
+    actions: {
+        deleteCanvasElement: function () {
+            this.sendAction('removeRecord', this.get('elementId'));
+            this.sendAction('editProperty', 'elementId', null);
+            this.destroy();
+        }
     },
     text: '',
     width: 100,
@@ -174,31 +182,63 @@ Proto.CanvasPanelComponent = Proto.CanvasElementComponent.extend({
  * @returns {{grid: Array, containment: string, cursor: string, drag: Function, stop: Function}}
  */
 Proto.draggableData = function (self) {
+
+    var selected = $([]);
+    var offset = {top: 0, left: 0};
+
     return {
         grid: [10, 10],
         containment: "parent",
         cursor: "move",
+        start: function () {
+
+            // this block enables dragging of selectable elements
+            if (!self.$().is(".ui-selected")) { $(".ui-selected").removeClass("ui-selected"); }
+
+            selected = $(".ui-selected").each(function () {
+                var element = $(this);
+                element.data("offset", element.offset());
+            });
+            offset = self.$().offset();
+
+            // confirm selected element
+            self.sendAction('editProperty', 'elementId', self.get('elementId'));
+        },
+
         drag: function (event, ui) {
 
-            ui.helper.css('z-index', 1000);
+            // create guide lines for single elements
+            if (!self.$().is(".ui-selected")) {
 
-            var $parent = ui.helper.parent();
+                var $parent = ui.helper.parent();
+                var left = ui.position.left;
+                var top = ui.position.top;
 
-            if ($parent.find('.guide').size() === 0) {
+                if ($parent.find('.guide').size() === 0) {
 
-                $parent.append('<div class="guide guide-v"></div>');
-                $parent.append('<div class="guide guide-h"></div>');
+                    $parent.append('<div class="guide guide-v"></div>');
+                    $parent.append('<div class="guide guide-h"></div>');
+                }
+
+                $parent.find('.guide').show();
+
+                $parent.find('.guide-v').css({top: 0, left: left});
+                $parent.find('.guide-h').css({top: top, left: 0});
+
             }
 
-            $parent.find('.guide').show();
+            // enabling selectable elements dragging
+            var draggedTop = ui.position.top - offset.top;
+            var draggedLeft = ui.position.left - offset.left;
 
-            $parent.find('.guide-v').css({top: 0, left: ui.position.left});
-            $parent.find('.guide-h').css({top: ui.position.top, left: 0});
+            selected.not(self).each(function () {
+                var element = $(this);
+                var off = element.data("offset");
+                element.css({top: off.top + draggedTop, left: off.left + draggedLeft});
+            });
 
         },
         stop: function (event, ui) {
-
-            ui.helper.css('z-index', self.get('stack'));
 
             var $parent = ui.helper.parent();
 

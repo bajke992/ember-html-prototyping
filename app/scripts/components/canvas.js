@@ -28,6 +28,10 @@ Proto.CanvasContainer = Ember.ContainerView.extend(Ember.TargetActionSupport, {
 
         var self = this;
 
+        self.$().selectable({
+            filter: ".canvas-element"
+        });
+
         self.$().droppable({
             accept: ".toolbar > div, .canvas > .canvas-element",
             activeClass: "over",
@@ -71,6 +75,7 @@ Proto.addElement = function (attr, self) {
     var className = attr.item.attr('class');
     var type;
 
+    // TODO: this can be done better, without need to loop and compare each valid class
     $.each(map, function (key, val) {
         if (className.search(val) !== -1) {
             type = val;

@@ -10,16 +10,45 @@
     padding: 0;
 
     li {
-      padding: 2px 0 2px 15px;
+      padding: 2px 15px 2px 2px;
       list-style: none;
       background-color: #eee;
+      text-align: right;
+
+      &.toggle{
+        border-top: 1px solid #ddd;
+      }
+
+      label{
+        margin-right: 5px;
+      }
+      input{
+        border: 1px solid #ddd;
+        padding-left: 3px;
+        width: 55%;
+      }
+      select{
+        border: 1px solid #ddd;
+        width: 55%;
+      }
+
+      .inner-toggle {
+        .font, .background {
+          padding-right: 54%
+        }
+        &:hover{
+          font-weight: bold;
+          cursor: pointer;
+        }
+      }
 
       ul {
         margin: 0;
         padding: 0;
+        li {
+          padding-right: 0;
+        }
       }
-
     }
   }
-
 }
