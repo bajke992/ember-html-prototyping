@@ -69,11 +69,13 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
     },
     actions: {
         deleteCanvasElement: function () {
-            this.sendAction('removeRecord', this.get('elementId'));
+            this.sendAction('removeRecord', this.get('recordId'));
             this.sendAction('editProperty', 'elementId', null);
             this.destroy();
         }
     },
+    recordId: '',
+    type: 'general',
     text: '',
     width: 100,
     height: 40,
@@ -109,7 +111,26 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
 
     updateStack: function () {
         this.$().css('z-index', this.get('stack'));
-    }.observes('stack')
+    }.observes('stack'),
+
+    updateMode: function () {
+        var mode = this.get('mode');
+
+        if (mode === 'singleline') {
+
+            this.set('minHeight', 40);
+            this.set('maxHeight', 40);
+            this.set('height', 40);
+
+        } else if (mode === 'multiline') {
+
+            this.set('minHeight', 80);
+            this.set('maxHeight', null);
+            this.set('height', 80);
+
+        }
+
+    }.observes('mode')
 
 });
 
@@ -119,6 +140,7 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
  */
 Proto.CanvasBtnComponent = Proto.CanvasElementComponent.extend({
     classNames: ['btn'],
+    type: 'button',
     text: 'Button',
     width: 100,
     height: 40,
@@ -135,6 +157,7 @@ Proto.CanvasBtnComponent = Proto.CanvasElementComponent.extend({
  */
 Proto.CanvasInputComponent = Proto.CanvasElementComponent.extend({
     classNames: ['input'],
+    type: 'input',
     text: 'Your text here',
     width: 100,
     height: 40,
@@ -142,6 +165,7 @@ Proto.CanvasInputComponent = Proto.CanvasElementComponent.extend({
     maxHeight: 40,
     minWidth: 100,
     maxWidth: 300,
+    mode: 'singleline',
     hint: 'Your text here'
 });
 
@@ -151,8 +175,8 @@ Proto.CanvasInputComponent = Proto.CanvasElementComponent.extend({
  */
 Proto.CanvasTextComponent = Proto.CanvasElementComponent.extend({
     classNames: ['text'],
+    type: 'text',
     text: 'Text',
-//    width: 100,
     width: null,
     height: 40,
     minHeight: 40,
@@ -167,6 +191,7 @@ Proto.CanvasTextComponent = Proto.CanvasElementComponent.extend({
  */
 Proto.CanvasPanelComponent = Proto.CanvasElementComponent.extend({
     classNames: ['panel'],
+    type: 'panel',
     text: '',
     width: 100,
     height: 100,
