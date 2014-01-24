@@ -31,6 +31,19 @@ Proto.EditorController = Ember.ArrayController.extend({
     },
     editCode: false,
     editDesign: true,
-    elementId: null
+    elementId: null,
+
+    editCodeBegin: function () {
+        this.get('editor').getDoc().markText(1, 2, {
+            readOnly: true
+        });
+    },
+
+    editCodeFinish: function () {
+        if(this.editCode === false) {
+            var eventList = Ember.View.views[this.get('elementId')].get('eventList');
+            eventList.onclick = this.get('editor').getValue();
+        }
+    }.observes('editCode')
 
 });
