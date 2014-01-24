@@ -15,11 +15,19 @@ Proto.EditorController = Ember.ArrayController.extend({
         addRecord: function (params) {
             var data = this.get('store').createRecord('data', params);
             data.save();
+
+            var canvasElement = Ember.View.views[params.elementId];
+            canvasElement.set('recordId', 'element-' + data.get('id'));
+
         },
-        removeRecord: function (elementId) {
-            // NOTE: only inserting into LS is working; fetching, updating and deleting is not working for some reason
+        removeRecord: function (recordId) {
+            // FIXME: only inserting into LS is working; fetching, updating and deleting is not working for some reason
+            // (except when you query by ID)
             // DAMN YOU EMBER! BURN IN HELL! I HATE YOU!!!
-            this.get('store').find('data', {elementId: elementId}).then(function(record){
+
+            recordId = recordId.replace('element-', '');
+
+            this.get('store').find('data', recordId).then(function(record){
                 record.deleteRecord();
                 record.save();
             });
