@@ -2,11 +2,11 @@
 
     <div class="property-body">
 
-        <header class="sub-label" {{action 'toggleObj'}}>Object: Component Type</header>
+        <header class="sub-label" {{action 'toggleObj'}}>Object: {{props.type}}</header>
         {{#if isObjExpanded}}
             <ul class="options-list">
                 <li>Name {{view Ember.TextField valueBinding="props.text" action="updateText" }}</li>
-                <li>ID {{view Ember.TextField valueBinding="props.recordId" action="updateId" }}</li>
+
             </ul>
         {{/if}}
 

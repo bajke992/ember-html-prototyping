@@ -62,15 +62,17 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
 
         var self = this;
         // TODO: keep list of properties on one place!!!
-        var fields = ['text', 'width', 'height', 'x_pos', 'y_pos', 'disabled', 'hint', 'stack'];
+        var fields = ['text', 'width', 'height', 'x_pos', 'y_pos', 'disabled', 'hint', 'stack', 'recordId', 'type'];
 
         if (this.get('elemid') !== null) {
 
             var canvasElement = Ember.View.views[this.get('elemid')];
 
+
             self.set('canvasElement', canvasElement);
 
-            console.log(this.canvasElement.get('eventList'));
+            console.log(canvasElement);
+            console.log(canvasElement.get('eventList'));
             console.log(this.get('elemid'));
 
             $.each(fields, function (value, key) {
