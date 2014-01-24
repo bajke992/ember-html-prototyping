@@ -16,6 +16,7 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
 
         var self = this;
         var position = self.get('position');
+        self.set('eventList', {});
 
         self.$().css(Proto.cssData(position, self));
 

@@ -53,7 +53,10 @@ Proto.EditorController = Ember.ArrayController.extend({
 
     editCodeBegin: function () {
         if (this.editCode === true) {
-            var text = "$(" + this.get('elementId') + ")." + this.get('eventType') + "(function () {\n\n});";
+            var eventList = Ember.View.views[this.get('elementId')].get('eventList');
+            var eventFunctionCode = eventList["on"+this.get('eventType')] || "";
+            var elementId = this.get('elementId') === "document" ? this.get('elementId'): "\"#" + this.get('elementId') + "\"";
+            var text = eventFunctionCode === "" ? "$(" + elementId + ")." + this.get('eventType') + "(function () {\n" + eventFunctionCode + "\n});" : eventFunctionCode;
             this.get('editor').getDoc().setValue(text);
             this.get('editor').getDoc().markText(
                 {line: 0, ch: 0},
@@ -61,8 +64,8 @@ Proto.EditorController = Ember.ArrayController.extend({
                 {readOnly: true, className: 'read-only'}
             );
             this.get('editor').getDoc().markText(
-                {line: 2, ch: 0},
-                {line: 2, ch: 100},
+                {line: this.get('editor').getDoc().lastLine(), ch: 0},
+                {line: this.get('editor').getDoc().lastLine(), ch: 100},
                 {readOnly: true, className: 'read-only'}
             );
         }
