@@ -71,7 +71,9 @@ Proto.CanvasContainer = Ember.ContainerView.extend(Ember.TargetActionSupport, {
         add: function (attr) {
             Proto.addElement(attr, this);
         }
-    }
+    },
+
+    eventList: {}
 
 });
 

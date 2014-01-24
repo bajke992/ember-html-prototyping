@@ -16,6 +16,7 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
 
         var self = this;
         var data = self.get('data');
+        self.set('eventList', {});
 
         self.$().css(Proto.cssData(data, self));
 
@@ -68,7 +69,7 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
     },
     doubleClick: function () {
 
-        this.sendAction('editCode', this.get('elementId'));
+        this.sendAction('editCode', this.get('elementId'), null);
 
     },
     actions: {
