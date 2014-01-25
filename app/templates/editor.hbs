@@ -17,6 +17,14 @@
     <section class="sidebar">
         <aside>
             <header class="label-title">Project Tree</header>
+            <button {{action addScreen}}>add screen</button>
+
+            <ul>
+            {{#each model}}
+                <li>{{#link-to 'screen' this}}{{name}}{{/link-to}}</li>
+            {{/each}}
+            </ul>
+
             {{ project-tree }}
         </aside>
         <aside>
@@ -34,14 +42,9 @@
     <div class="workspace">
 
         <div class="canvas-workspace">
-            {{view Proto.CodeContainer id="code-container" isVisibleBinding="editCode"}}
-            {{view Proto.Canvas isVisibleBinding="editDesign"}}
+            {{outlet}}
         </div>
 
-        <footer>
-            <button {{bind-attr class="editDesign:active"}}{{action "setDesignView" on="click"}}>Design View</button>
-            <button {{bind-attr class="editCode:active"}}{{action "setCodeView" on="click"}}>Code View</button>
-        </footer>
     </div>
 
 </div>

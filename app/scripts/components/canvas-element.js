@@ -15,10 +15,10 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
     didInsertElement: function() {
 
         var self = this;
-        var position = self.get('position');
+        var data = self.get('data');
         self.set('eventList', {});
 
-        self.$().css(Proto.cssData(position, self));
+        self.$().css(Proto.cssData(data, self));
 
         self.$().draggable(Proto.draggableData(self));
 
@@ -42,18 +42,21 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
             });
         }
 
-        this.sendAction('addRecord', {
-            elementId:  this.get('elementId'),
-            text:       this.get('text'),
-            width:      this.get('width'),
-            height:     this.get('height'),
-            x_pos:      this.get('x_pos'),
-            y_pos:      this.get('y_pos'),
-            disabled:   this.get('disabled'),
-            hint:       this.get('hint'),
-            stack:      this.get('stack'),
-            resizable:  this.get('resizable')
-        });
+        if (data.insert) {
+            this.sendAction('addRecord', {
+                elementId:  this.get('elementId'),
+                text:       this.get('text'),
+                width:      this.get('width'),
+                height:     this.get('height'),
+                x_pos:      this.get('x_pos'),
+                y_pos:      this.get('y_pos'),
+                disabled:   this.get('disabled'),
+                hint:       this.get('hint'),
+                stack:      this.get('stack'),
+                resizable:  this.get('resizable'),
+                type:       this.get('type')
+            });
+        }
 
         this.sendAction('editProperty', 'elementId', this.get('elementId'));
 
@@ -70,7 +73,7 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
     },
     actions: {
         deleteCanvasElement: function () {
-            this.sendAction('removeRecord', this.get('recordId'));
+            this.sendAction('removeRecord', this.get('elementId'));
             this.sendAction('editProperty', 'elementId', null);
             this.destroy();
         }
@@ -141,7 +144,7 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
  */
 Proto.CanvasBtnComponent = Proto.CanvasElementComponent.extend({
     classNames: ['btn'],
-    type: 'button',
+    type: 'btn',
     text: 'Button',
     width: 100,
     height: 40,

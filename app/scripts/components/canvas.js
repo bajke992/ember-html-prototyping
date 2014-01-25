@@ -13,6 +13,9 @@ Proto.Canvas = Ember.View.extend({
             cursor: "move"
         });
 
+        var elements = this.get('content').get('model.elements');
+        console.log(elements);
+
     }
 });
 
@@ -43,11 +46,25 @@ Proto.CanvasContainer = Ember.ContainerView.extend(Ember.TargetActionSupport, {
                     self.triggerAction({
                         action: 'add',
                         target: self,
-                        actionContext: {item: ui.draggable, event: event}
+                        actionContext: {item: ui.draggable, event: event, insert: true}
                     });
                 }
 
             }
+        });
+
+        var elements = this.get('content').get('model.elements');
+
+        console.log(elements);
+
+        $.each(elements, function (key, params) {
+
+            self.triggerAction({
+                action: 'add',
+                target: self,
+                actionContext: params
+            });
+
         });
 
     },
@@ -70,23 +87,28 @@ Proto.CanvasContainer = Ember.ContainerView.extend(Ember.TargetActionSupport, {
  */
 Proto.addElement = function (attr, self) {
 
-    var left = attr.event.pageX - self.$().offset().left;
-    var top = attr.event.pageY - self.$().offset().top;
+    var left = (attr.event !== undefined) ? attr.event.pageX - self.$().offset().left : attr.x_pos;
+    var top = (attr.event !== undefined) ? attr.event.pageY - self.$().offset().top : attr.y_pos;
 
-    var map = ['btn', 'input', 'text', 'panel'];
-    var className = attr.item.attr('class');
     var type;
 
-    // TODO: this can be done better, without need to loop and compare each valid class
-    $.each(map, function (key, val) {
-        if (className.search(val) !== -1) {
-            type = val;
-            return false;
-        }
-    });
+    if (attr.item === undefined) {
+        type = attr.type;
+    } else {
+        var map = ['btn', 'input', 'text', 'panel'];
+        var className = attr.item.attr('class');
+
+        // TODO: this can be done better, without need to loop and compare each valid class
+        $.each(map, function (key, val) {
+            if (className.search(val) !== -1) {
+                type = val;
+                return false;
+            }
+        });
+    }
 
     var cmpName = 'Canvas' + type.charAt(0).toUpperCase() + type.slice(1) + 'Component';
-    var cmp = Proto[cmpName].create({position: {left: left, top: top}});
+    var cmp = Proto[cmpName].create({data: {left: left, top: top, insert: attr.insert}});
     self.pushObject(cmp);
 
 };
