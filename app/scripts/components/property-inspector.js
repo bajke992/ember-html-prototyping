@@ -23,22 +23,22 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
 
     actions: {
         toggleAttr: function () {
-            (this.isAttrExpanded) ? this.set('isAttrExpanded', false) : this.set('isAttrExpanded', true);
+            this.toggleProperty('isAttrExpanded');
         },
         toggleStyle: function () {
-            (this.isStyleExpanded) ? this.set('isStyleExpanded', false) : this.set('isStyleExpanded', true);
+            this.toggleProperty('isStyleExpanded');
         },
         toggleObj: function () {
-            (this.isObjExpanded) ? this.set('isObjExpanded', false) : this.set('isObjExpanded', true);
+            this.toggleProperty('isObjExpanded');
         },
         toggleEvents: function () {
-            (this.isEventsExpanded) ? this.set('isEventsExpanded', false) : this.set('isEventsExpanded', true);
+            this.toggleProperty('isEventsExpanded');
         },
         toggleFont: function () {
-            (this.isFontExpanded) ? this.set('isFontExpanded', false) : this.set('isFontExpanded', true);
+            this.toggleProperty('isFontExpanded');
         },
         toggleBg: function () {
-            (this.isBgExpanded) ? this.set('isBgExpanded', false) : this.set('isBgExpanded', true);
+            this.toggleProperty('isBgExpanded');
         },
 
         updateText: function (text) {
@@ -112,6 +112,13 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
 
         var isTypes = ['isBtn', 'isInput', 'isText', 'isPanel'];
         var type = this.canvasElement.get('type');
+
+        var isTestType = isTypes.filter(function(testType) {
+            console.log(testType, type);
+            return testType === "is" + type.charAt(0).toUpperCase() + type.slice(1);
+        });
+
+        console.log(isTestType);
 
         if (self.get('elemid') !== null) {
             $.each(isTypes, function(index, element) {
