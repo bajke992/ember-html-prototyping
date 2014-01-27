@@ -2,9 +2,10 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
     isAttrExpanded: false,
     isStyleExpanded: true,
     isObjExpanded: true,
-    isEventsExpanded: false,
     isFontExpanded: false,
     isBgExpanded: false,
+    isElementSelected: true,
+    isEventsSelected: false,
 
     elemid: null,
     isInput: false,
@@ -15,7 +16,22 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
     canvasElement: {},
     props: {},
 
+    modes: [
+        {mode: 'multiline', title: 'Multi-line'},
+        {mode: 'singleline', title: 'Single-line'}
+    ],
+
     actions: {
+        showElement: function () {
+            this.set('isElementSelected', true);
+            this.set('isEventsSelected', false);
+        },
+
+        showEvents: function () {
+            this.set('isElementSelected', false);
+            this.set('isEventsSelected', true);
+        },
+
         toggleAttr: function () {
             this.toggleProperty('isAttrExpanded');
         },
@@ -24,9 +40,6 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
         },
         toggleObj: function () {
             this.toggleProperty('isObjExpanded');
-        },
-        toggleEvents: function () {
-            this.toggleProperty('isEventsExpanded');
         },
         toggleFont: function () {
             this.toggleProperty('isFontExpanded');
@@ -58,7 +71,11 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
         },
         updateStack: function (stack) {
             this.canvasElement.set('stack', stack);
-        }
+        },
+//        updateMode: function (mode) {
+//            console.log(mode);
+//            console.log('mode updated');
+//        }
     },
 
 
@@ -66,7 +83,7 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
 
         var self = this;
         // TODO: keep list of properties on one place!!!
-        var fields = ['text', 'width', 'height', 'x_pos', 'y_pos', 'disabled', 'hint', 'stack', 'recordId', 'type'];
+        var fields = ['text', 'width', 'height', 'x_pos', 'y_pos', 'disabled', 'hint', 'stack', 'recordId', 'type', 'mode'];
 
         if (this.get('elemid') !== null) {
 
