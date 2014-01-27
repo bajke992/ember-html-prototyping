@@ -1,5 +1,31 @@
 Proto.ScreenController = Ember.ObjectController.extend({
     needs: ['editor'],
+
+    currentPathDidChange: function() {
+
+        var self = this;
+        Ember.run.schedule('afterRender', this, function() {
+
+
+            var elements = this.get('model').get('elements');
+            var canvas = Ember.View.views['document'];
+
+            canvas.removeAllChildren();
+
+            $.each(elements, function (key, params) {
+
+                canvas.triggerAction({
+                    action: 'add',
+                    target: canvas,
+                    actionContext: params
+                });
+
+            });
+
+        });
+    }.observes('currentPath'),
+
+
     actions: {
         setDesignView: function () {
             this.set('editCode', false);
@@ -30,9 +56,6 @@ Proto.ScreenController = Ember.ObjectController.extend({
 
         },
         removeRecord: function (elementId) {
-            // FIXME: only inserting into LS is working; fetching, updating and deleting is not working for some reason
-            // (except when you query by ID)
-            // DAMN YOU EMBER! BURN IN HELL! I HATE YOU!!!
 
             var model = this.get('model');
 
