@@ -78,6 +78,18 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
         },
         updateBgColor: function (color){
             this.canvasElement.set('cssRules.bgColor', color);
+        },
+        updateBgImage: function (image){
+            this.canvasElement.set('cssRules.bgImage', image);
+        },
+        updateFontFamily: function(font) {
+            this.canvasElement.set('cssRules.fontfamily', font);
+        },
+        updateFontSize: function(size) {
+            this.canvasElement.set('cssRules.fontsize', size);
+        },
+        updateStyle: function(style) {
+            this.canvasElement.set('cssRules.style', style);
         }
     },
 
