@@ -2,17 +2,12 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
     isAttrExpanded: false,
     isStyleExpanded: true,
     isObjExpanded: true,
-    isEventsExpanded: false,
     isFontExpanded: false,
     isBgExpanded: false,
+    isElementSelected: true,
+    isEventsSelected: false,
 
     elemid: null,
-    isType: [
-        {isInput: false},
-        {isText: false},
-        {isPanel: false},
-        {isButton: false}
-    ],
     isInput: false,
     isText: false,
     isPanel: false,
@@ -21,24 +16,36 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
     canvasElement: {},
     props: {},
 
+    modes: [
+        {mode: 'multiline', title: 'Multi-line'},
+        {mode: 'singleline', title: 'Single-line'}
+    ],
+
     actions: {
+        showElement: function () {
+            this.set('isElementSelected', true);
+            this.set('isEventsSelected', false);
+        },
+
+        showEvents: function () {
+            this.set('isElementSelected', false);
+            this.set('isEventsSelected', true);
+        },
+
         toggleAttr: function () {
-            (this.isAttrExpanded) ? this.set('isAttrExpanded', false) : this.set('isAttrExpanded', true);
+            this.toggleProperty('isAttrExpanded');
         },
         toggleStyle: function () {
-            (this.isStyleExpanded) ? this.set('isStyleExpanded', false) : this.set('isStyleExpanded', true);
+            this.toggleProperty('isStyleExpanded');
         },
         toggleObj: function () {
-            (this.isObjExpanded) ? this.set('isObjExpanded', false) : this.set('isObjExpanded', true);
-        },
-        toggleEvents: function () {
-            (this.isEventsExpanded) ? this.set('isEventsExpanded', false) : this.set('isEventsExpanded', true);
+            this.toggleProperty('isObjExpanded');
         },
         toggleFont: function () {
-            (this.isFontExpanded) ? this.set('isFontExpanded', false) : this.set('isFontExpanded', true);
+            this.toggleProperty('isFontExpanded');
         },
         toggleBg: function () {
-            (this.isBgExpanded) ? this.set('isBgExpanded', false) : this.set('isBgExpanded', true);
+            this.toggleProperty('isBgExpanded');
         },
 
         updateText: function (text) {
@@ -64,7 +71,11 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
         },
         updateStack: function (stack) {
             this.canvasElement.set('stack', stack);
-        }
+        },
+//        updateMode: function (mode) {
+//            console.log(mode);
+//            console.log('mode updated');
+//        }
     },
 
 
@@ -72,7 +83,7 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
 
         var self = this;
         // TODO: keep list of properties on one place!!!
-        var fields = ['text', 'width', 'height', 'x_pos', 'y_pos', 'disabled', 'hint', 'stack', 'recordId', 'type'];
+        var fields = ['text', 'width', 'height', 'x_pos', 'y_pos', 'disabled', 'hint', 'stack', 'recordId', 'type', 'mode'];
 
         if (this.get('elemid') !== null) {
 
@@ -109,24 +120,17 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
     updateType: function () {
 
         var self = this;
-
         var isTypes = ['isBtn', 'isInput', 'isText', 'isPanel'];
         var type = this.canvasElement.get('type');
 
-        if (self.get('elemid') !== null) {
-            $.each(isTypes, function(index, element) {
-                var typeName = "is" + type.charAt(0).toUpperCase() + type.slice(1)
-                if (typeName === element){
-                    self.set(element, true);
-                } else {
-                    self.set(element, false);
-                }
-            });
-        } else {
-            $.each(isTypes, function(index, element) {
-                self.set(element, false);
-            });
-        }
+        $.each(isTypes, function(index, element) {
+            self.set(element, false);
+        });
+
+        var isType = isTypes.filter(function(testType) {
+            return testType === "is" + type.charAt(0).toUpperCase() + type.slice(1);
+        });
+
+        self.set(isType, true);
     }.observes('elemid')
 });
-
