@@ -58,6 +58,12 @@ $font: "Myriad Pro", Calibri, Helvetica, Arial, sans-serif;
       font-weight: bold;
       font-size: 15px;
       border-bottom: none;
+
+      .add-screen {
+        float: right;
+        font-size: 22px;
+        cursor: pointer;
+      }
     }
 
     &.sub-label {
@@ -84,6 +90,40 @@ $font: "Myriad Pro", Calibri, Helvetica, Arial, sans-serif;
 //    min-height: 750px;
     aside {
       height: 50%;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .screens-list {
+      &>li {
+        a {
+          text-decoration: none;
+          padding: 10px;
+          display: block;
+          background-color: $sub-label-color;
+          color: white;
+          border-bottom: 1px solid #ddd;
+          &.active {
+            &+ .elements-list {
+              display: block;
+            }
+          }
+        }
+        .elements-list {
+          display: none;
+          &>li {
+            border-bottom: 1px solid #ddd;
+            &>div {
+              cursor: pointer;
+              padding: 5px 10px;
+              display: block;
+            }
+          }
+        }
+      }
     }
   }
 

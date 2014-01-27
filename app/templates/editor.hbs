@@ -16,16 +16,9 @@
 
     <section class="sidebar">
         <aside>
-            <header class="label-title">Project Tree</header>
-            <button {{action addScreen}}>add screen</button>
+            <header class="label-title">Project Tree <span class="add-screen fa fa-plus-square-o" {{action addScreen}}></span></header>
 
-            <ul>
-            {{#each model}}
-                <li>{{#link-to 'screen' this}}{{name}}{{/link-to}}</li>
-            {{/each}}
-            </ul>
-
-            {{ project-tree }}
+            {{ project-tree screens=model }}
         </aside>
         <aside>
             <header class="label-title">Element Inspector</header>

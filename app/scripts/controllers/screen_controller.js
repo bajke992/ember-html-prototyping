@@ -51,15 +51,25 @@ Proto.ScreenController = Ember.ObjectController.extend({
 
             var model = this.get('model');
 
-            model.get('elements')[params.elementId] = params;
+            //model.get('elements')[params.elementId] = params;
+            model.get('elements').pushObject(params);
             model.save();
 
         },
         removeRecord: function (elementId) {
 
             var model = this.get('model');
+            var toDelete;
 
-            delete model.get('elements')[elementId];
+            $.each(model.get('elements'), function (index, element) {
+                if (element.elementId === elementId) {
+                    toDelete = index;
+                    return;
+                }
+            });
+
+            //delete model.get('elements')[elementId];
+            model.get('elements').splice (toDelete, 1);
             model.save();
 
         },
