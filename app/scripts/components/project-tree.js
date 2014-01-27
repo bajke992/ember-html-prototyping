@@ -1,8 +1,11 @@
 Proto.ProjectTreeComponent = Ember.Component.extend({
 
+    editProperty: 'editProperty',
+
     actions: {
         focusElement: function (element) {
-            console.log('focus element', element.elementId);
+
+            this.sendAction('editProperty', 'elementId', element.elementId);
         }
     }
 

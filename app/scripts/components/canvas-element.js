@@ -8,6 +8,7 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
     attributeBindings: ['hint:title'],
 
     addRecord: 'addRecord',
+    updateRecord: 'updateRecord',
     removeRecord: 'removeRecord',
     editProperty: 'editProperty',
     editCode: 'setCodeView',
@@ -29,7 +30,12 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
                 maxHeight: self.maxHeight,
                 minWidth: self.minWidth,
                 maxWidth: self.maxWidth,
-                stop: function (event, ui ) {
+                start: function (event, ui) {
+
+                    self.sendAction('editProperty', 'elementId', self.get('elementId'));
+
+                },
+                stop: function (event, ui) {
 
                     var width = ui.size.width;
                     var height = ui.size.height;
@@ -58,6 +64,11 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
                 resizable:  this.get('resizable'),
                 type:       this.get('type')
             });
+        } else {
+            this.sendAction('updateRecord', {
+                elementId:  this.get('elementId'),
+                recordId:   this.get('recordId')
+            });
         }
 
         this.sendAction('editProperty', 'elementId', this.get('elementId'));
@@ -65,7 +76,11 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
     },
     click: function () {
 
-        this.sendAction('editProperty', 'elementId', this.get('elementId'));
+        if (!this.$().is(".ui-selected")) {
+
+            this.sendAction('editProperty', 'elementId', this.get('elementId'));
+
+        }
 
     },
     doubleClick: function () {
@@ -239,7 +254,9 @@ Proto.draggableData = function (self) {
             offset = self.$().offset();
 
             // confirm selected element
-            self.sendAction('editProperty', 'elementId', self.get('elementId'));
+            if (!self.$().is(".ui-selected")) {
+                self.sendAction('editProperty', 'elementId', self.get('elementId'));
+            }
         },
 
         drag: function (event, ui) {
@@ -262,6 +279,12 @@ Proto.draggableData = function (self) {
                 $parent.find('.guide-v').css({top: 0, left: left});
                 $parent.find('.guide-h').css({top: top, left: 0});
 
+                self.set('x_pos', left);
+                self.set('y_pos', top);
+
+                self.sendAction('editProperty', 'x_pos', left);
+                self.sendAction('editProperty', 'y_pos', top);
+
             }
 
             // enabling selectable elements dragging
@@ -277,18 +300,26 @@ Proto.draggableData = function (self) {
         },
         stop: function (event, ui) {
 
-            var $parent = ui.helper.parent();
+            if (self.$().is(".ui-selected")) {
 
-            $parent.find('.guide').hide();
+                self.sendAction('editProperty', 'elementId', null);
 
-            var x_pos = ui.position.left;
-            var y_pos = ui.position.top;
+            } else {
 
-            self.set('x_pos', x_pos);
-            self.set('y_pos', y_pos);
+                var $parent = ui.helper.parent();
 
-            self.sendAction('editProperty', 'x_pos', x_pos);
-            self.sendAction('editProperty', 'y_pos', y_pos);
+                $parent.find('.guide').hide();
+
+                var x_pos = ui.position.left;
+                var y_pos = ui.position.top;
+
+                self.set('x_pos', x_pos);
+                self.set('y_pos', y_pos);
+
+                self.sendAction('editProperty', 'x_pos', x_pos);
+                self.sendAction('editProperty', 'y_pos', y_pos);
+
+            }
         }
     }
 };

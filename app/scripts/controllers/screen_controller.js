@@ -55,6 +55,22 @@ Proto.ScreenController = Ember.ObjectController.extend({
             model.save();
 
         },
+        updateRecord: function (params) {
+
+            var model = this.get('model');
+            var toUpdate;
+
+            // TODO: try to find a way to get object to delete without iterating through array
+            $.each(model.get('elements'), function (index, element) {
+                if (element.recordId === params.recordId) {
+                    toUpdate = index;
+                    return;
+                }
+            });
+
+            model.get('elements')[toUpdate].elementId = params.elementId;
+
+        },
         removeRecord: function (recordId) {
 
             var model = this.get('model');

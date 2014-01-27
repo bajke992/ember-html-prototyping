@@ -22,7 +22,6 @@ Proto.Canvas = Ember.View.extend({
  */
 Proto.CanvasContainer = Ember.ContainerView.extend(Ember.TargetActionSupport, {
     classNames: ['canvas'],
-    addAction: 'addToCanvas',
 
     parentViewDidChange: function () {
         console.log('parent change');
