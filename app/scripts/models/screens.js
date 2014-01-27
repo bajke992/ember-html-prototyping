@@ -3,7 +3,7 @@
 
 Proto.Screens = DS.Model.extend({
     name:       DS.attr('string'),
-    elements:   DS.attr('object')
+    elements:   DS.attr('array')
 });
 
 //Proto.Data.FIXTURES = [];
@@ -11,12 +11,12 @@ Proto.Screens = DS.Model.extend({
 
 DS.ArrayTransform = DS.Transform.extend({
     deserialize: function(serialized) {
-        return (Ember.typeOf(serialized) == "object") ? serialized : {};
+        return (Ember.typeOf(serialized) == "array") ? serialized : [];
     },
     serialize: function(deserialized) {
-        return (Ember.typeOf(deserialized) == "object") ? deserialized : {};
+        return (Ember.typeOf(deserialized) == "array") ? deserialized : [];
     }
 });
 
 
-Proto.register('transform:object', DS.ArrayTransform);
+Proto.register('transform:array', DS.ArrayTransform);

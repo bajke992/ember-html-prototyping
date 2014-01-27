@@ -11,6 +11,7 @@ Proto.EditorController = Ember.ArrayController.extend({
         editProperty: function (key, value) {
             this.set(key, value);
         }
+
     }
 
 });

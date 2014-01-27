@@ -1,3 +1,18 @@
 <div class="project-tree">
 
+    <ul class="screens-list">
+        {{#each screens}}
+            <li>
+                {{#link-to 'screen' this}}{{name}}{{/link-to}}
+
+                <ul class="elements-list">
+                    {{#each element in elements}}
+                        <li><div {{ action focusElement element }}>{{ element.type }}</div></li>
+                    {{/each}}
+                </ul>
+
+            </li>
+        {{/each}}
+    </ul>
+
 </div>
