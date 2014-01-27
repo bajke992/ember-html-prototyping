@@ -17,6 +17,7 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
         var self = this;
         var data = self.get('data');
         self.set('eventList', {});
+        self.set('recordId', data.recordId);
 
         self.$().css(Proto.cssData(data, self));
 
@@ -45,6 +46,7 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
         if (data.insert) {
             this.sendAction('addRecord', {
                 elementId:  this.get('elementId'),
+                recordId:   this.get('recordId'),
                 text:       this.get('text'),
                 width:      this.get('width'),
                 height:     this.get('height'),
@@ -73,7 +75,7 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
     },
     actions: {
         deleteCanvasElement: function () {
-            this.sendAction('removeRecord', this.get('elementId'));
+            this.sendAction('removeRecord', this.get('recordId'));
             this.sendAction('editProperty', 'elementId', null);
             this.destroy();
         }
@@ -210,7 +212,7 @@ Proto.CanvasTextComponent = Proto.CanvasElementComponent.extend({
 Proto.CanvasPanelComponent = Proto.CanvasElementComponent.extend({
     classNames: ['panel'],
     type: 'panel',
-    text: '',
+    text: 'Panel',
     width: 100,
     height: 100,
     minHeight: 100,

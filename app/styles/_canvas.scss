@@ -65,6 +65,9 @@
       &.panel {
         $height: 99px;
         height: $height;
+        .inner {
+          display: none;
+        }
       }
       &.text {
         min-width: 50px;
