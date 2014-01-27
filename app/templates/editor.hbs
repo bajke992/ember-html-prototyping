@@ -15,11 +15,7 @@
     </header>
 
     <section class="sidebar">
-        <aside>
-            <header class="label-title">Project Tree <span class="add-screen fa fa-plus-square-o" {{action addScreen}}></span></header>
 
-            {{ project-tree screens=model }}
-        </aside>
         <aside>
             <header class="label-title">Element Inspector</header>
             {{ property-inspector
@@ -30,6 +26,13 @@
                     y_pos=y_pos
             }}
         </aside>
+
+        <aside>
+            <header class="label-title">Project Tree <span class="add-screen fa fa-plus-square-o" {{action addScreen}}></span></header>
+
+            {{ project-tree screens=model }}
+        </aside>
+
     </section>
 
     <div class="workspace">
