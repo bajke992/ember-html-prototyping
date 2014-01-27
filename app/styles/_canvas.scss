@@ -1,8 +1,7 @@
 .canvas-view {
   .canvas {
-    margin: 10px 10px;
     background-color: #eee;
-    min-height: 600px;
+//    min-height: 600px;
     background-image: url('../images/gird-bg.png?test=123');
     position: relative;
     z-index: 1;
@@ -137,6 +136,16 @@
     text-align: left;
     vertical-align: top;
     text-indent: 5px;
+    &.singleline{
+      min-height: 40px;
+      max-height: 40px;
+      height: 40px;
+    }
+    &.multiline{
+      min-height: 80px;
+      max-height: none;
+      height: 80px;
+    }
   }
 
   .text {
@@ -167,24 +176,52 @@
   }
   /* ---- END canvas elements ---- */
 
-  .toolbar {
-//    margin: 20px 10px 10px 10px;
-    padding: 10px;
-//    border: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    &>div {
-      margin-right: 10px;
-      &:last-child {
-        margin: 0;
-      }
-      &.text {
-        &:before {
-          content: '<';
-          margin-right: 5px;
-        }
-        &:after {
-          content: '>';
-          margin-left: 5px;
+//  .toolbar {
+////    margin: 20px 10px 10px 10px;
+//    padding: 10px;
+////    border: 1px solid #ddd;
+//    border-bottom: 1px solid #ddd;
+//    &>div {
+//      margin-right: 10px;
+//      &:last-child {
+//        margin: 0;
+//      }
+//      &.text {
+//        &:before {
+//          content: '<';
+//          margin-right: 5px;
+//        }
+//        &:after {
+//          content: '>';
+//          margin-left: 5px;
+//        }
+//      }
+//    }
+//  }
+
+  .toolbar{
+    position: absolute;
+    top: -2px;
+    left: 449px;
+    height: auto;
+
+
+    .toolbar-element {
+      padding:10px;
+      font-size: 2em;
+      color: white;
+      max-height: 48px;
+      vertical-align: middle;
+
+      &.btn, &.input, &.text, &.panel{
+        width: auto;
+        height: auto;
+        border: none;
+        background-color: transparent;
+
+        &:hover{
+          cursor: pointer;
+          color: #ccc;
         }
       }
     }
