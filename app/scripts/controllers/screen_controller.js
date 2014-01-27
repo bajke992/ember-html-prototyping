@@ -51,7 +51,6 @@ Proto.ScreenController = Ember.ObjectController.extend({
 
             var model = this.get('model');
 
-            //model.get('elements')[params.elementId] = params;
             model.get('elements').pushObject(params);
             model.save();
 
