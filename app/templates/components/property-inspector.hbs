@@ -12,7 +12,7 @@
             {{#if isObjExpanded}}
                 <ul class="options-list">
                     <li>Name {{view Ember.TextField valueBinding="props.text" action="updateText" }}</li>
-                    <li>ID {{view Ember.TextField valueBinding="props.ID" action="updateId" }}</li>
+                    <li>ID {{view Ember.TextField valueBinding="props.recordId" action="updateId" }}</li>
                     {{#if isBtn}}
                         <li><label>URL</label> {{view Ember.TextField}}</li>
                     {{/if}}
@@ -50,11 +50,10 @@
                     <li class="toggle"><span {{action 'toggleFont'}} class="inner-toggle"><span class="font">Font</span><span class="caret"></span></span>
                         {{#if isFontExpanded}}
                             <ul>
-                                <li><label>font-family</label> {{view Ember.TextField}}</li>
-                                <li><label>font-size</label> {{view Ember.TextField}}</li>
-                                <li><label>color</label> {{view Ember.TextField}}</li>
-                                <li><label>style</label> {{view Ember.TextField}}</li>
-                                <li><label>line-height</label> {{view Ember.TextField}}</li>
+                                <li><label>font-family</label> {{view Ember.TextField valueBinding="cssProps.fontfamily"}}</li>
+                                <li><label>font-size</label> {{view Ember.TextField valueBinding="cssProps.fontsize"}}</li>
+                                <li><label>color</label> {{view Ember.TextField valueBinding="cssProps.color"}}</li>
+                                <li><label>style</label> {{view Ember.TextField valueBinding="cssProps.style"}}</li>
                             </ul>
                         {{/if}}
                     </li>
@@ -62,8 +61,8 @@
                     <li class="toggle"><span {{action 'toggleBg'}} class="inner-toggle bg"><span class="background">Background</span><span class="caret"></span></span>
                         {{#if isBgExpanded}}
                             <ul>
-                                <li><label>color</label> {{view Ember.TextField}}</li>
-                                <li><label>image</label> {{view Ember.TextField}}</li>
+                                <li><label>color</label> {{view Ember.TextField valueBinding="cssProps.bgColor"}}</li>
+                                <li><label>image</label> {{view Ember.TextField valueBinding="cssProps.bgImage"}}</li>
                             </ul>
                         {{/if}}
                     </li>

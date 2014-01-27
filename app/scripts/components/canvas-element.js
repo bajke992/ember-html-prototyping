@@ -97,7 +97,12 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
         onclick: null
     },
     cssRules: {
-        fontsize: '12'
+        fontsize: '12',
+        fontfamily: 'myriad pro',
+        color: 'black',
+        style: 'normal',
+        bgColor: 'transparent',
+        bgImage: 'none'
     },
 
     updateWidth: function () {
