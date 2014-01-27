@@ -96,6 +96,9 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
     eventList: {
         onclick: null
     },
+    cssRules: {
+        fontsize: '12'
+    },
 
     updateWidth: function () {
         this.$().css('width', this.get('width'));
