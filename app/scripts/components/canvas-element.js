@@ -149,7 +149,19 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
             maxHeight: this.maxHeight
         })
 
-    }.observes('mode')
+    }.observes('mode'),
+
+    updateCss: function () {
+        console.log('cssChanged');
+
+        var cssRules = this.get('cssRules');
+        this.$().css('color', cssRules['color']);
+        this.$().css('background-color', cssRules['bgColor']);
+        this.$().css('font-size', cssRules['fontsize']);
+        this.$().css('font-family', cssRules['fontfamily']);
+
+    }.observes('cssRules.color', 'cssRules.fontfamily', 'cssRules.fontsize', 'cssRules.style',
+            'cssRules.bgImage', 'cssRules.bgColor')
 
 });
 

@@ -50,10 +50,10 @@
                     <li class="toggle"><span {{action 'toggleFont'}} class="inner-toggle"><span class="font">Font</span><span class="caret"></span></span>
                         {{#if isFontExpanded}}
                             <ul>
-                                <li><label>font-family</label> {{view Ember.TextField valueBinding="cssProps.fontfamily"}}</li>
-                                <li><label>font-size</label> {{view Ember.TextField valueBinding="cssProps.fontsize"}}</li>
-                                <li><label>color</label> {{view Ember.TextField valueBinding="cssProps.color"}}</li>
-                                <li><label>style</label> {{view Ember.TextField valueBinding="cssProps.style"}}</li>
+                                <li><label>font-family</label> {{view Ember.TextField valueBinding="cssProps.fontfamily" action="updateFontFamily"}}</li>
+                                <li><label>font-size</label> {{view Ember.TextField valueBinding="cssProps.fontsize" action="updateFontSize"}}</li>
+                                <li><label>color</label> {{view Ember.TextField valueBinding="cssProps.color" action="updateColor"}}</li>
+                                <li><label>style</label> {{view Ember.TextField valueBinding="cssProps.style" action="updateStyle"}}</li>
                             </ul>
                         {{/if}}
                     </li>
@@ -61,8 +61,8 @@
                     <li class="toggle"><span {{action 'toggleBg'}} class="inner-toggle bg"><span class="background">Background</span><span class="caret"></span></span>
                         {{#if isBgExpanded}}
                             <ul>
-                                <li><label>color</label> {{view Ember.TextField valueBinding="cssProps.bgColor"}}</li>
-                                <li><label>image</label> {{view Ember.TextField valueBinding="cssProps.bgImage"}}</li>
+                                <li><label>color</label> {{view Ember.TextField valueBinding="cssProps.bgColor" action="updateBgColor"}}</li>
+                                <li><label>image</label> {{view Ember.TextField valueBinding="cssProps.bgImage" action="updateBgImage"}}</li>
                             </ul>
                         {{/if}}
                     </li>

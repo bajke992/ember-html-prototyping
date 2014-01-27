@@ -72,6 +72,12 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
         },
         updateStack: function (stack) {
             this.canvasElement.set('stack', stack);
+        },
+        updateColor: function (color) {
+            this.canvasElement.set('cssRules.color', color);
+        },
+        updateBgColor: function (color){
+            this.canvasElement.set('cssRules.bgColor', color);
         }
     },
 
