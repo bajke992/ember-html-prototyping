@@ -1,4 +1,5 @@
 Proto.EditorController = Ember.ArrayController.extend({
+
     actions: {
         addScreen: function () {
 

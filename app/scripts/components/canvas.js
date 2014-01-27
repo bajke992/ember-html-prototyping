@@ -13,9 +13,6 @@ Proto.Canvas = Ember.View.extend({
             cursor: "move"
         });
 
-        var elements = this.get('content').get('model.elements');
-        console.log(elements);
-
     }
 });
 
@@ -26,6 +23,10 @@ Proto.Canvas = Ember.View.extend({
 Proto.CanvasContainer = Ember.ContainerView.extend(Ember.TargetActionSupport, {
     classNames: ['canvas'],
     addAction: 'addToCanvas',
+
+    parentViewDidChange: function () {
+        console.log('parent change');
+    },
 
     didInsertElement: function () {
 
@@ -51,20 +52,6 @@ Proto.CanvasContainer = Ember.ContainerView.extend(Ember.TargetActionSupport, {
                 }
 
             }
-        });
-
-        var elements = this.get('content').get('model.elements');
-
-        console.log(elements);
-
-        $.each(elements, function (key, params) {
-
-            self.triggerAction({
-                action: 'add',
-                target: self,
-                actionContext: params
-            });
-
         });
 
     },
