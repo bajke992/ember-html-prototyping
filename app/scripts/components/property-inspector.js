@@ -7,12 +7,6 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
     isBgExpanded: false,
 
     elemid: null,
-    isType: [
-        {isInput: false},
-        {isText: false},
-        {isPanel: false},
-        {isButton: false}
-    ],
     isInput: false,
     isText: false,
     isPanel: false,
@@ -109,31 +103,17 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
     updateType: function () {
 
         var self = this;
-
         var isTypes = ['isBtn', 'isInput', 'isText', 'isPanel'];
         var type = this.canvasElement.get('type');
 
-        var isTestType = isTypes.filter(function(testType) {
-            console.log(testType, type);
+        $.each(isTypes, function(index, element) {
+            self.set(element, false);
+        });
+
+        var isType = isTypes.filter(function(testType) {
             return testType === "is" + type.charAt(0).toUpperCase() + type.slice(1);
         });
 
-        console.log(isTestType);
-
-        if (self.get('elemid') !== null) {
-            $.each(isTypes, function(index, element) {
-                var typeName = "is" + type.charAt(0).toUpperCase() + type.slice(1)
-                if (typeName === element){
-                    self.set(element, true);
-                } else {
-                    self.set(element, false);
-                }
-            });
-        } else {
-            $.each(isTypes, function(index, element) {
-                self.set(element, false);
-            });
-        }
+        self.set(isType, true);
     }.observes('elemid')
 });
-
