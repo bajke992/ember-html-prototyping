@@ -1,8 +1,8 @@
 Proto.PropertyInspectorComponent = Ember.Component.extend({
     isAttrExpanded: false,
     isStyleExpanded: true,
-    isObjExpanded: true,
-    isFontExpanded: false,
+    isObjExpanded: false,
+    isFontExpanded: true,
     isBgExpanded: false,
     isElementSelected: true,
     isEventsSelected: false,
@@ -15,6 +15,7 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
 
     canvasElement: {},
     props: {},
+    cssProps: {},
 
     modes: [
         {mode: 'multiline', title: 'Multi-line'},
@@ -71,6 +72,24 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
         },
         updateStack: function (stack) {
             this.canvasElement.set('stack', stack);
+        },
+        updateColor: function (color) {
+            this.canvasElement.set('cssRules.color', color);
+        },
+        updateBgColor: function (color){
+            this.canvasElement.set('cssRules.bgColor', color);
+        },
+        updateBgImage: function (image){
+            this.canvasElement.set('cssRules.bgImage', image);
+        },
+        updateFontFamily: function(font) {
+            this.canvasElement.set('cssRules.fontfamily', font);
+        },
+        updateFontSize: function(size) {
+            this.canvasElement.set('cssRules.fontsize', size);
+        },
+        updateStyle: function(style) {
+            this.canvasElement.set('cssRules.style', style);
         }
     },
 
@@ -80,18 +99,30 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
         var self = this;
         // TODO: keep list of properties on one place!!!
         var fields = ['text', 'width', 'height', 'x_pos', 'y_pos', 'disabled', 'hint', 'stack', 'recordId', 'type', 'mode'];
+        //TODO: style and fontfamily in a select!!!
+        var cssFields = ['fontsize', 'fontfamily', 'color', 'style', 'bgColor', 'bgImage'];
+
+        var cssRules = Ember.View.views[this.get('elemid')].get('cssRules');
 
         if (this.get('elemid') !== null) {
 
             var canvasElement = Ember.View.views[this.get('elemid')];
+            var cssRules = canvasElement.get('cssRules');
 
             self.set('canvasElement', canvasElement);
+
+            $.each(cssFields, function (value, key) {
+                self.set('cssProps.' + key, cssRules[key]);
+            });
 
             $.each(fields, function (value, key) {
                 self.set('props.' + key, canvasElement.get(key));
             });
 
         } else {
+            $.each(cssFields, function (value, key) {
+                self.set('cssProps.' + key, cssRules[key]);
+            });
             $.each(fields, function (value, key) {
                 self.set('props.' + key, '');
             });
@@ -103,6 +134,7 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
 
         this.set('props.width', this.canvasElement.get('width'));
         this.set('props.height', this.canvasElement.get('height'));
+
 
     }.observes('width', 'height'),
 
