@@ -71,11 +71,7 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
         },
         updateStack: function (stack) {
             this.canvasElement.set('stack', stack);
-        },
-//        updateMode: function (mode) {
-//            console.log(mode);
-//            console.log('mode updated');
-//        }
+        }
     },
 
 
@@ -120,17 +116,21 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
     updateType: function () {
 
         var self = this;
-        var isTypes = ['isBtn', 'isInput', 'isText', 'isPanel'];
+        var types = ['isBtn', 'isInput', 'isText', 'isPanel'];
         var type = this.canvasElement.get('type');
 
-        $.each(isTypes, function(index, element) {
+        $.each(types, function(index, element) {
             self.set(element, false);
         });
 
-        var isType = isTypes.filter(function(testType) {
+        var isType = types.filter(function(testType) {
             return testType === "is" + type.charAt(0).toUpperCase() + type.slice(1);
         });
 
         self.set(isType, true);
-    }.observes('elemid')
+    }.observes('elemid'),
+
+    updateMode: function () {
+        this.canvasElement.set('mode', this.props.mode);
+    }.observes('this.props.mode')
 });

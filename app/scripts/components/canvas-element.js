@@ -134,6 +134,11 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
 
         }
 
+        this.$().resizable({
+            minHeight: this.minHeight,
+            maxHeight: this.maxHeight
+        })
+
     }.observes('mode')
 
 });
@@ -161,6 +166,7 @@ Proto.CanvasBtnComponent = Proto.CanvasElementComponent.extend({
  */
 Proto.CanvasInputComponent = Proto.CanvasElementComponent.extend({
     classNames: ['input'],
+    classNameBindings: ['mode'],
     type: 'input',
     text: 'Your text here',
     width: 100,
