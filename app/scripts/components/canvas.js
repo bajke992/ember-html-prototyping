@@ -78,9 +78,11 @@ Proto.addElement = function (attr, self) {
     var top = (attr.event !== undefined) ? attr.event.pageY - self.$().offset().top : attr.y_pos;
 
     var type;
+    var recordId;
 
     if (attr.item === undefined) {
         type = attr.type;
+        recordId = attr.recordId;
     } else {
         var map = ['btn', 'input', 'text', 'panel'];
         var className = attr.item.attr('class');
@@ -92,10 +94,12 @@ Proto.addElement = function (attr, self) {
                 return false;
             }
         });
+
+        recordId = 'cmp-' + (new Date()).getTime();
     }
 
     var cmpName = 'Canvas' + type.charAt(0).toUpperCase() + type.slice(1) + 'Component';
-    var cmp = Proto[cmpName].create({data: {left: left, top: top, insert: attr.insert}});
+    var cmp = Proto[cmpName].create({data: {left: left, top: top, insert: attr.insert, recordId: recordId}});
     self.pushObject(cmp);
 
 };

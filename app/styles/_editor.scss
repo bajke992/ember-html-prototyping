@@ -103,7 +103,7 @@ $font: "Myriad Pro", Calibri, Helvetica, Arial, sans-serif;
       &>li {
         a {
           text-decoration: none;
-          padding: 10px;
+          padding: 5px 10px;
           display: block;
           background-color: $sub-label-color;
           color: white;
@@ -122,6 +122,31 @@ $font: "Myriad Pro", Calibri, Helvetica, Arial, sans-serif;
               cursor: pointer;
               padding: 5px 10px;
               display: block;
+              &.fa {
+                &:before {
+                  margin-right: 10px;
+                }
+                &.btn {
+                  &:before {
+                    content: "\f096";
+                  }
+                }
+                &.text {
+                  &:before {
+                    content: "\f031";
+                  }
+                }
+                &.input {
+                  &:before {
+                    content: "\f035";
+                  }
+                }
+                &.panel {
+                  &:before {
+                    content: "\f0db";
+                  }
+                }
+              }
             }
           }
         }

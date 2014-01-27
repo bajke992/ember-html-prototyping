@@ -65,12 +65,13 @@
       &.panel {
         $height: 99px;
         height: $height;
+        .inner {
+          width: auto;
+          display: none;
+        }
       }
       &.text {
         min-width: 50px;
-        .inner {
-          width: auto;
-        }
       }
     }
     /* ---- guide lines for canvas elements (when dragged across the canvas) ---- */

@@ -7,7 +7,7 @@
 
                 <ul class="elements-list">
                     {{#each element in elements}}
-                        <li><div {{ action focusElement element }}>{{ element.type }}</div></li>
+                        <li><div {{bind-attr class=":fa element.type"}} {{ action focusElement element }}>{{ element.text }}</div></li>
                     {{/each}}
                 </ul>
 
