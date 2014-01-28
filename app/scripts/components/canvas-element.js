@@ -173,7 +173,6 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
     }.observes('mode'),
 
     updateCss: function () {
-        console.log('css changed');
 
         this.$().css({
             color: this.get('color'),
