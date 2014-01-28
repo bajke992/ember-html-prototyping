@@ -34,6 +34,13 @@
   -webkit-transition: $attr; /* Saf3.2+, Chrome */
 }
 
+@mixin user-select($attr) {
+  -webkit-user-select: $attr;
+  -moz-user-select: $attr;
+  -ms-user-select: $attr;
+  user-select: $attr;
+}
+
 *, *:before, *:after {
   @include box-sizing(border-box);
 }
