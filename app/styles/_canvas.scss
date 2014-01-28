@@ -226,6 +226,10 @@
           color: #ccc;
         }
       }
+
+      &.ui-draggable-dragging {
+        color: rgba(225, 82, 59, 0.85);
+      }
     }
   }
 }
