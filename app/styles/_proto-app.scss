@@ -12,6 +12,10 @@
     text-decoration: none;
     text-align: center;
     font-size: 22px;
+    width: 100%;
+    &:before {
+      margin-right: 10px;
+    }
   }
   .or {
     display: block;

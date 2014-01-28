@@ -1,5 +1,5 @@
 <div class="root-options">
-    {{#link-to 'editor' class="new-project fa fa-plus button"}} Create new project {{/link-to}}
+    <button {{action createNewProject }} class="new-project fa fa-plus button">Create new project</button>
     <span class="or">or choose from the list:</span>
     <ul class="project-list">
         <li>{{#link-to 'editor'}} Project 1 {{/link-to}}</li>
