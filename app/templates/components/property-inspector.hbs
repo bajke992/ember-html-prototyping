@@ -35,12 +35,12 @@
             <header class="sub-label" {{action 'toggleAttr'}}>Attributes</header>
             {{#if isAttrExpanded}}
                 <ul class="options-list">
-                    <li><label>Width</label> {{view Ember.TextField valueBinding="props.width" action="updateWidth"}}</li>
-                    <li><label>Height</label> {{view Ember.TextField valueBinding="props.height" action="updateHeight"}}</li>
-                    <li><label>x-pos</label> {{view Ember.TextField valueBinding="props.x_pos" action="updateX"}}</li>
-                    <li><label>y-pos</label> {{view Ember.TextField valueBinding="props.y_pos" action="updateY"}}</li>
+                    <li><label>Width</label> {{view Ember.TextField valueBinding="props.width" action="updateWidth" type="number"}}</li>
+                    <li><label>Height</label> {{view Ember.TextField valueBinding="props.height" action="updateHeight" type="number"}}</li>
+                    <li><label>x-pos</label> {{view Ember.TextField valueBinding="props.x_pos" action="updateX" type="number"}}</li>
+                    <li><label>y-pos</label> {{view Ember.TextField valueBinding="props.y_pos" action="updateY" type="number"}}</li>
                     <li><label>Hint</label> {{view Ember.TextField valueBinding="props.hint" action="updateHint"}}</li>
-                    <li><label>Stack Index</label> {{view Ember.TextField valueBinding="props.stack" action="updateStack"}}</li>
+                    <li><label>Stack Index</label> {{view Ember.TextField valueBinding="props.stack" action="updateStack" type="number"}}</li>
                 </ul>
             {{/if}}
 
@@ -50,10 +50,22 @@
                     <li class="toggle"><span {{action 'toggleFont'}} class="inner-toggle"><span class="font">Font</span><span class="caret"></span></span>
                         {{#if isFontExpanded}}
                             <ul>
-                                <li><label>font-family</label> {{view Ember.TextField valueBinding="cssProps.fontfamily" action="updateFontFamily"}}</li>
-                                <li><label>font-size</label> {{view Ember.TextField valueBinding="cssProps.fontsize" action="updateFontSize"}}</li>
-                                <li><label>color</label> {{view Ember.TextField valueBinding="cssProps.color" action="updateColor"}}</li>
-                                <li><label>style</label> {{view Ember.TextField valueBinding="cssProps.style" action="updateStyle"}}</li>
+                                <li><label>font-family</label>
+                                    {{view Ember.Select
+                                    prompt="--Select a font--"
+                                    content=fontFamilies
+                                    optionValuePath="content.font"
+                                    optionLabelPath="content.title"
+                                    value=props.fontfamily
+                                    }}
+                                </li>
+                                <li><label>font-size</label> {{view Ember.TextField valueBinding="props.fontsize" action="updateFontSize" type="number"}}</li>
+                                <li><label>color</label> {{view Ember.TextField valueBinding="props.color" action="updateColor"}}</li>
+                                <li><label>style</label>
+                                <button {{bind-attr class=":style-button :fa :fa-bold canvasElement.bold:style-selected"}} {{action updateBold}}></button>
+                                <button {{bind-attr class=":style-button :fa :fa-italic canvasElement.italic:style-selected"}} {{action updateItalic}}></button>
+                                <button {{bind-attr class=":style-button :fa :fa-underline canvasElement.underline:style-selected"}} {{action updateUnderline}}></button>
+                                </li>
                             </ul>
                         {{/if}}
                     </li>
@@ -61,8 +73,8 @@
                     <li class="toggle"><span {{action 'toggleBg'}} class="inner-toggle bg"><span class="background">Background</span><span class="caret"></span></span>
                         {{#if isBgExpanded}}
                             <ul>
-                                <li><label>color</label> {{view Ember.TextField valueBinding="cssProps.bgColor" action="updateBgColor"}}</li>
-                                <li><label>image</label> {{view Ember.TextField valueBinding="cssProps.bgImage" action="updateBgImage"}}</li>
+                                <li><label>color</label> {{view Ember.TextField valueBinding="props.bgColor" action="updateBgColor"}}</li>
+                                <li><label>image</label> {{view Ember.TextField valueBinding="props.bgImage" action="updateBgImage"}}</li>
                             </ul>
                         {{/if}}
                     </li>

@@ -113,14 +113,14 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
     eventList: {
         onclick: null
     },
-    cssRules: {
-        fontsize: '12',
-        fontfamily: 'myriad pro',
-        color: 'black',
-        style: 'normal',
-        bgColor: 'transparent',
-        bgImage: 'none'
-    },
+    fontsize: '14',
+    fontfamily: 'Myriad Pro',
+    color: 'black',
+    style: 'normal',
+    bgImage: 'none',
+    bold: false,
+    italic: false,
+    underline: false,
 
     updateWidth: function () {
         this.$().css('width', this.get('width'));
@@ -167,34 +167,25 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
     }.observes('mode'),
 
     updateCss: function () {
-        console.log('cssChanged');
+        console.log('css changed');
 
-        var cssRules = this.get('cssRules');
-        this.$().css('color', cssRules['color']);
-        this.$().css('background-color', cssRules['bgColor']);
-        this.$().css('font-size', cssRules['fontsize']);
-        this.$().css('font-family', cssRules['fontfamily']);
+        this.$().css({
+            color: this.get('color'),
+            backgroundColor: this.get('bgColor'),
+            fontSize: this.get('fontsize') + 'px',
+            fontFamily: this.get('fontfamily')
+//            TODO: make styles icons for bold, italic and underline
+        });
 
-    }.observes('cssRules.color', 'cssRules.fontfamily', 'cssRules.fontsize', 'cssRules.style',
-            'cssRules.bgImage', 'cssRules.bgColor')
+        if (this.get('bgImage') !== "none"){
+            this.$().css('background-image', 'url(' + this.get('bgImage') + ')')
+        }
 
-});
+        this.get('bold') ? this.$().css('font-weight', 'bold') : this.$().css('font-weight', 'normal');
+        this.get('italic') ? this.$().css('font-style', 'italic') : this.$().css('font-style', 'normal');
+        this.get('underline') ? this.$().css('text-decoration', 'underline') : this.$().css('text-decoration', 'none')
 
-/**
- * Canvas button component which is contained by canvas container
- * @type {*}
- */
-Proto.CanvasBtnComponent = Proto.CanvasElementComponent.extend({
-    classNames: ['btn'],
-    type: 'btn',
-    text: 'Button',
-    width: 100,
-    height: 40,
-    minHeight: 40,
-    maxHeight: 40,
-    minWidth: 100,
-    maxWidth: 300,
-    hint: 'Button'
+    }.observes('color', 'fontfamily', 'fontsize', 'style', 'bgImage', 'bgColor', 'style', 'bold', 'underline', 'italic')
 });
 
 /**
@@ -213,7 +204,26 @@ Proto.CanvasInputComponent = Proto.CanvasElementComponent.extend({
     minWidth: 100,
     maxWidth: 300,
     mode: 'singleline',
-    hint: 'Your text here'
+    hint: 'Your text here',
+    bgColor: 'white'
+});
+
+/**
+ * Canvas button component which is contained by canvas container
+ * @type {*}
+ */
+Proto.CanvasBtnComponent = Proto.CanvasElementComponent.extend({
+    classNames: ['btn'],
+    type: 'btn',
+    text: 'Button',
+    width: 100,
+    height: 40,
+    minHeight: 40,
+    maxHeight: 40,
+    minWidth: 100,
+    maxWidth: 300,
+    hint: 'Button',
+    bgColor: '#eee'
 });
 
 /**
@@ -229,7 +239,8 @@ Proto.CanvasTextComponent = Proto.CanvasElementComponent.extend({
     minHeight: 40,
     maxHeight: 40,
     resizable: false,
-    hint: 'Text'
+    hint: 'Text',
+    bgColor: 'transparent'
 });
 
 /**
@@ -246,7 +257,8 @@ Proto.CanvasPanelComponent = Proto.CanvasElementComponent.extend({
     maxHeight: null,
     minWidth: 100,
     maxWidth: null,
-    hint: 'Panel'
+    hint: 'Panel',
+    bgColor: '#f3f3f3'
 });
 
 /**

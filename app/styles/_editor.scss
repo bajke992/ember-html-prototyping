@@ -10,6 +10,7 @@ $font: "Myriad Pro", Calibri, Helvetica, Arial, sans-serif;
   background-color: $editor-background;
   border: 1px solid #ddd;
   height: 100%;
+  @include user-select(none);
 
 /*-- Editor heading styles --*/
   header {

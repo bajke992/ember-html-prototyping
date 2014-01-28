@@ -1,6 +1,7 @@
 .editor aside>div {
   height: 92%;
   overflow: auto;
+
 }
 
 .property-inspector {
@@ -24,11 +25,24 @@
   }
 
 
-
-
   .options-list {
     margin: 0;
     padding: 0;
+
+    .style-button {
+      background-color: $editor-background;
+      border: 1px solid #ddd;
+      padding: 5px;
+
+      &:hover {
+        background-color: #eee4e4;
+        cursor: pointer;
+      }
+
+      &.style-selected {
+        background-color: #ddd;
+      }
+    }
 
     li {
       padding: 2px 15px 2px 2px;

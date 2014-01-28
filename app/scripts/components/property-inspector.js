@@ -3,7 +3,7 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
     isStyleExpanded: true,
     isObjExpanded: false,
     isFontExpanded: true,
-    isBgExpanded: false,
+    isBgExpanded: true,
     isElementSelected: true,
     isEventsSelected: false,
 
@@ -15,7 +15,19 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
 
     canvasElement: {},
     props: {},
-    cssProps: {},
+    defaultFont: "Myriad Pro",
+    fontFamilies: [
+        {font: 'Calibri', title: 'Calibri'},
+        {font: 'Century Gothic', title: 'Century Gothic'},
+        {font: 'Garamond', title: 'Garamond'},
+        {font: 'Georgia', title: 'Georgia'},
+        {font: 'Helvetica', title: 'Helvetica'},
+        {font: 'Helvetica Neue Light', title: 'Helvetica Neue Light'},
+        {font: 'Lucida Sans', title: 'Lucida Sans'},
+        {font: 'Myriad Pro', title: 'Myriad Pro'},
+        {font: 'Times New Roman', title: 'Times New Roman'},
+        {font: 'Verdana', title: 'Verdana'}
+    ],
 
     modes: [
         {mode: 'multiline', title: 'Multi-line'},
@@ -74,23 +86,27 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
             this.canvasElement.set('stack', stack);
         },
         updateColor: function (color) {
-            this.canvasElement.set('cssRules.color', color);
+            this.canvasElement.set('color', color);
         },
         updateBgColor: function (color){
-            this.canvasElement.set('cssRules.bgColor', color);
+            this.canvasElement.set('bgColor', color);
         },
         updateBgImage: function (image){
-            this.canvasElement.set('cssRules.bgImage', image);
-        },
-        updateFontFamily: function(font) {
-            this.canvasElement.set('cssRules.fontfamily', font);
+            this.canvasElement.set('bgImage', image);
         },
         updateFontSize: function(size) {
-            this.canvasElement.set('cssRules.fontsize', size);
+            this.canvasElement.set('fontsize', size);
         },
-        updateStyle: function(style) {
-            this.canvasElement.set('cssRules.style', style);
+        updateBold: function(style){
+            this.canvasElement.toggleProperty('bold');
+        },
+        updateItalic: function(style) {
+            this.canvasElement.toggleProperty('italic');
+        },
+        updateUnderline: function(style) {
+            this.canvasElement.toggleProperty('underline')
         }
+
     },
 
 
@@ -98,31 +114,20 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
 
         var self = this;
         // TODO: keep list of properties on one place!!!
-        var fields = ['text', 'width', 'height', 'x_pos', 'y_pos', 'disabled', 'hint', 'stack', 'recordId', 'type', 'mode'];
-        //TODO: style and fontfamily in a select!!!
-        var cssFields = ['fontsize', 'fontfamily', 'color', 'style', 'bgColor', 'bgImage'];
-
-        var cssRules = Ember.View.views[this.get('elemid')].get('cssRules');
+        var fields = ['text', 'width', 'height', 'x_pos', 'y_pos', 'disabled', 'hint', 'stack', 'recordId', 'type', 'mode',
+            'fontsize', 'fontfamily', 'color', 'style', 'bgColor', 'bgImage', 'bold', 'italic', 'underline'];
 
         if (this.get('elemid') !== null) {
 
             var canvasElement = Ember.View.views[this.get('elemid')];
-            var cssRules = canvasElement.get('cssRules');
 
             self.set('canvasElement', canvasElement);
-
-            $.each(cssFields, function (value, key) {
-                self.set('cssProps.' + key, cssRules[key]);
-            });
 
             $.each(fields, function (value, key) {
                 self.set('props.' + key, canvasElement.get(key));
             });
 
         } else {
-            $.each(cssFields, function (value, key) {
-                self.set('cssProps.' + key, cssRules[key]);
-            });
             $.each(fields, function (value, key) {
                 self.set('props.' + key, '');
             });
@@ -164,5 +169,12 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
 
     updateMode: function () {
         this.canvasElement.set('mode', this.props.mode);
-    }.observes('this.props.mode')
+    }.observes('this.props.mode'),
+
+    updateFontFamily: function () {
+        console.log('font family changed');
+        console.log(this.get('props')['fontfamily']);
+        this.canvasElement.set('fontfamily', this.get('props')['fontfamily']);
+    }.observes('this.props.fontfamily')
+
 });
