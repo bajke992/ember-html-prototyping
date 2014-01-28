@@ -1,49 +1,32 @@
-<div class="editor clearfix" xmlns="http://www.w3.org/1999/html">
+<section class="sidebar">
 
-    <header class="main">
-        <h1>Proto
-            {{#link-to 'editor'}}Design{{/link-to}}
-        </h1>
+    <aside>
+        <header class="label-title">Element Inspector</header>
+        {{ property-inspector
+        elemid=elementId
+        width=width
+        height=height
+        x_pos=x_pos
+        y_pos=y_pos
+        }}
+    </aside>
 
-        <div class="project-controls">
-            <span class="fa fa-file-o icons" title="New"></span>
-            <span class="fa fa-folder-open-o icons" title="Open"></span>
-            <span class="fa fa-save icons" title="Save"></span>
-            <span class="fa fa-external-link-square icons" title="Export"></span>
-            <span class="fa fa-play icons" title="Run"></span>
-        </div>
-    </header>
+    <aside>
+        <header class="label-title">Project Tree <span class="add-screen fa fa-plus-square-o" {{action addScreen}}></span></header>
 
-    <section class="sidebar">
+        {{ project-tree screens=model }}
+    </aside>
 
-        <aside>
-            <header class="label-title">Element Inspector</header>
-            {{ property-inspector
-                    elemid=elementId
-                    width=width
-                    height=height
-                    x_pos=x_pos
-                    y_pos=y_pos
-            }}
-        </aside>
+    {{screen-modal edit=edit screenTitle=screenTitle}}
 
-        <aside>
-            <header class="label-title">Project Tree <span class="add-screen fa fa-plus-square-o" {{action addScreen}}></span></header>
+</section>
+<!-- # .sidebar -->
 
-            {{ project-tree screens=model }}
-        </aside>
+<div class="workspace">
 
-        {{screen-modal edit=edit screenTitle=screenTitle}}
-
-    </section>
-
-    <div class="workspace">
-
-        <div class="canvas-workspace">
-            {{outlet}}
-        </div>
-
+    <div class="canvas-workspace">
+        {{outlet}}
     </div>
 
 </div>
-
+<!-- # .workspace -->
