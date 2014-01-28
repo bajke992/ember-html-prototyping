@@ -98,6 +98,7 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
     recordId: '',
     type: 'general',
     text: '',
+    URL: '',
     width: 100,
     height: 40,
     minHeight: 40,
@@ -118,6 +119,11 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
     color: 'black',
     style: 'normal',
     bgImage: 'none',
+    bgSize: 'auto',
+    bgRepeat: 'repeat',
+    bgPositionX: 0,
+    bgPositionY: 0,
+
     bold: false,
     italic: false,
     underline: false,
@@ -171,10 +177,12 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
 
         this.$().css({
             color: this.get('color'),
-            backgroundColor: this.get('bgColor'),
             fontSize: this.get('fontsize') + 'px',
-            fontFamily: this.get('fontfamily')
-//            TODO: make styles icons for bold, italic and underline
+            fontFamily: this.get('fontfamily'),
+            backgroundColor: this.get('bgColor'),
+            backgroundRepeat: this.get('bgRepeat'),
+            backgroundPositionX: this.get('bgPositionX') + 'px',
+            backgroundPositionY: this.get('bgPositionY') + 'px'
         });
 
         if (this.get('bgImage') !== "none"){
@@ -185,7 +193,16 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
         this.get('italic') ? this.$().css('font-style', 'italic') : this.$().css('font-style', 'normal');
         this.get('underline') ? this.$().css('text-decoration', 'underline') : this.$().css('text-decoration', 'none')
 
-    }.observes('color', 'fontfamily', 'fontsize', 'style', 'bgImage', 'bgColor', 'style', 'bold', 'underline', 'italic')
+    }.observes('color', 'fontfamily', 'fontsize', 'style', 'bgImage', 'bgColor', 'bgPositionX', 'bgPositionY', 'bgRepeat',
+            'style', 'bold', 'underline', 'italic'),
+
+    updatePlaceholder: function() {
+        this.$().attr('placeholder', this.get('placeholder'));
+    }.observes('placeholder'),
+
+    updateURL: function() {
+        this.$().attr('href', this.get('URL'));
+    }.observes('URL')
 });
 
 /**
