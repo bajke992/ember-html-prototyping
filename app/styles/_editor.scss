@@ -99,59 +99,6 @@ $font: "Myriad Pro", Calibri, Helvetica, Arial, sans-serif;
       padding: 0;
       list-style: none;
     }
-    .screens-list {
-      &>li {
-        a {
-          text-decoration: none;
-          padding: 5px 10px;
-          display: block;
-          background-color: $sub-label-color;
-          color: white;
-          border-bottom: 1px solid #ddd;
-          &.active {
-            &+ .elements-list {
-              display: block;
-            }
-          }
-        }
-        .elements-list {
-          display: none;
-          &>li {
-            border-bottom: 1px solid #ddd;
-            &>div {
-              cursor: pointer;
-              padding: 5px 10px;
-              display: block;
-              &.fa {
-                &:before {
-                  margin-right: 10px;
-                }
-                &.btn {
-                  &:before {
-                    content: "\f096";
-                  }
-                }
-                &.text {
-                  &:before {
-                    content: "\f031";
-                  }
-                }
-                &.input {
-                  &:before {
-                    content: "\f035";
-                  }
-                }
-                &.panel {
-                  &:before {
-                    content: "\f0db";
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
   }
 
   .workspace {
@@ -221,3 +168,4 @@ $font: "Myriad Pro", Calibri, Helvetica, Arial, sans-serif;
 .read-only {
   background-color: #d3d3d3;
 }
+
