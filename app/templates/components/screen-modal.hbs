@@ -1,0 +1,12 @@
+{{#if edit}}
+<div class="screen-modal">
+
+    <div class="screen-modal-frm">
+        <label>Screen Title</label>
+        {{input type="text" value=screenTitle action="saveTitle"}}
+
+        <button class="button" {{ action saveTitle screenTitle }}>Save</button>
+        <button class="button gray" {{ action closeEdit }}>Cancel</button>
+    </div>
+</div>
+{{/if}}
