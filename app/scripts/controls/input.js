@@ -15,5 +15,6 @@ Proto.CanvasInputComponent = Proto.CanvasElementComponent.extend({
     maxWidth: 300,
     mode: 'singleline',
     hint: 'Your text here',
+    placeholder: 'Placeholder text...',
     bgColor: 'white'
 });

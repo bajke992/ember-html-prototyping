@@ -11,22 +11,23 @@
             <header class="sub-label" {{action 'toggleObj'}}>Object: {{props.type}}</header>
             {{#if isObjExpanded}}
                 <ul class="options-list">
+                    <li>ID {{ props.recordId }}</li>
                     <li>Name {{view Ember.TextField valueBinding="props.text" action="updateText" }}</li>
-                    <li>ID {{view Ember.TextField valueBinding="props.recordId" action="updateId" }}</li>
                     {{#if isBtn}}
-                        <li><label>URL</label> {{view Ember.TextField}}</li>
+                        <li><label>URL</label> {{view Ember.TextField valueBinding="props.URL" action="updateURL"}}</li>
                     {{/if}}
                     {{#if isText}}
-                        <li><label>URL</label> {{view Ember.TextField}}</li>
+                        <li><label>URL</label> {{view Ember.TextField valueBinding="props.URL" action="updateURL"}}</li>
                     {{/if}}
                     {{#if isInput}}
-                       <li>Lines
+                        <li><label>Placeholder</label> {{view Ember.TextField valueBinding="props.placeholder" action="updatePlaceholder"}}</li>
+                        <li>Lines
                            {{view Ember.Select
                                content=modes
                                optionValuePath="content.mode"
                                optionLabelPath="content.title"
                                value=props.mode}}
-                       </li>
+                        </li>
                     {{/if}}
                 </ul>
             {{/if}}
@@ -56,8 +57,7 @@
                                     content=fontFamilies
                                     optionValuePath="content.font"
                                     optionLabelPath="content.title"
-                                    value=props.fontfamily
-                                    }}
+                                    value=props.fontfamily}}
                                 </li>
                                 <li><label>font-size</label> {{view Ember.TextField valueBinding="props.fontsize" action="updateFontSize" type="number"}}</li>
                                 <li><label>color</label> {{view Ember.TextField valueBinding="props.color" action="updateColor"}}</li>
@@ -69,15 +69,24 @@
                             </ul>
                         {{/if}}
                     </li>
-
+                    {{#unless isText}}
                     <li class="toggle"><span {{action 'toggleBg'}} class="inner-toggle bg"><span class="background">Background</span><span class="caret"></span></span>
                         {{#if isBgExpanded}}
                             <ul>
                                 <li><label>color</label> {{view Ember.TextField valueBinding="props.bgColor" action="updateBgColor"}}</li>
                                 <li><label>image</label> {{view Ember.TextField valueBinding="props.bgImage" action="updateBgImage"}}</li>
+                                <li><label>repeat</label>
+                                    {{view Ember.Select
+                                        prompt="--Select repeat --"
+                                        content=repeats
+                                        value=props.bgRepeat}}
+                                </li>
+                                <li><label>position: x</label> {{view Ember.TextField valueBinding="props.bgPositionX" action="updateBgPositionX" type="number"}}</li>
+                                <li><label>position: y</label> {{view Ember.TextField valueBinding="props.bgPositionY" action="updateBgPositionY" type="number"}}</li>
                             </ul>
                         {{/if}}
                     </li>
+                    {{/unless}}
                 </ul>
             {{/if}}
         {{/if}}

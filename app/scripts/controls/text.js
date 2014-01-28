@@ -11,6 +11,5 @@ Proto.CanvasTextComponent = Proto.CanvasElementComponent.extend({
     minHeight: 40,
     maxHeight: 40,
     resizable: false,
-    hint: 'Text',
-    bgColor: 'transparent'
+    hint: 'Text'
 });

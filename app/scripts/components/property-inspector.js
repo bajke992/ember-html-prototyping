@@ -1,9 +1,11 @@
 Proto.PropertyInspectorComponent = Ember.Component.extend({
-    isAttrExpanded: false,
+    isObjExpanded: true,
+    isAttrExpanded: true,
     isStyleExpanded: true,
-    isObjExpanded: false,
-    isFontExpanded: true,
-    isBgExpanded: true,
+
+    isFontExpanded: false,
+    isBgExpanded: false,
+
     isElementSelected: true,
     isEventsSelected: false,
 
@@ -15,7 +17,7 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
 
     canvasElement: {},
     props: {},
-    defaultFont: "Myriad Pro",
+
     fontFamilies: [
         {font: 'Calibri', title: 'Calibri'},
         {font: 'Century Gothic', title: 'Century Gothic'},
@@ -27,6 +29,13 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
         {font: 'Myriad Pro', title: 'Myriad Pro'},
         {font: 'Times New Roman', title: 'Times New Roman'},
         {font: 'Verdana', title: 'Verdana'}
+    ],
+
+    repeats: [
+        'repeat',
+        'repeat-x',
+        'repeat-y',
+        'no-repeat'
     ],
 
     modes: [
@@ -64,6 +73,12 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
         updateText: function (text) {
             this.canvasElement.set('text', text);
         },
+        updatePlaceholder: function(text) {
+            this.canvasElement.set('placeholder', text);
+        },
+        updateURL: function(URL) {
+            this.canvasElement.set('URL', URL);
+        },
         updateId: function (id) {
             this.canvasElement.set('recordId', id);
         },
@@ -94,19 +109,24 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
         updateBgImage: function (image){
             this.canvasElement.set('bgImage', image);
         },
+        updateBgPositionX: function(pos){
+            this.canvasElement.set('bgPositionX', pos);
+        },
+        updateBgPositionY: function(pos){
+            this.canvasElement.set('bgPositionY', pos);
+        },
         updateFontSize: function(size) {
             this.canvasElement.set('fontsize', size);
         },
-        updateBold: function(style){
+        updateBold: function(){
             this.canvasElement.toggleProperty('bold');
         },
-        updateItalic: function(style) {
+        updateItalic: function() {
             this.canvasElement.toggleProperty('italic');
         },
-        updateUnderline: function(style) {
+        updateUnderline: function() {
             this.canvasElement.toggleProperty('underline')
         }
-
     },
 
 
@@ -115,7 +135,8 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
         var self = this;
         // TODO: keep list of properties on one place!!!
         var fields = ['text', 'width', 'height', 'x_pos', 'y_pos', 'disabled', 'hint', 'stack', 'recordId', 'type', 'mode',
-            'fontsize', 'fontfamily', 'color', 'style', 'bgColor', 'bgImage', 'bold', 'italic', 'underline'];
+            'fontsize', 'fontfamily', 'color', 'style', 'bgColor', 'bgSize', 'bgRepeat', 'bgPositionX', 'bgPositionY', 'bgImage', 'bold',
+            'italic', 'underline', 'placeholder'];
 
         if (this.get('elemid') !== null) {
 
@@ -172,9 +193,12 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
     }.observes('this.props.mode'),
 
     updateFontFamily: function () {
-        console.log('font family changed');
-        console.log(this.get('props')['fontfamily']);
         this.canvasElement.set('fontfamily', this.get('props')['fontfamily']);
-    }.observes('this.props.fontfamily')
+    }.observes('this.props.fontfamily'),
+
+    updateBgRepeat: function () {
+        console.log(this.get('props')['bgRepeat']);
+        this.canvasElement.set('bgRepeat', this.get('props')['bgRepeat']);
+    }.observes('this.props.bgRepeat')
 
 });
