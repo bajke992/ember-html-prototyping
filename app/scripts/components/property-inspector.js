@@ -97,9 +97,16 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
         updateFontSize: function(size) {
             this.canvasElement.set('fontsize', size);
         },
-        updateStyle: function(style) {
-            this.canvasElement.set('style', style);
+        updateBold: function(style){
+            this.canvasElement.toggleProperty('bold');
+        },
+        updateItalic: function(style) {
+            this.canvasElement.toggleProperty('italic');
+        },
+        updateUnderline: function(style) {
+            this.canvasElement.toggleProperty('underline')
         }
+
     },
 
 
@@ -108,7 +115,7 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
         var self = this;
         // TODO: keep list of properties on one place!!!
         var fields = ['text', 'width', 'height', 'x_pos', 'y_pos', 'disabled', 'hint', 'stack', 'recordId', 'type', 'mode',
-            'fontsize', 'fontfamily', 'color', 'style', 'bgColor', 'bgImage'];
+            'fontsize', 'fontfamily', 'color', 'style', 'bgColor', 'bgImage', 'bold', 'italic', 'underline'];
 
         if (this.get('elemid') !== null) {
 

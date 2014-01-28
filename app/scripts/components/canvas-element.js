@@ -118,6 +118,9 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
     color: 'black',
     style: 'normal',
     bgImage: 'none',
+    bold: false,
+    italic: false,
+    underline: false,
 
     updateWidth: function () {
         this.$().css('width', this.get('width'));
@@ -173,8 +176,16 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
             fontFamily: this.get('fontfamily')
 //            TODO: make styles icons for bold, italic and underline
         });
-    }.observes('color', 'fontfamily', 'fontsize', 'style', 'bgImage', 'bgColor', 'style')
 
+        if (this.get('bgImage') !== "none"){
+            this.$().css('background-image', 'url(' + this.get('bgImage') + ')')
+        }
+
+        this.get('bold') ? this.$().css('font-weight', 'bold') : this.$().css('font-weight', 'normal');
+        this.get('italic') ? this.$().css('font-style', 'italic') : this.$().css('font-style', 'normal');
+        this.get('underline') ? this.$().css('text-decoration', 'underline') : this.$().css('text-decoration', 'none')
+
+    }.observes('color', 'fontfamily', 'fontsize', 'style', 'bgImage', 'bgColor', 'style', 'bold', 'underline', 'italic')
 });
 
 /**
