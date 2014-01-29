@@ -201,7 +201,11 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
 
     updateURL: function() {
         this.$().attr('href', this.get('URL'));
-    }.observes('URL')
+    }.observes('URL'),
+
+    updateEvents: function () {
+        this.$().attr('eventList', this.get('eventList'));
+    }.observes('eventList')
 });
 
 /**

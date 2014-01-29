@@ -89,45 +89,44 @@ Proto.ScreenController = Ember.ObjectController.extend({
 
         },
         editProperty: function (key, value) {
-
             this.get('controllers.editor').send('editProperty', key, value);
         }
     },
     editCode: false,
     editDesign: true,
     elementId: null,
-    eventType: '',
+    eventType: ''
 
 
-    editCodeBegin: function () {
-        if (this.editCode === true) {
-            var eventList = Ember.View.views[this.get('elementId')].get('eventList');
-            var eventFunctionCode = eventList["on"+this.get('eventType')] || "";
-            var elementId = this.get('elementId') === "document" ? this.get('elementId'): "\"#" + this.get('elementId') + "\"";
-            var text = eventFunctionCode === "" ? "$(" + elementId + ")." + this.get('eventType') + "(function () {\n" + eventFunctionCode + "\n});" : eventFunctionCode;
-            this.get('editor').getDoc().setValue(text);
-            this.get('editor').getDoc().markText(
-                {line: 0, ch: 0},
-                {line: 0, ch: 100},
-                {readOnly: true, className: 'read-only'}
-            );
-            this.get('editor').getDoc().markText(
-                {line: this.get('editor').getDoc().lastLine(), ch: 0},
-                {line: this.get('editor').getDoc().lastLine(), ch: 100},
-                {readOnly: true, className: 'read-only'}
-            );
-        }
-    }.observes('editCode'),
+//    editCodeBegin: function () {
+//        if (this.editCode === true) {
+//            var eventList = Ember.View.views[this.get('elementId')].get('eventList');
+//            var eventFunctionCode = eventList["on"+this.get('eventType')] || "";
+//            var elementId = this.get('elementId') === "document" ? this.get('elementId'): "\"#" + this.get('elementId') + "\"";
+//            var text = eventFunctionCode === "" ? "$(" + elementId + ")." + this.get('eventType') + "(function () {\n" + eventFunctionCode + "\n});" : eventFunctionCode;
+//            this.get('editor').getDoc().setValue(text);
+//            this.get('editor').getDoc().markText(
+//                {line: 0, ch: 0},
+//                {line: 0, ch: 100},
+//                {readOnly: true, className: 'read-only'}
+//            );
+//            this.get('editor').getDoc().markText(
+//                {line: this.get('editor').getDoc().lastLine(), ch: 0},
+//                {line: this.get('editor').getDoc().lastLine(), ch: 100},
+//                {readOnly: true, className: 'read-only'}
+//            );
+//        }
+//    }.observes('editCode'),
 
-    editCodeFinish: function () {
-        if (this.editCode === false) {
-            var eventType = this.get('eventType');
-            var eventList = Ember.View.views[this.get('elementId')].get('eventList');
-            eventList['on' + eventType] = this.get('editor').getValue();
-            Ember.View.views[this.get('elementId')].set('eventList', eventList);
-
-            console.log(Ember.View.views[this.get('elementId')].get('eventList'));
-        }
-    }.observes('editCode')
+//    editCodeFinish: function () {
+//        if (this.editCode === false) {
+//            var eventType = this.get('eventType');
+//            var eventList = Ember.View.views[this.get('elementId')].get('eventList');
+//            eventList['on' + eventType] = this.get('editor').getValue();
+//            Ember.View.views[this.get('elementId')].set('eventList', eventList);
+//
+//            console.log(Ember.View.views[this.get('elementId')].get('eventList'));
+//        }
+//    }.observes('editCode')
 
 });
