@@ -2,7 +2,9 @@
   "name": "ember-app",
   "version": "0.0.0",
   "dependencies": {
-    "grunt-mocha": "~0.4.8"
+    "grunt-mocha": "~0.4.8",
+    "express": "3.4",
+    "mongoose": "3.8"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

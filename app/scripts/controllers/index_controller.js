@@ -2,7 +2,7 @@ Proto.IndexController = Ember.ArrayController.extend({
     actions: {
         createNewProject: function () {
 
-            /*$.post("/api/projects", {
+            $.post("/api/projects", {
                 "name": "Project 1",
                 "elements": [{id: 'test'}, {id: 'test2'}]
             }, function (data, textStatus, jqXHR) {
@@ -12,7 +12,7 @@ Proto.IndexController = Ember.ArrayController.extend({
                 console.log(textStatus);
                 console.dir(jqXHR);
 
-            });*/
+            });
 
         }
     }
