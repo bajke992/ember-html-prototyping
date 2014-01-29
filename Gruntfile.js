@@ -313,7 +313,7 @@ module.exports = function (grunt) {
             dist: {
                 files: {
                     //'.tmp/scripts/compiled-templates.js': '<%= yeoman.app %>/templates/{,*/}*.hbs'
-                    '<%= yeoman.app %>/scripts/compiled-templates.js': '<%= yeoman.app %>/templates/{,*/}*.hbs'
+                    '<%= yeoman.app %>/assets/compiled-templates.js': '<%= yeoman.app %>/templates/{,*/}*.hbs'
                 }
             }
         },
@@ -326,7 +326,7 @@ module.exports = function (grunt) {
                 },
                 src: '<%= yeoman.app %>/scripts/application.js',
                 //dest: '.tmp/scripts/combined-scripts.js'
-                dest: '<%= yeoman.app %>/scripts/combined-scripts.js'
+                dest: '<%= yeoman.app %>/assets/combined-scripts.js'
             }
         }
     });
