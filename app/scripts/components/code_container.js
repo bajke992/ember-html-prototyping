@@ -17,6 +17,29 @@ Proto.CodeContainer = Ember.View.extend({
 //        }));
     },
 
+    eventType: 'click',
+
+    eventTypeChanged: function () {
+
+//        for changes in events from the property inspector
+
+        var eventList = Ember.View.views[this.get('controller.elementId')].get('eventList');
+        var eventFunctionCode = eventList["on"+this.get('controller.eventType')] || "";
+        var elementId = this.get('controller.elementId') === "document" ? this.get('controller.elementId'): "\"#" + this.get('controller.elementId') + "\"";
+        var text = eventFunctionCode === "" ? "$(" + elementId + ")." + this.get('controller.eventType') + "(function () {\n" + eventFunctionCode + "\n});" : eventFunctionCode;
+        this.get('controller.editor').getDoc().setValue(text);
+        this.get('controller.editor').getDoc().markText(
+            {line: 0, ch: 0},
+            {line: 0, ch: 100},
+            {readOnly: true, className: 'read-only'}
+        );
+        this.get('controller.editor').getDoc().markText(
+            {line: this.get('controller.editor').getDoc().lastLine(), ch: 0},
+            {line: this.get('controller.editor').getDoc().lastLine(), ch: 100},
+            {readOnly: true, className: 'read-only'}
+        );
+    }.observes('eventType'),
+
     becameVisible: function () {
 //        this.get('controller').get('editor').refresh();
         if(!this.get("initialized")) {
@@ -31,6 +54,8 @@ Proto.CodeContainer = Ember.View.extend({
             this.set("initialized", true);
         }
 
+//        for on ready event when no elements are selected
+
         var eventList = Ember.View.views[this.get('controller.elementId')].get('eventList');
         var eventFunctionCode = eventList["on"+this.get('controller.eventType')] || "";
         var elementId = this.get('controller.elementId') === "document" ? this.get('controller.elementId'): "\"#" + this.get('controller.elementId') + "\"";
@@ -39,7 +64,7 @@ Proto.CodeContainer = Ember.View.extend({
         this.get('controller.editor').getDoc().markText(
             {line: 0, ch: 0},
             {line: 0, ch: 100},
-            {readOnly: true, className: 'read-only'}
+        {readOnly: true, className: 'read-only'}
         );
         this.get('controller.editor').getDoc().markText(
             {line: this.get('controller.editor').getDoc().lastLine(), ch: 0},

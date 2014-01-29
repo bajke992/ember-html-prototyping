@@ -32,6 +32,13 @@ Proto.ScreenController = Ember.ObjectController.extend({
             this.set('editDesign', true);
         },
         setCodeView: function (elementId, eventType) {
+            console.log(eventType);
+
+            if(this.get('editCode')){
+                this.set('editCode', false);
+                this.set('editDesign', true);
+            }
+
             if (elementId) {
                 this.set('elementId', elementId);
             } else {
@@ -46,6 +53,8 @@ Proto.ScreenController = Ember.ObjectController.extend({
             this.set('eventType', eventType || defaultEvent);
             this.set('editCode', true);
             this.set('editDesign', false);
+
+            Ember.View.views[('code-container')].set('eventType', eventType);
         },
         addRecord: function (params) {
 

@@ -6,8 +6,8 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
     isFontExpanded: false,
     isBgExpanded: false,
 
-    isElementSelected: true,
-    isEventsSelected: false,
+    isElementSelected: false,
+    isEventsSelected: true,
 
     elemid: null,
     isInput: false,
@@ -17,6 +17,18 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
 
     canvasElement: {},
     props: {},
+
+    events: [
+        {type: 'click', name: 'Click'},
+        {type: 'dblclick', name: 'Double Click'},
+        {type: 'mouseover', name: 'Mouse Over'},
+        {type: 'mouseout', name: 'Mouse Out'},
+        {type: 'focus', name: 'Focus'},
+        {type: 'blur', name: 'Blur'}
+
+    ],
+
+    setCodeView: 'setCodeView',
 
     fontFamilies: [
         {font: 'Calibri', title: 'Calibri'},
@@ -126,6 +138,10 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
         },
         updateUnderline: function() {
             this.canvasElement.toggleProperty('underline')
+        },
+        setCodeView: function (eventType) {
+            var elementId = this.get('canvasElement.elementId');
+            this.sendAction('setCodeView', elementId, eventType);
         }
     },
 
