@@ -19,6 +19,7 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
         var data = self.get('data');
         self.set('eventList', {});
         self.set('recordId', data.recordId);
+        self.set('eventList', data.eventList);
 
         self.$().css(Proto.cssData(data, self));
 
@@ -62,12 +63,14 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
                 hint:       this.get('hint'),
                 stack:      this.get('stack'),
                 resizable:  this.get('resizable'),
-                type:       this.get('type')
+                type:       this.get('type'),
+                eventList:  {}
             });
         } else {
             this.sendAction('updateRecord', {
                 elementId:  this.get('elementId'),
-                recordId:   this.get('recordId')
+                recordId:   this.get('recordId'),
+                eventList:  this.get('eventList')
             });
         }
 
