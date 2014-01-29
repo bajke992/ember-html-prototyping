@@ -9,6 +9,31 @@ Proto.CodeContainer = Ember.View.extend({
     updateRecordEvents: 'updateRecordEvents',
     activeElement: null,
 
+    eventType: 'click',
+
+    eventTypeChanged: function () {
+
+//        for changes in events from the property inspector
+
+        if(this.get('initialized')) {
+            var eventList = Ember.View.views[this.get('controller.elementId')].get('eventList');
+            var eventFunctionCode = eventList["on"+this.get('controller.eventType')] || "";
+            var elementId = this.get('controller.elementId') === "document" ? this.get('controller.elementId') : "\"#" + Ember.View.views[this.get('controller.elementId')].get('recordId') + "\"";
+            var text = eventFunctionCode === "" ? "$(" + elementId + ")." + this.get('controller.eventType') + "(function () {\n" + eventFunctionCode + "\n});" : eventFunctionCode;
+            this.get('editor').getDoc().setValue(text);
+            this.get('editor').getDoc().markText(
+                {line: 0, ch: 0},
+                {line: 0, ch: 100},
+                {readOnly: true, className: 'read-only'}
+            );
+            this.get('editor').getDoc().markText(
+                {line: this.get('editor').getDoc().lastLine(), ch: 0},
+                {line: this.get('editor').getDoc().lastLine(), ch: 100},
+                {readOnly: true, className: 'read-only'}
+            );
+        }
+    }.observes('eventType'),
+
     becameVisible: function () {
         if(!this.get("initialized")) {
             var textArea = document.getElementById("text-area");
@@ -26,6 +51,9 @@ Proto.CodeContainer = Ember.View.extend({
 
         this.set('activeElement', Ember.View.views[elementId]);
         var eventList = this.get('activeElement.eventList');
+//        for on ready event when no elements are selected
+
+//        var eventList = Ember.View.views[this.get('controller.elementId')].get('eventList');
         var eventFunctionCode = eventList["on"+this.get('controller.eventType')] || "";
         elementId = elementId === "document" ? elementId : "\"#" + this.get('activeElement.recordId') + "\"";
         var text = eventFunctionCode === "" ? "$(" + elementId + ")." + this.get('controller.eventType') + "(function () {\n" + eventFunctionCode + "\n});" : eventFunctionCode;
@@ -33,7 +61,7 @@ Proto.CodeContainer = Ember.View.extend({
         this.get('editor').getDoc().markText(
             {line: 0, ch: 0},
             {line: 0, ch: 100},
-            {readOnly: true, className: 'read-only'}
+        {readOnly: true, className: 'read-only'}
         );
         this.get('editor').getDoc().markText(
             {line: this.get('editor').getDoc().lastLine(), ch: 0},
