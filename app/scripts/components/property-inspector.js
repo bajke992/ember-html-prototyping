@@ -197,7 +197,6 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
     }.observes('this.props.fontfamily'),
 
     updateBgRepeat: function () {
-        console.log(this.get('props')['bgRepeat']);
         this.canvasElement.set('bgRepeat', this.get('props')['bgRepeat']);
     }.observes('this.props.bgRepeat')
 

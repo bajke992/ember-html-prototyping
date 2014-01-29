@@ -168,12 +168,11 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
         this.$().resizable({
             minHeight: this.minHeight,
             maxHeight: this.maxHeight
-        })
+        });
 
     }.observes('mode'),
 
     updateCss: function () {
-        console.log('css changed');
 
         this.$().css({
             color: this.get('color'),
@@ -186,12 +185,12 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
         });
 
         if (this.get('bgImage') !== "none"){
-            this.$().css('background-image', 'url(' + this.get('bgImage') + ')')
+            this.$().css('background-image', 'url(' + this.get('bgImage') + ')');
         }
 
         this.get('bold') ? this.$().css('font-weight', 'bold') : this.$().css('font-weight', 'normal');
         this.get('italic') ? this.$().css('font-style', 'italic') : this.$().css('font-style', 'normal');
-        this.get('underline') ? this.$().css('text-decoration', 'underline') : this.$().css('text-decoration', 'none')
+        this.get('underline') ? this.$().css('text-decoration', 'underline') : this.$().css('text-decoration', 'none');
 
     }.observes('color', 'fontfamily', 'fontsize', 'style', 'bgImage', 'bgColor', 'bgPositionX', 'bgPositionY', 'bgRepeat',
             'style', 'bold', 'underline', 'italic'),
@@ -202,7 +201,11 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
 
     updateURL: function() {
         this.$().attr('href', this.get('URL'));
-    }.observes('URL')
+    }.observes('URL'),
+
+    updateEvents: function () {
+        this.$().attr('eventList', this.get('eventList'));
+    }.observes('eventList')
 });
 
 /**
@@ -297,7 +300,7 @@ Proto.draggableData = function (self) {
 
             }
         }
-    }
+    };
 };
 
 /**
