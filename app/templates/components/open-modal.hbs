@@ -1,0 +1,19 @@
+{{#if open}}
+    <div class="screen-modal">
+
+        <div class="open-project-modal-body">
+
+            <div class="root-options">
+                <span class="or">Choose a project from the list:</span>
+                <ul class="project-list">
+                    {{#each project in projects}}
+                        <li {{action chooseProject project}}><a>{{project.name}}</a></li>
+                    {{/each}}
+
+                </ul>
+            </div>
+
+            <button class="button gray close-button" {{ action closeModal }}>Close</button>
+        </div>
+    </div>
+{{/if}}

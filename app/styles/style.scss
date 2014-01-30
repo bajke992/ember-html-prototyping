@@ -37,8 +37,8 @@ ul {
   list-style: none;
 }
 
-@import 'proto-app';
 @import 'mixins';
+@import 'proto-app';
 @import 'canvas';
 @import 'editor';
 @import 'property-inspector';

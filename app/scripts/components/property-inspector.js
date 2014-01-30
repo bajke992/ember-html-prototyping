@@ -55,6 +55,15 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
         {mode: 'singleline', title: 'Single-line'}
     ],
 
+    hasEvent: [
+        {hasClick: false},
+        {hasDblclick: false},
+        {hasMouseOver: false},
+        {hasMouseOut: false},
+        {hasFocus: false},
+        {hasBlur: false}
+    ],
+
     actions: {
         showElement: function () {
             this.set('isElementSelected', true);
@@ -144,6 +153,11 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
             this.sendAction('setCodeView', elementId, eventType);
         }
     },
+
+    updateHasEvents: function () {
+        console.log('events changed');
+        var eventList = this.get('canvasElement.eventList');
+    }.observes('canvasElement.eventList.onclick','canvasElement.eventList.onblur'),
 
 
     update: function () {
