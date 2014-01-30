@@ -34,27 +34,21 @@ Proto.ScreenController = Ember.ObjectController.extend({
         setCodeView: function (elementId, eventType) {
             console.log(eventType);
 
-            if(this.get('editCode')){
-                this.set('editCode', false);
-                this.set('editDesign', true);
-            }
-
             if (elementId) {
                 this.set('elementId', elementId);
             } else {
-                if (!this.get('elementId')) {
+                if (!this.get('elementId') || this.get('elementId') === "document") {
                     this.set('elementId', 'document');
                     eventType = "ready";
                 }
             }
 
-            var defaultEvent = 'click';
+            var event = eventType || 'click';
 
-            this.set('eventType', eventType || defaultEvent);
+            this.set('eventType', event);
             this.set('editCode', true);
             this.set('editDesign', false);
 
-            Ember.View.views[('code-container')].set('eventType', eventType);
         },
         addRecord: function (params) {
 
@@ -116,6 +110,9 @@ Proto.ScreenController = Ember.ObjectController.extend({
         },
         editProperty: function (key, value) {
             this.get('controllers.editor').send('editProperty', key, value);
+        },
+        setElementId: function (elementId) {
+            this.set('elementId', elementId);
         }
     },
 

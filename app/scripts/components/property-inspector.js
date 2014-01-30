@@ -155,7 +155,7 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
     },
 
     updateHasEvents: function () {
-        console.log('events changed');
+//        console.log('events changed');
         var eventList = this.get('canvasElement.eventList');
     }.observes('canvasElement.eventList.onclick','canvasElement.eventList.onblur'),
 
