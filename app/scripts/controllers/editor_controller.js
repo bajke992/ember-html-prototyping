@@ -1,4 +1,5 @@
 Proto.EditorController = Ember.ObjectController.extend({
+    needs: ['screen'],
 
     edit: null,
     screenTitle: '',
@@ -57,6 +58,9 @@ Proto.EditorController = Ember.ObjectController.extend({
         },
         editProperty: function (key, value) {
             this.set(key, value);
+        },
+        setCodeView: function (elementId, eventType) {
+            this.get('controllers.screen').send('setCodeView', elementId, eventType);
         }
     }
 

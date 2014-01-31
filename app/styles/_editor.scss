@@ -10,6 +10,7 @@ $font: "Myriad Pro", Calibri, Helvetica, Arial, sans-serif;
   background-color: $editor-background;
   border: 1px solid #ddd;
   height: 100%;
+  overflow: hidden;
   @include user-select(none);
 
 /*-- Editor heading styles --*/
@@ -17,12 +18,13 @@ $font: "Myriad Pro", Calibri, Helvetica, Arial, sans-serif;
     background-color: $header-color;
     color: white;
     border-bottom: 1px solid #ddd;
-    padding: 10px;
+    padding: 0 10px;
     height: 10%;
 
 /*-- Main editor heading --*/
     &.main {
-      height: 5%;
+      height: 48px;
+      line-height: 48px;
 //      min-height:50px;
       padding: 0;
 
@@ -32,7 +34,7 @@ $font: "Myriad Pro", Calibri, Helvetica, Arial, sans-serif;
         height: 100%;
         vertical-align: middle;
         border-right: 1px solid #ddd;
-        padding: 15px;
+        padding: 0 15px;
       }
 
       .project-controls {
@@ -57,7 +59,8 @@ $font: "Myriad Pro", Calibri, Helvetica, Arial, sans-serif;
     }
 
     &.label-title {
-      height: 8%;
+      height: 40px;
+      line-height: 40px;
       font-weight: bold;
       font-size: 15px;
       border-bottom: none;
@@ -65,6 +68,7 @@ $font: "Myriad Pro", Calibri, Helvetica, Arial, sans-serif;
       .add-screen {
         float: right;
         font-size: 22px;
+        line-height: 40px;
         cursor: pointer;
       }
     }
@@ -89,7 +93,7 @@ $font: "Myriad Pro", Calibri, Helvetica, Arial, sans-serif;
     float: left;
     width: 20%;
     border-right: 1px solid #ddd;
-    height: 95%;
+    height: calc(100% - 58px);
 //    min-height: 750px;
     aside {
       height: 50%;
@@ -102,9 +106,11 @@ $font: "Myriad Pro", Calibri, Helvetica, Arial, sans-serif;
     }
   }
 
+
+
   .workspace {
     width: 80%;
-    height: 95%;
+    height: calc(100% - 58px);
     float: left;
 
     footer {

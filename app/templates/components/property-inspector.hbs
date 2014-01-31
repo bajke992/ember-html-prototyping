@@ -61,11 +61,13 @@
                                 </li>
                                 <li><label>font-size</label> {{view Ember.TextField valueBinding="props.fontsize" action="updateFontSize" type="number"}}</li>
                                 <li><label>color</label> {{view Ember.TextField valueBinding="props.color" action="updateColor"}}</li>
-                                <li><label>style</label>
-                                <button {{bind-attr class=":style-button :fa :fa-bold canvasElement.bold:style-selected"}} {{action updateBold}}></button>
-                                <button {{bind-attr class=":style-button :fa :fa-italic canvasElement.italic:style-selected"}} {{action updateItalic}}></button>
-                                <button {{bind-attr class=":style-button :fa :fa-underline canvasElement.underline:style-selected"}} {{action updateUnderline}}></button>
-                                </li>
+                                {{#unless isPanel}}
+                                    <li><label>style</label>
+                                        <button {{bind-attr class=":style-button :fa :fa-bold canvasElement.bold:style-selected"}} {{action updateBold}}></button>
+                                        <button {{bind-attr class=":style-button :fa :fa-italic canvasElement.italic:style-selected"}} {{action updateItalic}}></button>
+                                        <button {{bind-attr class=":style-button :fa :fa-underline canvasElement.underline:style-selected"}} {{action updateUnderline}}></button>
+                                    </li>
+                                {{/unless}}
                             </ul>
                         {{/if}}
                     </li>
@@ -97,12 +99,10 @@
 
             <header class="sub-label" {{action 'toggleEvents'}}>Events</header>
                 <ul class="options-list">
-                    <li><label>Click</label></li>
-                    <li><label>Double Click</label></li>
-                    <li><label>Mouse Enter</label></li>
-                    <li><label>Mouse Leave</label></li>
-                    <li><label>Focus In</label></li>
-                    <li><label>Focus Out</label></li>
+                    {{#each events}}
+                        <li><label>{{name}}</label>
+                        <button {{action setCodeView type}}>Show function</button></li>
+                    {{/each}}
                 </ul>
         {{/if}}
 

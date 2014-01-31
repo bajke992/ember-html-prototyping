@@ -42,3 +42,24 @@
     }
   }
 }
+
+.open-project-modal-body {
+  position: absolute;
+  width: 624px;
+  max-height: 450px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  margin: auto;
+  padding: 10px;
+  .project-list{
+    height: 300px;
+    overflow: auto;
+  }
+  @include box-shadow(0 0 5px 1px #666);
+  .close-button {
+    float: right;
+  }
+}
