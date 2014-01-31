@@ -172,6 +172,21 @@ $font: "Myriad Pro", Calibri, Helvetica, Arial, sans-serif;
   }
 }
 
+.editor-button {
+  background-color: $editor-background;
+  border: 1px solid #ddd;
+  padding: 5px;
+
+  &:hover {
+    background-color: #eee4e4;
+    cursor: pointer;
+  }
+
+  &.style-selected {
+    background-color: #ddd;
+  }
+}
+
 .read-only {
   background-color: #d3d3d3;
 }

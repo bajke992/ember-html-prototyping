@@ -1,5 +1,11 @@
 Proto.ScreenController = Ember.ObjectController.extend({
     needs: ['editor'],
+    themes: [
+        {name: 'none'},
+        {name: 'flat'},
+        {name: 'flat-rounded'},
+        {name: 'bubbly'}
+    ],
 
     currentPathDidChange: function() {
 

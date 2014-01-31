@@ -6,8 +6,8 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
     isFontExpanded: false,
     isBgExpanded: false,
 
-    isElementSelected: false,
-    isEventsSelected: true,
+    isElementSelected: true,
+    isEventsSelected: false,
 
     elemid: null,
     isInput: false,
