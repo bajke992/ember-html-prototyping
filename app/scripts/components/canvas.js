@@ -12,7 +12,14 @@ Proto.Canvas = Ember.View.extend({
             helper: "clone",
             cursor: "move"
         });
-
+    },
+    actions: {
+        chooseTheme: function(theme) {
+           console.log('theme', theme);
+            console.log(Ember.View.views['document'].get('theme'));
+           Ember.View.views['document'].set('theme', theme);
+            console.log(Ember.View.views['document'].get('theme'));
+        }
     }
 });
 
@@ -22,6 +29,12 @@ Proto.Canvas = Ember.View.extend({
  */
 Proto.CanvasContainer = Ember.ContainerView.extend(Ember.TargetActionSupport, {
     classNames: ['canvas'],
+    classNameBindings: ['theme'],
+
+    showDropDown: false,
+
+    theme: 'flat',
+
 
     parentViewDidChange: function () {
         console.log('parent change');
