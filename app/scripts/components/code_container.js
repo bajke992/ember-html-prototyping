@@ -1,6 +1,5 @@
 Proto.CodeContainer = Ember.View.extend(Ember.TargetActionSupport, {
     init: function () {
-//        Ember.addBeforeObserver(this, 'controller.eventType', this, 'valueWillChange');
         this.set("initialized", false);
         this._super();
     },
@@ -12,7 +11,6 @@ Proto.CodeContainer = Ember.View.extend(Ember.TargetActionSupport, {
     oldEvent: null,
 
     valueWillChange: function(obj, keyName, value){
-        console.log(value);
         this.set('oldEvent', this.get('controller.eventType'));
     }.observesBefore('controller.eventType'),
 
@@ -57,12 +55,14 @@ Proto.CodeContainer = Ember.View.extend(Ember.TargetActionSupport, {
         save: function () {
             var oldEvent = this.get('oldEvent');
             var eventList = this.get('activeElement').get('eventList');
-            console.log(eventList);
+//            console.log(eventList);
 
             if (eventList.get) {
                 eventList.set(oldEvent, this.get('editor').getValue());
             } else {
+                console.log('crashes here');
                 eventList[oldEvent] = this.get('editor').getValue();
+                console.log('told you it crashed there');
             }
             this.get('activeElement').set('eventList', eventList);
 

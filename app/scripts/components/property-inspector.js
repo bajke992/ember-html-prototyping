@@ -19,12 +19,12 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
     props: {},
 
     events: [
-        {type: 'click', name: 'Click'},
-        {type: 'dblclick', name: 'Double Click'},
-        {type: 'mouseover', name: 'Mouse Over'},
-        {type: 'mouseout', name: 'Mouse Out'},
-        {type: 'focus', name: 'Focus'},
-        {type: 'blur', name: 'Blur'}
+        {type: 'click', name: 'Click', isPresent: false},
+        {type: 'dblclick', name: 'Double Click', isPresent: false},
+        {type: 'mouseover', name: 'Mouse Over', isPresent: false},
+        {type: 'mouseout', name: 'Mouse Out', isPresent: false},
+        {type: 'focus', name: 'Focus', isPresent: false},
+        {type: 'blur', name: 'Blur', isPresent: false}
 
     ],
 
@@ -53,15 +53,6 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
     modes: [
         {mode: 'multiline', title: 'Multi-line'},
         {mode: 'singleline', title: 'Single-line'}
-    ],
-
-    hasEvent: [
-        {hasClick: false},
-        {hasDblclick: false},
-        {hasMouseOver: false},
-        {hasMouseOut: false},
-        {hasFocus: false},
-        {hasBlur: false}
     ],
 
     actions: {
@@ -155,9 +146,37 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
     },
 
     updateHasEvents: function () {
-        console.log('events changed');
-        var eventList = this.get('canvasElement.eventList');
-    }.observes('canvasElement.eventList.onclick','canvasElement.eventList.onblur'),
+        var self = this;
+
+        function filterEvent (event) {
+//            console.log(event);
+//            debugger;
+            var eventFunction = self.get('canvasElement.eventList')[event];
+            if(eventFunction){
+                var index = eventFunction.indexOf('function () {');
+                return eventFunction.length - index !== 18
+            }
+        }
+//        console.warn('events changed');
+//        console.debug('dblclick in eventlist');
+//        console.log(this.get('canvasElement.eventList')['dblclick']);
+//        var dblclick = this.get('canvasElement.eventList')['dblclick'];
+
+//        var events = ['click', 'dblclick', 'blur', 'focus', 'mouseout', 'mouseover'];
+
+        var events = this.get('events');
+
+//        console.log(this.get('events'));
+        $.each(events, function(index, event){
+//            console.log(event.isPresent);
+            console.log(filterEvent(event.type));
+            event.isPresent = filterEvent(event.type);
+//            event.set('isPresent', filterEvent(event.type));
+            console.log(event.isPresent);
+        });
+
+    }.observes('canvasElement.eventList.dblclick','canvasElement.eventList.blur','canvasElement.eventList.click',
+        'canvasElement.eventList.focus', 'canvasElement.eventList.mouseout', 'canvasElement.eventList.mouseover'),
 
 
     update: function () {
