@@ -82,9 +82,6 @@ Proto.ScreenController = Ember.ObjectController.extend({
             // DON'T SAVE IT INTO LS! THERE IS A BUG!
 //            model.save();
 
-
-
-
         },
         updateRecordEvents: function (params) {
             var model = this.get('model');

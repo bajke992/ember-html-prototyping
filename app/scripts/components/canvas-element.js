@@ -79,12 +79,12 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
                 type:       this.get('type'),
                 eventList:  {}
             });
-        } else {
-            this.sendAction('updateRecord', {
-                elementId:  this.get('elementId'),
-                recordId:   this.get('recordId'),
-                eventList:  this.get('eventList')
-            });
+//        } else {
+//            this.sendAction('updateRecord', {
+//                elementId:  this.get('elementId'),
+//                recordId:   this.get('recordId'),
+//                eventList:  this.get('eventList')
+//            });
         }
 
         this.sendAction('editProperty', 'elementId', this.get('elementId'));
