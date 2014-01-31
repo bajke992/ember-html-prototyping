@@ -23,7 +23,10 @@ Proto.CodeContainer = Ember.View.extend(Ember.TargetActionSupport, {
                 mode: "javascript",
                 autofocus: true,
                 matchBrackets: true,
-                autoCloseBrackets: true
+                autoCloseBrackets: true,
+                gutters: ["CodeMirror-lint-markers"],
+                lint: true,
+                extraKeys: {"Ctrl-Space": "autocomplete"}
             }));
             this.set("initialized", true);
         }
