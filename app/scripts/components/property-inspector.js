@@ -25,7 +25,6 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
         {type: 'mouseout', name: 'Mouse Out', isPresent: false},
         {type: 'focus', name: 'Focus', isPresent: false},
         {type: 'blur', name: 'Blur', isPresent: false}
-
     ],
 
     setCodeView: 'setCodeView',
@@ -144,40 +143,6 @@ Proto.PropertyInspectorComponent = Ember.Component.extend({
             this.sendAction('setCodeView', elementId, eventType);
         }
     },
-
-    updateHasEvents: function () {
-        var self = this;
-
-        function filterEvent (event) {
-//            console.log(event);
-//            debugger;
-            var eventFunction = self.get('canvasElement.eventList')[event];
-            if(eventFunction){
-                var index = eventFunction.indexOf('function () {');
-                return eventFunction.length - index !== 18
-            }
-        }
-//        console.warn('events changed');
-//        console.debug('dblclick in eventlist');
-//        console.log(this.get('canvasElement.eventList')['dblclick']);
-//        var dblclick = this.get('canvasElement.eventList')['dblclick'];
-
-//        var events = ['click', 'dblclick', 'blur', 'focus', 'mouseout', 'mouseover'];
-
-        var events = this.get('events');
-
-//        console.log(this.get('events'));
-        $.each(events, function(index, event){
-//            console.log(event.isPresent);
-            console.log(filterEvent(event.type));
-            event.isPresent = filterEvent(event.type);
-//            event.set('isPresent', filterEvent(event.type));
-            console.log(event.isPresent);
-        });
-
-    }.observes('canvasElement.eventList.dblclick','canvasElement.eventList.blur','canvasElement.eventList.click',
-        'canvasElement.eventList.focus', 'canvasElement.eventList.mouseout', 'canvasElement.eventList.mouseover'),
-
 
     update: function () {
 
