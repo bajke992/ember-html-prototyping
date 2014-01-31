@@ -12,6 +12,7 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
     removeRecord: 'removeRecord',
     editProperty: 'editProperty',
     editCode: 'setCodeView',
+    setElementId: 'setElementId',
 
     didInsertElement: function() {
 
@@ -82,6 +83,7 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
         if (!this.$().is(".ui-selected")) {
 
             this.sendAction('editProperty', 'elementId', this.get('elementId'));
+            this.sendAction('setElementId', this.get('elementId'));
 
         }
 

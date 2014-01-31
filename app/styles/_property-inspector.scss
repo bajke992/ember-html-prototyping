@@ -6,8 +6,10 @@
 
 .property-inspector {
 
-  .inspector-tabs {
+  header.inspector-tabs {
     padding: 0;
+    height: 28px;
+    line-height: 28px;
     .inspector-tab {
       border-radius: 5px 5px 0 0;
       padding: 4px 9px;
