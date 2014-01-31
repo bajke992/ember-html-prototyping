@@ -128,12 +128,30 @@ Proto.ScreenController = Ember.ObjectController.extend({
         },
         setElementId: function (elementId) {
             this.set('elementId', elementId);
+        },
+        toggleFullscreen: function () {
+
+            var fullscreen = !this.get('fullscreen');
+
+            if (fullscreen) {
+                $('#header').hide();
+                $('#sidebar').hide();
+                $('#footer').hide();
+            } else {
+                $('#header').show();
+                $('#sidebar').show();
+                $('#footer').show();
+            }
+
+            this.set('fullscreen', fullscreen);
+
         }
     },
 
     editCode: false,
     editDesign: true,
     elementId: null,
-    eventType: ''
+    eventType: '',
+    fullscreen: false
 
 });

@@ -1,4 +1,4 @@
-<div class="canvas-view">
+<div class="canvas-view" id="canvas-view">
 
     <div class="toolbar">
         <div class="btn toolbar-element fa fa-square-o fa-2x" title="Button"></div>
@@ -13,5 +13,7 @@
     </div>
 
     {{ view Proto.CanvasContainer id="document" contentBinding="this"}}
+
+    <span class="fullscreen-toggle fa fa-arrows-alt" {{ action toggleFullscreen }}></span>
 
 </div>

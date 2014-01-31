@@ -1,4 +1,5 @@
 .canvas-view {
+  position: relative;
   .canvas {
     background-color: #eee;
 //    min-height: 600px;
@@ -294,10 +295,21 @@
       background-color: #fafafa;
     }
   }
-
 }
 .ui-selectable-helper {
   background-color: #cc0000;
   opacity: 0.1;
+}
+
+.fullscreen-toggle {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  color: #999;
+  font-size: 25px;
+  z-index: 1000;
+  cursor: pointer;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
