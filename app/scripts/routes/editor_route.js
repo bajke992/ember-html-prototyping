@@ -1,6 +1,5 @@
 Proto.EditorRoute = Ember.Route.extend ({
-    model: function () {
-        //return this.store.find('data');
-        return this.store.find('screens');
+    model: function (params) {
+        return this.store.find('projects', params.project_id);
     }
 });

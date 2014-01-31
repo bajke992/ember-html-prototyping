@@ -1,9 +1,11 @@
 <div class="root-options">
-    <button {{action createNewProject }} class="new-project fa fa-plus button">Create new project</button>
+    <button {{action createProject }} class="new-project fa fa-plus button">Create new project</button>
     <span class="or">or choose from the list:</span>
     <ul class="project-list">
-        <li>{{#link-to 'editor'}} Project 1 {{/link-to}}</li>
-        <li>{{#link-to 'editor'}} Project 2 {{/link-to}}</li>
-        <li>{{#link-to 'editor'}} Project 3 {{/link-to}}</li>
+        {{#each model}}
+            <li>{{#link-to 'editor' this}} {{ name }} {{/link-to}}</li>
+        {{/each}}
     </ul>
 </div>
+
+{{project-modal create=create projectTitle=projectTitle}}

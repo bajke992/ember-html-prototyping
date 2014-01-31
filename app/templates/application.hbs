@@ -1,14 +1,12 @@
 <div class="editor clearfix">
 
     <header class="main">
-        <h1>Proto
-            {{#link-to 'editor'}}Design{{/link-to}}
-        </h1>
+        <h1>Proto {{#link-to 'index'}}Design{{/link-to}}</h1>
 
         <div class="project-controls">
             <span class="fa fa-file-o icons" title="New"></span>
             <span class="fa fa-folder-open-o icons" title="Open"></span>
-            <span class="fa fa-save icons" title="Save"></span>
+            <span class="fa fa-save icons" title="Save" {{action saveProject}}></span>
             <span class="fa fa-external-link-square icons" title="Export"></span>
             <span class="fa fa-play icons" title="Run"></span>
         </div>

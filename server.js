@@ -27,16 +27,27 @@ var Schema = mongoose.Schema;
 
 var Project = new Schema({
     name: { type: String, required: true },
-    elements: { type: [], required: false }
+    screens: [Screens]
+});
+
+var Screens = new Schema({
+    name: String,
+    elements: []
 });
 
 
 var ProjectModel = mongoose.model('Project', Project);
 
+/**
+ * Landing action for the api
+ */
 app.get('/api', function (req, res) {
     res.send('Proto API is running');
 });
 
+/**
+ * Get all projects
+ */
 app.get('/api/projects', function (req, res) {
 
     return ProjectModel.find(function (err, projects) {
@@ -53,17 +64,14 @@ app.post('/api/projects', function (req, res) {
 
     var project;
 
-    console.log("POST: ");
-    console.log(req.body);
-
     project = new ProjectModel({
         name: req.body.name,
-        elements: req.body.elements
+        screens: req.body.screens
     });
 
-    project.save(function (err) {
+    project.save(function (err, p) {
         if (!err) {
-            return console.log("created");
+            return console.log('created');
         } else {
             return console.log(err);
         }
@@ -89,7 +97,7 @@ app.put('/api/projects/:id', function (req, res) {
     return ProjectModel.findById(req.params.id, function (err, project) {
 
         project.name = req.body.name;
-        project.elements = req.body.elements;
+        project.screens = req.body.screens;
 
         return project.save(function (err) {
             if (!err) {

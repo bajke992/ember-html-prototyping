@@ -1,0 +1,12 @@
+{{#if create}}
+<div class="project-modal">
+
+    <div class="modal-frm">
+        <label>Project Title</label>
+        {{input type="text" value=projectTitle action="saveProject"}}
+
+        <button class="button" {{ action saveProject }}>Create</button>
+        <button class="button gray" {{ action closeCreate }}>Cancel</button>
+    </div>
+</div>
+{{/if}}

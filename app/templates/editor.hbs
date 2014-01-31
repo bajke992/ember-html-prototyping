@@ -14,7 +14,8 @@
     <aside>
         <header class="label-title">Project Tree <span class="add-screen fa fa-plus-square-o" {{action addScreen}}></span></header>
 
-        {{ project-tree screens=model }}
+        {{ project-tree screens=model.screens }}
+
     </aside>
 
     {{screen-modal edit=edit screenTitle=screenTitle}}

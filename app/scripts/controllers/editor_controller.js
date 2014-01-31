@@ -1,4 +1,4 @@
-Proto.EditorController = Ember.ArrayController.extend({
+Proto.EditorController = Ember.ObjectController.extend({
 
     edit: null,
     screenTitle: '',
@@ -23,26 +23,36 @@ Proto.EditorController = Ember.ArrayController.extend({
         },
         saveScreen: function (title) {
 
+            var self = this;
             var screen_id = this.get('edit');
+
+            var project = this.get('model');
 
             if (screen_id === 'new') {
                 // add new screen
-                var screen = this.get('store').createRecord('screens', {name: title, elements: []});
-                screen.save();
-                screen_id = screen.get('id');
+                var screen = this.get('store').createRecord('screens', {name: title, project: project, elements: []});
+                screen.save().then(function() {
+
+                    project.get('screens').pushObject(screen);
+                    // DON'T SAVE IT INTO LS! THERE IS A BUG!
+                    project.save();
+
+                    self.set('edit', null);
+                    self.transitionToRoute('screen', screen.get('id'));
+
+                });
 
             } else {
                 // edit screen
                 this.get('store').find('screens', screen_id).then(function(record){
                     record.set('name', title);
-                    record.save();
+                    // DON'T SAVE IT INTO LS! THERE IS A BUG!
+                    //record.save();
+
+                    self.set('edit', null);
+                    self.transitionToRoute('screen', screen_id);
                 });
-
             }
-
-            this.set('edit', null);
-
-            this.transitionToRoute('screen', screen_id);
 
         },
         editProperty: function (key, value) {

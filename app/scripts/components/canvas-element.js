@@ -13,6 +13,18 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
     editProperty: 'editProperty',
     editCode: 'setCodeView',
 
+    init: function () {
+
+        var data = this.get('data');
+
+        var time = new Date().getTime();
+        var elementId = (data.elementId !== null) ? data.elementId : 'elem-' + time;
+
+        this.set('elementId', elementId);
+
+        this._super();
+    },
+
     didInsertElement: function() {
 
         var self = this;
@@ -65,10 +77,17 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
                 type:       this.get('type')
             });
         } else {
-            this.sendAction('updateRecord', {
-                elementId:  this.get('elementId'),
-                recordId:   this.get('recordId')
-            });
+//            this.sendAction('updateRecord', {
+//                elementId:  this.get('elementId'),
+//                recordId:   this.get('recordId')
+//            });
+
+//            this.sendAction('updateRecord', {
+//                recordId:   this.get('recordId'),
+//                attrs: {
+//                    elementId:  this.get('elementId')
+//                }
+//            });
         }
 
         this.sendAction('editProperty', 'elementId', this.get('elementId'));
@@ -129,7 +148,18 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
     underline: false,
 
     updateWidth: function () {
-        this.$().css('width', this.get('width'));
+
+        var width = this.get('width');
+
+        this.sendAction('updateRecord', {
+            recordId:   this.get('recordId'),
+            attrs: {
+                width: width
+            }
+        });
+
+        this.$().css('width', width);
+
     }.observes('width'),
 
     updateHeight: function () {

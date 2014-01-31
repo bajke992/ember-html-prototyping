@@ -4,10 +4,10 @@ Proto.ScreenController = Ember.ObjectController.extend({
     currentPathDidChange: function() {
 
         var self = this;
+
         Ember.run.schedule('afterRender', this, function() {
 
-
-            var elements = this.get('model').get('elements');
+            var elements = self.get('model').get('elements');
             var canvas = Ember.View.views['document'];
 
             canvas.removeAllChildren();
@@ -49,10 +49,26 @@ Proto.ScreenController = Ember.ObjectController.extend({
         },
         addRecord: function (params) {
 
+//            var screen = this.get('model');
+//            params.screen = screen;
+//
+//            var element = this.get('store').createRecord('elements', params);
+//            element.save().then(function(erecord) {
+//
+//                Ember.view.views[params.elementId].set('recordId', erecord.get('id'));
+//
+//                screen.get('elements').pushObject(erecord);
+//                screen.save().then(function (srecord) {
+//                    console.log('srecord', srecord);
+//                });
+//
+//            });
+
             var model = this.get('model');
 
             model.get('elements').pushObject(params);
-            model.save();
+            // DON'T SAVE IT INTO LS! THERE IS A BUG!
+//            model.save();
 
         },
         updateRecord: function (params) {
@@ -60,7 +76,7 @@ Proto.ScreenController = Ember.ObjectController.extend({
             var model = this.get('model');
             var toUpdate;
 
-            // TODO: try to find a way to get object to delete without iterating through array
+            //TODO: try to find a way to get object to delete without iterating through array
             $.each(model.get('elements'), function (index, element) {
                 if (element.recordId === params.recordId) {
                     toUpdate = index;
@@ -68,7 +84,19 @@ Proto.ScreenController = Ember.ObjectController.extend({
                 }
             });
 
-            model.get('elements')[toUpdate].elementId = params.elementId;
+            var elements = model.get('elements');
+
+            $.each(params.attrs, function (key, value) {
+                elements[toUpdate][key] = value;
+            });
+
+            console.log('not saved into local storage');
+//            model.set('elements', elements);
+            // DON'T SAVE IT INTO LS! THERE IS A BUG!
+//            model.save();
+
+
+
 
         },
         removeRecord: function (recordId) {
@@ -85,7 +113,8 @@ Proto.ScreenController = Ember.ObjectController.extend({
             });
 
             model.get('elements').removeObject(toDelete);
-            model.save();
+            // DON'T SAVE IT INTO LS! THERE IS A BUG!
+            //model.save();
 
         },
         editProperty: function (key, value) {

@@ -707,7 +707,7 @@ ul {
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_project-tree\.scss}line{font-family:\0000394}}
-.screen-modal {
+.screen-modal, .project-modal {
   position: fixed;
   background-color: rgba(0, 0, 0, 0.3);
   top: 0;
@@ -717,9 +717,9 @@ ul {
   z-index: 2000;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_project-tree\.scss}line{font-family:\00003103}}
-.screen-modal .screen-modal-frm {
+.screen-modal .modal-frm, .project-modal .modal-frm {
   position: absolute;
-  width: 425px;
+  width: 440px;
   height: 65px;
   top: 0;
   right: 0;
@@ -733,7 +733,7 @@ ul {
   box-shadow: 0 0 5px 1px #666666;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_project-tree\.scss}line{font-family:\00003115}}
-.screen-modal .screen-modal-frm input[type="text"] {
+.screen-modal .modal-frm input[type="text"], .project-modal .modal-frm input[type="text"] {
   border: 1px solid #ddd;
   padding: 10px;
   font-size: 14px;
