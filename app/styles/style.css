@@ -350,39 +350,39 @@ ul {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003189}}
 .canvas-view .toolbar {
   position: absolute;
-  top: -2px;
-  left: 470px;
+  top: -52px;
+  left: 173px;
   height: auto;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003195}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003196}}
 .canvas-view .toolbar .themes {
   display: inline-block;
   vertical-align: text-top;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003201}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003202}}
 .canvas-view .toolbar .toolbar-element {
   padding: 10px;
   color: white;
   max-height: 48px;
   vertical-align: middle;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003207}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003208}}
 .canvas-view .toolbar .toolbar-element.btn, .canvas-view .toolbar .toolbar-element.input, .canvas-view .toolbar .toolbar-element.text, .canvas-view .toolbar .toolbar-element.panel {
   width: auto;
   height: auto;
   border: none;
   background-color: transparent;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003213}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003214}}
 .canvas-view .toolbar .toolbar-element.btn:hover, .canvas-view .toolbar .toolbar-element.input:hover, .canvas-view .toolbar .toolbar-element.text:hover, .canvas-view .toolbar .toolbar-element.panel:hover {
   cursor: pointer;
   color: #ccc;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003219}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003220}}
 .canvas-view .toolbar .toolbar-element.ui-draggable-dragging {
   color: rgba(225, 82, 59, 0.85);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003225}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003226}}
 .canvas-view .flat .btn {
   background-color: #90daf4;
   border-radius: 0;
@@ -390,11 +390,11 @@ ul {
   -webkit-border-radius: 0;
   border: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003229}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003230}}
 .canvas-view .flat .btn:active, .canvas-view .flat .btn:hover {
   background-color: #70b2f4;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003233}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003234}}
 .canvas-view .flat .input {
   border: 1px solid #ccc;
   color: #ccc;
@@ -402,15 +402,15 @@ ul {
   -moz-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.075);
   box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.075);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003237}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003238}}
 .canvas-view .flat .input:hover {
   border: 1px solid #58bff4;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003241}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003242}}
 .canvas-view .flat .panel {
   border: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003246}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003247}}
 .canvas-view .flat-rounded .btn {
   background-color: #a9e7f4;
   border-radius: 7px;
@@ -418,11 +418,11 @@ ul {
   -webkit-border-radius: 7px;
   border: 1px solid #a6d6f4;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003250}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003251}}
 .canvas-view .flat-rounded .btn:active, .canvas-view .flat-rounded .btn:hover {
   background-color: #a6d6f4;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003254}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003255}}
 .canvas-view .flat-rounded .input {
   border-radius: 7px;
   -moz-border-radius: 7px;
@@ -430,14 +430,14 @@ ul {
   border: 1px solid #ccc;
   color: #ccc;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003259}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003260}}
 .canvas-view .flat-rounded .input:hover {
   -webkit-box-shadow: 0 0 9px rgba(140, 213, 244, 0.69);
   -moz-box-shadow: 0 0 9px rgba(140, 213, 244, 0.69);
   box-shadow: 0 0 9px rgba(140, 213, 244, 0.69);
   border: 1px solid #58bff4;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003264}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003265}}
 .canvas-view .flat-rounded .panel {
   border: 1px solid #dce8ea;
   border-radius: 7px;
@@ -445,7 +445,7 @@ ul {
   -webkit-border-radius: 7px;
   background-color: #eaf4f4;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003271}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003272}}
 .canvas-view .bubbly .btn {
   background-color: #529ff4;
   border-radius: 20px;
@@ -456,14 +456,14 @@ ul {
   -moz-box-shadow: inset 0 0 15px rgba(14, 29, 46, 0.5);
   box-shadow: inset 0 0 15px rgba(14, 29, 46, 0.5);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003276}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003277}}
 .canvas-view .bubbly .btn:active, .canvas-view .bubbly .btn:hover {
   background-color: #3f80f4;
   -webkit-box-shadow: inset 1px 1px 15px rgba(23, 43, 71, 0.4);
   -moz-box-shadow: inset 1px 1px 15px rgba(23, 43, 71, 0.4);
   box-shadow: inset 1px 1px 15px rgba(23, 43, 71, 0.4);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003281}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003282}}
 .canvas-view .bubbly .input {
   border-radius: 20px;
   -moz-border-radius: 20px;
@@ -474,14 +474,14 @@ ul {
   -moz-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.075);
   box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.075);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003287}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003288}}
 .canvas-view .bubbly .input:hover {
   -webkit-box-shadow: 0 0 9px rgba(140, 213, 244, 0.69);
   -moz-box-shadow: 0 0 9px rgba(140, 213, 244, 0.69);
   box-shadow: 0 0 9px rgba(140, 213, 244, 0.69);
   border: 1px solid #58bff4;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003292}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003293}}
 .canvas-view .bubbly .panel {
   border-radius: 8px;
   -moz-border-radius: 8px;
@@ -490,13 +490,13 @@ ul {
   background-color: #fafafa;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003299}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003300}}
 .ui-selectable-helper {
   background-color: #cc0000;
   opacity: 0.1;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003304}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003305}}
 .fullscreen-toggle {
   position: absolute;
   top: 0px;
@@ -653,7 +653,6 @@ ul {
   float: right;
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_editor\.scss}line{font-family:\00003151}}
 .editor .workspace .canvas-workspace > .ember-view {

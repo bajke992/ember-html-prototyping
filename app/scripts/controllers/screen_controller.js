@@ -133,14 +133,60 @@ Proto.ScreenController = Ember.ObjectController.extend({
 
             var fullscreen = !this.get('fullscreen');
 
+            var canvas = $('#document');
+            var workspace = $('#workspace');
+
             if (fullscreen) {
                 $('#header').hide();
                 $('#sidebar').hide();
                 $('#footer').hide();
+                $('#toolbar').hide();
+
+                var height = canvas.height();
+                var width = canvas.width();
+                console.log(height, width);
+
+                canvas.css({
+                    height: height,
+                    width: width,
+                    position: 'absolute',
+                    margin: 'auto',
+                    top: '0px',
+                    right: '0px',
+                    bottom: '0px',
+                    left: '0px',
+                    backgroundImage: 'none'
+                });
+
+                workspace.css({
+                    width: '100%',
+                    height: '100%'
+                });
+
             } else {
+
                 $('#header').show();
                 $('#sidebar').show();
                 $('#footer').show();
+                $('#toolbar').show();
+
+                canvas.css({
+                    height: '99.5%',
+                    width: 'auto',
+                    position: 'relative',
+                    margin: 'auto',
+                    top: 'auto',
+                    right: 'auto',
+                    bottom: 'auto',
+                    left: 'auto',
+                    backgroundImage: 'url("../images/gird-bg.png")'
+                });
+
+
+                workspace.css({
+                    width: '80%',
+                    height: 'calc(100% - 58px)'
+                });
             }
 
             this.set('fullscreen', fullscreen);
