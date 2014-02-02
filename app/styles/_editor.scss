@@ -1,18 +1,89 @@
 $editor-background: rgb(247, 247, 247);
+$header-color: rgba(225, 82, 59, 0.85);
+$sub-label-color: rgb(210, 105, 97);
+$sub-label-hover: #bd4b45;
+$font: "Myriad Pro", Calibri, Helvetica, Arial, sans-serif;
 
+/*-- Editor body --*/
 .editor {
+  font-family: $font;
   background-color: $editor-background;
   border: 1px solid #ddd;
   height: 100%;
+  overflow: hidden;
+  @include user-select(none);
 
+/*-- Editor heading styles --*/
   header {
-    background-color: rgba(225, 86, 63, 0.85);
+    background-color: $header-color;
     color: white;
     border-bottom: 1px solid #ddd;
-    padding: 10px;
+    padding: 0 10px;
     height: 10%;
 
-    a{
+/*-- Main editor heading --*/
+    &.main {
+      height: 48px;
+      line-height: 48px;
+//      min-height:50px;
+      padding: 0;
+
+      h1 {
+        display: inline-block;
+        margin: 0;
+        height: 100%;
+        vertical-align: middle;
+        border-right: 1px solid #ddd;
+        padding: 0 15px;
+      }
+
+      .project-controls {
+        margin-left: 20px;
+        padding-right: 20px;
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        border-right: 1px solid #ddd;
+
+        .icons {
+          font-size: 2em;
+          padding: 10px;
+
+          &:hover{
+            cursor: pointer;
+            color: #ccc;
+          }
+        }
+
+      }
+    }
+
+    &.label-title {
+      height: 40px;
+      line-height: 40px;
+      font-weight: bold;
+      font-size: 15px;
+      border-bottom: none;
+
+      .add-screen {
+        float: right;
+        font-size: 22px;
+        line-height: 40px;
+        cursor: pointer;
+      }
+    }
+
+    &.sub-label {
+      background-color: $sub-label-color;
+      padding: 5px;
+
+      &:hover {
+        background-color: $sub-label-hover;
+        cursor: pointer;
+      }
+    }
+
+    a {
       text-decoration: none;
       color: #ccc;
     }
@@ -22,27 +93,34 @@ $editor-background: rgb(247, 247, 247);
     float: left;
     width: 20%;
     border-right: 1px solid #ddd;
-    height: 90%;
-
-    aside{
+    height: calc(100% - 58px);
+//    min-height: 750px;
+    aside {
       height: 50%;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
     }
   }
 
+
+
   .workspace {
     width: 80%;
-    height: 90%;
+    height: calc(100% - 58px);
     float: left;
-    position: relative;
 
     footer {
+      height: 7%;
       width: 100%;
-      position: absolute;
       bottom: 0;
       text-align: right;
       background-color: #ddd;
 
-      a{
+      button {
         display: inline-block;
         background-color: rgb(238, 238, 238);
         height: 40px;
@@ -51,11 +129,65 @@ $editor-background: rgb(247, 247, 247);
         color: #696969;
         text-decoration: none;
         border-radius: 0 0 5px 5px;
+        border: 0;
+
+        &:hover {
+          background-color: rgb(238, 228, 228);
+          cursor: pointer;
+        }
 
         &.active {
-         background-color: $editor-background;
+          background-color: $editor-background;
+        }
+      }
+    }
+
+    .canvas-workspace {
+      float: right;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+
+      &>.ember-view {
+        height: 93%;
+        width: 100%;
+
+        .canvas-view {
+          height: 100%;
+          .canvas {
+            height: 99.5%;
+          }
+        }
+
+        .code-container {
+          width: 100%;
+          height: 100%;
+          .CodeMirror {
+            height: 99.5%;
+            width: 100%;
+          }
         }
       }
     }
   }
 }
+
+.editor-button {
+  background-color: $editor-background;
+  border: 1px solid #ddd;
+  padding: 5px;
+
+  &:hover {
+    background-color: #eee4e4;
+    cursor: pointer;
+  }
+
+  &.style-selected {
+    background-color: #ddd;
+  }
+}
+
+.read-only {
+  background-color: #d3d3d3;
+}
+

@@ -1,3 +1,65 @@
 #protoapp {
   height: 100%;
 }
+
+.root-options {
+  width: 600px;
+  margin: 10px auto;
+  border: 1px solid #ddd;
+  padding: 10px;
+  .new-project {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    font-size: 22px;
+    width: 100%;
+    &:before {
+      margin-right: 10px;
+    }
+  }
+  .or {
+    display: block;
+    margin: 10px 0;
+    text-align: center;
+    font-size: 16px;
+  }
+  .project-list {
+    li {
+      border-bottom: 1px solid #ddd;
+      &:last-child {
+        border: none;
+      }
+      a {
+        text-decoration: none;
+        display: block;
+        padding: 5px 10px;
+        font-size: 14px;
+        color: #666;
+        &:hover {
+          background-color: #eee;
+        }
+      }
+    }
+  }
+}
+
+.open-project-modal-body {
+  position: absolute;
+  width: 624px;
+  max-height: 450px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  margin: auto;
+  padding: 10px;
+  .project-list{
+    height: 300px;
+    overflow: auto;
+  }
+  @include box-shadow(0 0 5px 1px #666);
+  .close-button {
+    float: right;
+  }
+}

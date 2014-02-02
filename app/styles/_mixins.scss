@@ -34,6 +34,13 @@
   -webkit-transition: $attr; /* Saf3.2+, Chrome */
 }
 
+@mixin user-select($attr) {
+  -webkit-user-select: $attr;
+  -moz-user-select: $attr;
+  -ms-user-select: $attr;
+  user-select: $attr;
+}
+
 *, *:before, *:after {
   @include box-sizing(border-box);
 }
@@ -63,4 +70,15 @@
   &:after {
     clear: both;
   }
+}
+
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px solid;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
 }

@@ -1,37 +1,33 @@
-<div class="editor clearfix">
+<section class="sidebar" id="sidebar">
 
-    <header>
-        <h1>Proto
-            {{#link-to 'editor.design'}}Design{{/link-to}}
-            {{#link-to 'editor.code'}}Code{{/link-to}}
-        </h1>
-    </header>
+    <aside>
+        <header class="label-title">Element Inspector</header>
+        {{ property-inspector
+        elemid=elementId
+        width=width
+        height=height
+        x_pos=x_pos
+        y_pos=y_pos
+        }}
+    </aside>
 
-    <section class="sidebar">
-        <aside>
-            {{ project-tree }}
-        </aside>
-        <aside>
-            {{ property-inspector }}
-        </aside>
-    </section>
+    <aside>
+        <header class="label-title">Project Tree <span class="add-screen fa fa-plus-square-o" {{action addScreen}}></span></header>
 
-    <div class="workspace">
+        {{ project-tree screens=model.screens }}
 
-        <div class="canvas-workspace">
-            {{outlet}}
-        </div>
+    </aside>
 
+    {{screen-modal edit=edit screenTitle=screenTitle}}
 
-        <footer>
-            {{#link-to 'editor.design'}}Design View{{/link-to}}
-            {{#link-to 'editor.code'}}Code View{{/link-to}}
-        </footer>
+</section>
+<!-- # .sidebar -->
+
+<div class="workspace">
+
+    <div class="canvas-workspace">
+        {{outlet}}
     </div>
 
-
-
-
-
 </div>
-
+<!-- # .workspace -->

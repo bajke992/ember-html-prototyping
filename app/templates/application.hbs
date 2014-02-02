@@ -1,7 +1,24 @@
-<section id="protoapp">
-    {{outlet}}
-</section>
+<div class="editor clearfix">
 
-<!--<footer id="info">-->
-    <!--<p>© 2014 Proto All rights reserved </p>-->
-<!--</footer>-->
+    <header class="main" id="header">
+        <h1>Proto
+            {{#link-to 'index'}}Design{{/link-to}}
+        </h1>
+
+        <div class="project-controls">
+            <span class="fa fa-file-o icons" title="New"></span>
+            <span class="fa fa-folder-open-o icons" title="Open" {{ action openOpenProject }}></span>
+            <span class="fa fa-save icons" title="Save" {{action saveProject}}></span>
+            <span class="fa fa-external-link-square icons" title="Export"></span>
+            <span class="fa fa-play icons" title="Run"></span>
+        </div>
+    </header>
+
+    {{ open-modal open=open projects=projects }}
+
+    <!-- # .main -->
+
+    {{outlet}}
+
+</div>
+

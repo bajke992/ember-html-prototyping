@@ -1,21 +1,91 @@
 .editor aside>div {
-  height: 100%;
+  height: 92%;
   overflow: auto;
+
 }
 
 .property-inspector {
-  position: relative;
 
-  .property-head{
-    width: 20%;
-    border-right: 1px solid #ddd;
-    position: fixed;
-    font-weight: bold;
-    background-color: $editor-background;
+  header.inspector-tabs {
+    padding: 0;
+    height: 28px;
+    line-height: 28px;
+    .inspector-tab {
+      border-radius: 5px 5px 0 0;
+      padding: 4px 9px;
+      display: inline-block;
+      height: 100%;
+      background-color: $sub-label-hover;
+      &:hover {
+        background-color: rgb(184, 92, 86);
+        cursor: pointer;
+      }
+      &.active{
+        background-color: $sub-label-color;
+      }
+    }
   }
 
-  .property-body{
-    padding-top: 20px;
 
+  .options-list {
+    margin: 0;
+    padding: 0;
+
+    .style-button, button {
+      background-color: $editor-background;
+      border: 1px solid #ddd;
+      padding: 5px;
+
+      &:hover {
+        background-color: #eee4e4;
+        cursor: pointer;
+      }
+
+      &.style-selected {
+        background-color: #ddd;
+      }
+    }
+
+    li {
+      padding: 2px 15px 2px 2px;
+      list-style: none;
+      background-color: #eee;
+      text-align: right;
+
+      &.toggle{
+        border-top: 1px solid #ddd;
+      }
+
+      label{
+        margin-right: 5px;
+      }
+      input{
+        border: 1px solid #ddd;
+        padding-left: 3px;
+        width: 55%;
+      }
+      select{
+        border: 1px solid #ddd;
+        width: 55%;
+      }
+
+      .inner-toggle {
+        .font, .background {
+          padding-right: 54%
+        }
+        &:hover{
+          font-weight: bold;
+          cursor: pointer;
+        }
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        li {
+          padding-right: 0;
+        }
+      }
+    }
   }
 }

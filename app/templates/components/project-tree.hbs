@@ -1,3 +1,22 @@
 <div class="project-tree">
-    This is the project tree
+
+    <ul class="screens-list">
+        {{#each screens}}
+            <li>
+                {{#link-to 'screen' this}}{{name}} <span class="edit-screen fa fa-pencil" {{action editScreen id name bubbles=false}}></span> {{/link-to}}
+
+                <ul class="elements-list">
+                    {{#each element in elements}}
+                        <li><div {{bind-attr class=":fa element.type"}} {{ action focusElement element }}>{{ element.text }}</div></li>
+                    {{else}}
+                        <li><p class="info">There are no elements added yet</p></li>
+                    {{/each}}
+                </ul>
+
+            </li>
+        {{else}}
+            <li><p class="info">There are no screens added yet</p></li>
+        {{/each}}
+    </ul>
+
 </div>

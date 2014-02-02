@@ -1,8 +1,8 @@
 .canvas-view {
+  position: relative;
   .canvas {
-    margin: 10px 10px;
     background-color: #eee;
-    min-height: 400px;
+//    min-height: 600px;
     background-image: url('../images/gird-bg.png?test=123');
     position: relative;
     z-index: 1;
@@ -12,22 +12,75 @@
       border: 1px solid #666;
     }
     .canvas-element {
-      overflow: hidden;
+      //overflow: hidden;
       .inner {
-        span {
-          width: 90%;
+        width: 90%;
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-indent: 5px;
+      }
+      .delete {
+        display: none;
+        position: absolute;
+        top: -14px;
+        right: -14px;
+        font-size: 14px;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        border: 1px solid #666;
+        background-color: #fff;
+        cursor: pointer;
+        z-index: 2;
+        text-align: center;
+        text-indent: 0;
+        margin: 5px;
+        @include border-radius(10px);
+      }
+      &:hover {
+        .delete {
           display: block;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
         }
       }
-      &.over {
-        border: 1px solid #666;
+      &.ui-draggable-dragging {
+        &:hover {
+          .delete {
+            display: none;
+          }
+        }
+      }
+      &.ui-selected {
+        &:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(204, 0, 0, 0.1);
+          display: block;
+          z-index: 1;
+        }
       }
       &.panel {
         $height: 99px;
         height: $height;
+        .inner {
+          display: none;
+        }
+      }
+      &.text {
+        min-width: 50px;
+        .inner {
+          width: auto;
+        }
+      }
+      &.input{
+        .inner{
+          padding-left: 10px;
+        }
       }
     }
     /* ---- guide lines for canvas elements (when dragged across the canvas) ---- */
@@ -56,10 +109,10 @@
 
   /* ---- START canvas elements (from toolbar and canvas) ---- */
   .btn {
-    $height: 38px;
-    $max-height: 38px;
-    $width: 99px;
-    $max-width: 299px;
+    $height: 40px;
+    $max-height: 40px;
+    $width: 100px;
+    $max-width: 300px;
     border: 1px solid #999;
     background-color: #eee;
     display: inline-block;
@@ -76,10 +129,10 @@
   }
 
   .input {
-    $height: 38px;
-    $max-height: 38px;
-    $width: 99px;
-    $max-width: 299px;
+    $height: 40px;
+    $max-height: 40px;
+    $width: 100px;
+    $max-width: 300px;
     border: 1px solid #999;
     background-color: #fff;
     display: inline-block;
@@ -93,25 +146,33 @@
     text-align: left;
     vertical-align: top;
     text-indent: 5px;
+    &.singleline{
+      min-height: 40px;
+      max-height: 40px;
+      height: 40px;
+    }
+    &.multiline{
+      min-height: 80px;
+      max-height: none;
+      height: 80px;
+    }
   }
 
   .text {
-    $width: 59px;
-    $height: 38px;
-    $max-height: 38px;
+    //$width: 60px;
+    $height: 40px;
+    $max-height: 40px;
     display: inline-block;
     z-index: 2;
     cursor: move;
-    width: $width;
+    //width: $width;
     height: $height;
     line-height: $height;
   }
 
   .panel {
-    $height: 38px;
-    $max-height: 299px;
-    $width: 99px;
-    $max-width: 299px;
+    $height: 40px;
+    $width: 100px;
     border: 1px solid #999;
     background-color: #f3f3f3;
     display: inline-block;
@@ -120,34 +181,135 @@
     height: $height;
     line-height: $height;
     width: $width;
-    max-width: $max-width;
-    max-height: $max-height;
     text-align: center;
     vertical-align: top;
   }
   /* ---- END canvas elements ---- */
 
   .toolbar {
-    margin: 20px 10px 10px 10px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    &>div {
-      margin-right: 10px;
-      &:last-child {
-        margin: 0;
+    position: absolute;
+    top: -2px;
+    left: 470px;
+    height: auto;
+
+    .themes{
+      display:inline-block;
+      vertical-align: text-top;
+    }
+
+
+    .toolbar-element {
+      padding:10px;
+      color: white;
+      max-height: 48px;
+      vertical-align: middle;
+
+      &.btn, &.input, &.text, &.panel{
+        width: auto;
+        height: auto;
+        border: none;
+        background-color: transparent;
+
+        &:hover{
+          cursor: pointer;
+          color: #ccc;
+        }
       }
-      &.text {
-        &:before {
-          content: '<';
-          margin-right: 5px;
-        }
-        &:after {
-          content: '>';
-          margin-left: 5px;
-        }
+
+      &.ui-draggable-dragging {
+        color: rgba(225, 82, 59, 0.85);
       }
     }
   }
+  .flat {
+    .btn{
+      background-color: #90daf4;
+      @include border-radius(0);
+      border: none;
+        &:active, &:hover{
+          background-color: #70b2f4;
+        }
+    }
+    .input{
+      border: 1px solid #ccc;
+      color: #ccc;
+      @include box-shadow(inset 1px 1px 5px rgba(0,0,0,.075));
+      &:hover{
+        border: 1px solid #58bff4;
+      }
+    }
+    .panel{
+      border: none;
+    }
+  }
+  .flat-rounded {
+    .btn{
+      background-color: #a9e7f4;
+      @include border-radius(7px);
+      border: 1px solid #a6d6f4;
+      &:active, &:hover{
+        background-color: #a6d6f4;
+      }
+    }
+    .input{
+      @include border-radius(7px);
+      border: 1px solid #ccc;
+      color: #ccc;
 
+      &:hover{
+        @include box-shadow(0 0 9px rgba(140, 213, 244, 0.69));
+        border: 1px solid #58bff4;
+      }
+    }
+    .panel{
+      border:1px solid #dce8ea;
+      @include border-radius(7px);
+      background-color: #eaf4f4;
+    }
+  }
+  .bubbly{
+    .btn{
+      background-color: #529ff4;
+      @include border-radius(20px);
+      color: white;
+      @include box-shadow(inset 0 0 15px rgba(14, 29, 46, 0.5));
+      &:active, &:hover{
+        background-color: #3f80f4;
+        @include box-shadow(inset 1px 1px 15px rgba(23, 43, 71, 0.40));
+      }
+    }
+    .input{
+      @include border-radius(20px);
+      border: 1px solid #ccc;
+      color: #ccc;
+      @include box-shadow(inset 1px 1px 5px rgba(0,0,0,.075));
 
+      &:hover{
+        @include box-shadow(0 0 9px rgba(140, 213, 244, 0.69));
+        border: 1px solid #58bff4;
+      }
+    }
+    .panel{
+      @include border-radius(8px);
+      border: 1px solid #ccc;
+      background-color: #fafafa;
+    }
+  }
 }
+.ui-selectable-helper {
+  background-color: #cc0000;
+  opacity: 0.1;
+}
+
+.fullscreen-toggle {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  color: #999;
+  font-size: 25px;
+  z-index: 1000;
+  cursor: pointer;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+

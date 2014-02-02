@@ -1,0 +1,8 @@
+{{view Proto.CodeContainer id="code-container" isVisibleBinding="editCode" contentBinding="this"}}
+
+{{view Proto.Canvas isVisibleBinding="editDesign" contentBinding="this"}}
+
+<footer id="footer">
+    <button {{bind-attr class="editDesign:active"}}{{action "setDesignView" on="click"}}>Design View</button>
+    <button {{bind-attr class="editCode:active"}}{{action "setCodeView" on="click"}}>Code View</button>
+</footer>

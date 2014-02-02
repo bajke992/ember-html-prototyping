@@ -6,6 +6,8 @@ var mountFolder = function (connect, dir) {
     return connect.static(require('path').resolve(dir));
 };
 
+//var path = require('path');
+
 // # Globbing
 // for performance reasons we're only matching one level down:
 // 'test/spec/{,*/}*.js'
@@ -28,7 +30,7 @@ module.exports = function (grunt) {
         yeoman: yeomanConfig,
         watch: {
             emberTemplates: {
-                files: '<%= yeoman.app %>/templates/**/*.hbs',
+                files: '<%= yeoman.app %>/templates/{,*/}/*.hbs',
                 tasks: ['emberTemplates']
             },
             compass: {
@@ -36,25 +38,27 @@ module.exports = function (grunt) {
                 tasks: ['compass:server']
             },
             neuter: {
-                files: ['<%= yeoman.app %>/scripts/**/*.js'],
+                files: ['<%= yeoman.app %>/scripts/{,*/}/*.js'],
                 tasks: ['neuter']
             },
             replace: {
                 files: ['<%= yeoman.app %>/index.html'],
                 tasks: ['replace:app']
-            },
-            livereload: {
-                options: {
-                    livereload: LIVERELOAD_PORT
-                },
-                files: [
-                    '.tmp/scripts/*.js',
-                    '<%= yeoman.app %>/*.html',
-                    '{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
-                    '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
-                ]
             }
+//            livereload: {
+//                options: {
+//                    livereload: LIVERELOAD_PORT
+//                },
+//                files: [
+//                    '.tmp/scripts/*.js',
+//                    '<%= yeoman.app %>/*.html',
+//                    '{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
+//                    '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+//                ]
+//            }
+
         },
+
         connect: {
             options: {
                 port: 9000,
@@ -92,9 +96,11 @@ module.exports = function (grunt) {
                 }
             }
         },
+
         open: {
             server: {
-                path: 'http://localhost:<%= connect.options.port %>'
+                //path: 'http://localhost:<%= express.options.port %>'
+                url: 'http://localhost:<%= connect.options.port %>'
             }
         },
         clean: {
@@ -133,7 +139,8 @@ module.exports = function (grunt) {
         compass: {
             options: {
                 sassDir: '<%= yeoman.app %>/styles',
-                cssDir: '.tmp/styles',
+                //cssDir: '.tmp/styles',
+                cssDir: '<%= yeoman.app %>/styles',
                 generatedImagesDir: '.tmp/images/generated',
                 imagesDir: '<%= yeoman.app %>/images',
                 javascriptsDir: '<%= yeoman.app %>/scripts',
@@ -305,7 +312,8 @@ module.exports = function (grunt) {
             },
             dist: {
                 files: {
-                    '.tmp/scripts/compiled-templates.js': '<%= yeoman.app %>/templates/{,*/}*.hbs'
+                    //'.tmp/scripts/compiled-templates.js': '<%= yeoman.app %>/templates/{,*/}*.hbs'
+                    '<%= yeoman.app %>/assets/compiled-templates.js': '<%= yeoman.app %>/templates/{,*/}*.hbs'
                 }
             }
         },
@@ -317,7 +325,8 @@ module.exports = function (grunt) {
                     }
                 },
                 src: '<%= yeoman.app %>/scripts/application.js',
-                dest: '.tmp/scripts/combined-scripts.js'
+                //dest: '.tmp/scripts/combined-scripts.js'
+                dest: '<%= yeoman.app %>/assets/combined-scripts.js'
             }
         }
     });
@@ -332,8 +341,8 @@ module.exports = function (grunt) {
             'replace:app',
             'concurrent:server',
             'neuter:app',
-            'connect:livereload',
-            'open',
+            //'connect:livereload',
+            //'open',
             'watch'
         ]);
     });

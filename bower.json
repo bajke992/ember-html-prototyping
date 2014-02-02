@@ -3,9 +3,11 @@
   "version": "0.0.0",
   "dependencies": {
     "ember": "~1.2",
+    "jquery-ember":"jquery#2.0.3",
     "ember-data": "~1.0.0-beta.4",
     "jqueryui": "~1.10.3",
-    "ember-localstorage-adapter": "latest"
+    "ember-localstorage-adapter": "latest",
+    "font-awesome": "~4.0.3"
   },
   "devDependencies": {
     "ember-mocha-adapter": "0.1.2"
