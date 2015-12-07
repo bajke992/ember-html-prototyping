@@ -1,4 +1,4 @@
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/style\.scss}line{font-family:\000033}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/style\.scss}line{font-family:\000032}}
 html,
 body {
   margin: 0;
@@ -6,7 +6,7 @@ body {
   height: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/style\.scss}line{font-family:\0000310}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/style\.scss}line{font-family:\0000310}}
 body {
   font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
   line-height: 1.4em;
@@ -23,32 +23,32 @@ body {
   font-smoothing: antialiased;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/style\.scss}line{font-family:\0000327}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/style\.scss}line{font-family:\0000326}}
 button,
 input[type="checkbox"] {
   outline: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/style\.scss}line{font-family:\0000331}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/style\.scss}line{font-family:\0000331}}
 body > div {
   height: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/style\.scss}line{font-family:\0000335}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/style\.scss}line{font-family:\0000335}}
 ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_mixins\.scss}line{font-family:\0000344}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_mixins\.scss}line{font-family:\0000344}}
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_mixins\.scss}line{font-family:\0000348}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_mixins\.scss}line{font-family:\0000348}}
 .loading {
   background: url("../images/loader.gif");
   background-repeat: no-repeat;
@@ -61,22 +61,22 @@ ul {
   display: block;
   z-index: auto;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_mixins\.scss}line{font-family:\0000359}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_mixins\.scss}line{font-family:\0000359}}
 .loading.pale {
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_mixins\.scss}line{font-family:\0000366}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_mixins\.scss}line{font-family:\0000365}}
 .clearfix:before, .clearfix:after {
   content: " ";
   display: table;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_mixins\.scss}line{font-family:\0000370}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_mixins\.scss}line{font-family:\0000370}}
 .clearfix:after {
   clear: both;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_mixins\.scss}line{font-family:\0000375}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_mixins\.scss}line{font-family:\0000375}}
 .caret {
   display: inline-block;
   width: 0;
@@ -88,19 +88,19 @@ ul {
   border-left: 4px solid transparent;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_proto-app\.scss}line{font-family:\000031}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_proto-app\.scss}line{font-family:\000031}}
 #protoapp {
   height: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_proto-app\.scss}line{font-family:\000035}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_proto-app\.scss}line{font-family:\000035}}
 .root-options {
   width: 600px;
   margin: 10px auto;
   border: 1px solid #ddd;
   padding: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_proto-app\.scss}line{font-family:\0000310}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_proto-app\.scss}line{font-family:\0000310}}
 .root-options .new-project {
   display: block;
   text-decoration: none;
@@ -108,26 +108,26 @@ ul {
   font-size: 22px;
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_proto-app\.scss}line{font-family:\0000316}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_proto-app\.scss}line{font-family:\0000316}}
 .root-options .new-project:before {
   margin-right: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_proto-app\.scss}line{font-family:\0000320}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_proto-app\.scss}line{font-family:\0000320}}
 .root-options .or {
   display: block;
   margin: 10px 0;
   text-align: center;
   font-size: 16px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_proto-app\.scss}line{font-family:\0000327}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_proto-app\.scss}line{font-family:\0000327}}
 .root-options .project-list li {
   border-bottom: 1px solid #ddd;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_proto-app\.scss}line{font-family:\0000329}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_proto-app\.scss}line{font-family:\0000329}}
 .root-options .project-list li:last-child {
   border: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_proto-app\.scss}line{font-family:\0000332}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_proto-app\.scss}line{font-family:\0000332}}
 .root-options .project-list li a {
   text-decoration: none;
   display: block;
@@ -135,12 +135,12 @@ ul {
   font-size: 14px;
   color: #666;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_proto-app\.scss}line{font-family:\0000338}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_proto-app\.scss}line{font-family:\0000338}}
 .root-options .project-list li a:hover {
   background-color: #eee;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_proto-app\.scss}line{font-family:\0000346}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_proto-app\.scss}line{font-family:\0000346}}
 .open-project-modal-body {
   position: absolute;
   width: 624px;
@@ -152,27 +152,27 @@ ul {
   background-color: #fff;
   margin: auto;
   padding: 10px;
-  -webkit-box-shadow: 0 0 5px 1px #666666;
-  -moz-box-shadow: 0 0 5px 1px #666666;
-  box-shadow: 0 0 5px 1px #666666;
+  -webkit-box-shadow: 0 0 5px 1px #666;
+  -moz-box-shadow: 0 0 5px 1px #666;
+  box-shadow: 0 0 5px 1px #666;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_proto-app\.scss}line{font-family:\0000357}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_proto-app\.scss}line{font-family:\0000357}}
 .open-project-modal-body .project-list {
   height: 300px;
   overflow: auto;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_proto-app\.scss}line{font-family:\0000362}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_proto-app\.scss}line{font-family:\0000362}}
 .open-project-modal-body .close-button {
   float: right;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\000031}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\000031}}
 .canvas-view {
   position: relative;
   /* ---- START canvas elements (from toolbar and canvas) ---- */
   /* ---- END canvas elements ---- */
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\000033}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\000033}}
 .canvas-view .canvas {
   background-color: #eee;
   background-image: url("../images/gird-bg.png?test=123");
@@ -182,11 +182,11 @@ ul {
   border: 1px solid #bbb;
   /* ---- guide lines for canvas elements (when dragged across the canvas) ---- */
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\0000311}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\0000311}}
 .canvas-view .canvas.over {
   border: 1px solid #666;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\0000316}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\0000316}}
 .canvas-view .canvas .canvas-element .inner {
   width: 90%;
   display: block;
@@ -195,7 +195,7 @@ ul {
   text-overflow: ellipsis;
   text-indent: 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\0000324}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\0000324}}
 .canvas-view .canvas .canvas-element .delete {
   display: none;
   position: absolute;
@@ -216,15 +216,15 @@ ul {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\0000343}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\0000343}}
 .canvas-view .canvas .canvas-element:hover .delete {
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\0000349}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\0000349}}
 .canvas-view .canvas .canvas-element.ui-draggable-dragging:hover .delete {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\0000355}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\0000355}}
 .canvas-view .canvas .canvas-element.ui-selected:after {
   content: '';
   position: absolute;
@@ -236,27 +236,27 @@ ul {
   display: block;
   z-index: 1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\0000367}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\0000367}}
 .canvas-view .canvas .canvas-element.panel {
   height: 99px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\0000370}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\0000370}}
 .canvas-view .canvas .canvas-element.panel .inner {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\0000374}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\0000374}}
 .canvas-view .canvas .canvas-element.text {
   min-width: 50px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\0000376}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\0000376}}
 .canvas-view .canvas .canvas-element.text .inner {
   width: auto;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\0000381}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\0000381}}
 .canvas-view .canvas .canvas-element.input .inner {
   padding-left: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\0000387}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\0000387}}
 .canvas-view .canvas .guide {
   position: absolute;
   left: 0;
@@ -264,7 +264,7 @@ ul {
   opacity: 0.5;
   z-index: 3;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\0000393}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\0000393}}
 .canvas-view .canvas .guide.guide-v {
   height: 100%;
   width: 0px;
@@ -272,7 +272,7 @@ ul {
   left: 10px;
   border-right: 1px dashed #cc0000;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003100}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\00003100}}
 .canvas-view .canvas .guide.guide-h {
   width: 100%;
   height: 0px;
@@ -280,7 +280,7 @@ ul {
   left: 0px;
   border-top: 1px dashed #cc0000;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003111}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\00003111}}
 .canvas-view .btn {
   border: 1px solid #999;
   background-color: #eee;
@@ -298,7 +298,7 @@ ul {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003131}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\00003131}}
 .canvas-view .input {
   border: 1px solid #999;
   background-color: #fff;
@@ -314,19 +314,19 @@ ul {
   vertical-align: top;
   text-indent: 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003149}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\00003149}}
 .canvas-view .input.singleline {
   min-height: 40px;
   max-height: 40px;
   height: 40px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003154}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\00003154}}
 .canvas-view .input.multiline {
   min-height: 80px;
   max-height: none;
   height: 80px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003161}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\00003161}}
 .canvas-view .text {
   display: inline-block;
   z-index: 2;
@@ -334,7 +334,7 @@ ul {
   height: 40px;
   line-height: 40px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003173}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\00003173}}
 .canvas-view .panel {
   border: 1px solid #999;
   background-color: #f3f3f3;
@@ -347,42 +347,42 @@ ul {
   text-align: center;
   vertical-align: top;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003189}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\00003189}}
 .canvas-view .toolbar {
   position: absolute;
   top: -52px;
   left: 173px;
   height: auto;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003196}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\00003196}}
 .canvas-view .toolbar .themes {
   display: inline-block;
   vertical-align: text-top;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003202}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\00003202}}
 .canvas-view .toolbar .toolbar-element {
   padding: 10px;
   color: white;
   max-height: 48px;
   vertical-align: middle;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003208}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\00003208}}
 .canvas-view .toolbar .toolbar-element.btn, .canvas-view .toolbar .toolbar-element.input, .canvas-view .toolbar .toolbar-element.text, .canvas-view .toolbar .toolbar-element.panel {
   width: auto;
   height: auto;
   border: none;
   background-color: transparent;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003214}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\00003214}}
 .canvas-view .toolbar .toolbar-element.btn:hover, .canvas-view .toolbar .toolbar-element.input:hover, .canvas-view .toolbar .toolbar-element.text:hover, .canvas-view .toolbar .toolbar-element.panel:hover {
   cursor: pointer;
   color: #ccc;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003220}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\00003220}}
 .canvas-view .toolbar .toolbar-element.ui-draggable-dragging {
   color: rgba(225, 82, 59, 0.85);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003226}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\00003226}}
 .canvas-view .flat .btn {
   background-color: #90daf4;
   border-radius: 0;
@@ -390,11 +390,11 @@ ul {
   -webkit-border-radius: 0;
   border: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003230}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\00003230}}
 .canvas-view .flat .btn:active, .canvas-view .flat .btn:hover {
   background-color: #70b2f4;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003234}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\00003234}}
 .canvas-view .flat .input {
   border: 1px solid #ccc;
   color: #ccc;
@@ -402,15 +402,15 @@ ul {
   -moz-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.075);
   box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.075);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003238}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\00003238}}
 .canvas-view .flat .input:hover {
   border: 1px solid #58bff4;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003242}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\00003242}}
 .canvas-view .flat .panel {
   border: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003247}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\00003247}}
 .canvas-view .flat-rounded .btn {
   background-color: #a9e7f4;
   border-radius: 7px;
@@ -418,11 +418,11 @@ ul {
   -webkit-border-radius: 7px;
   border: 1px solid #a6d6f4;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003251}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\00003251}}
 .canvas-view .flat-rounded .btn:active, .canvas-view .flat-rounded .btn:hover {
   background-color: #a6d6f4;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003255}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\00003255}}
 .canvas-view .flat-rounded .input {
   border-radius: 7px;
   -moz-border-radius: 7px;
@@ -430,14 +430,14 @@ ul {
   border: 1px solid #ccc;
   color: #ccc;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003260}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\00003260}}
 .canvas-view .flat-rounded .input:hover {
   -webkit-box-shadow: 0 0 9px rgba(140, 213, 244, 0.69);
   -moz-box-shadow: 0 0 9px rgba(140, 213, 244, 0.69);
   box-shadow: 0 0 9px rgba(140, 213, 244, 0.69);
   border: 1px solid #58bff4;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003265}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\00003265}}
 .canvas-view .flat-rounded .panel {
   border: 1px solid #dce8ea;
   border-radius: 7px;
@@ -445,7 +445,7 @@ ul {
   -webkit-border-radius: 7px;
   background-color: #eaf4f4;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003272}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\00003272}}
 .canvas-view .bubbly .btn {
   background-color: #529ff4;
   border-radius: 20px;
@@ -456,14 +456,14 @@ ul {
   -moz-box-shadow: inset 0 0 15px rgba(14, 29, 46, 0.5);
   box-shadow: inset 0 0 15px rgba(14, 29, 46, 0.5);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003277}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\00003277}}
 .canvas-view .bubbly .btn:active, .canvas-view .bubbly .btn:hover {
   background-color: #3f80f4;
   -webkit-box-shadow: inset 1px 1px 15px rgba(23, 43, 71, 0.4);
   -moz-box-shadow: inset 1px 1px 15px rgba(23, 43, 71, 0.4);
   box-shadow: inset 1px 1px 15px rgba(23, 43, 71, 0.4);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003282}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\00003282}}
 .canvas-view .bubbly .input {
   border-radius: 20px;
   -moz-border-radius: 20px;
@@ -474,14 +474,14 @@ ul {
   -moz-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.075);
   box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.075);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003288}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\00003288}}
 .canvas-view .bubbly .input:hover {
   -webkit-box-shadow: 0 0 9px rgba(140, 213, 244, 0.69);
   -moz-box-shadow: 0 0 9px rgba(140, 213, 244, 0.69);
   box-shadow: 0 0 9px rgba(140, 213, 244, 0.69);
   border: 1px solid #58bff4;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003293}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\00003293}}
 .canvas-view .bubbly .panel {
   border-radius: 8px;
   -moz-border-radius: 8px;
@@ -490,13 +490,13 @@ ul {
   background-color: #fafafa;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003300}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\00003300}}
 .ui-selectable-helper {
   background-color: #cc0000;
   opacity: 0.1;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_canvas\.scss}line{font-family:\00003305}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_canvas\.scss}line{font-family:\00003305}}
 .fullscreen-toggle {
   position: absolute;
   top: 0px;
@@ -510,7 +510,7 @@ ul {
 }
 
 /*-- Editor body --*/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_editor\.scss}line{font-family:\000038}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_editor\.scss}line{font-family:\000038}}
 .editor {
   font-family: "Myriad Pro", Calibri, Helvetica, Arial, sans-serif;
   background-color: #f7f7f7;
@@ -523,7 +523,7 @@ ul {
   user-select: none;
   /*-- Editor heading styles --*/
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_editor\.scss}line{font-family:\0000317}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_editor\.scss}line{font-family:\0000317}}
 .editor header {
   background-color: rgba(225, 82, 59, 0.85);
   color: white;
@@ -532,13 +532,13 @@ ul {
   height: 10%;
   /*-- Main editor heading --*/
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_editor\.scss}line{font-family:\0000325}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_editor\.scss}line{font-family:\0000325}}
 .editor header.main {
   height: 48px;
   line-height: 48px;
   padding: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_editor\.scss}line{font-family:\0000331}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_editor\.scss}line{font-family:\0000331}}
 .editor header.main h1 {
   display: inline-block;
   margin: 0;
@@ -547,7 +547,7 @@ ul {
   border-right: 1px solid #ddd;
   padding: 0 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_editor\.scss}line{font-family:\0000340}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_editor\.scss}line{font-family:\0000340}}
 .editor header.main .project-controls {
   margin-left: 20px;
   padding-right: 20px;
@@ -556,17 +556,17 @@ ul {
   vertical-align: middle;
   border-right: 1px solid #ddd;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_editor\.scss}line{font-family:\0000348}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_editor\.scss}line{font-family:\0000348}}
 .editor header.main .project-controls .icons {
   font-size: 2em;
   padding: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_editor\.scss}line{font-family:\0000352}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_editor\.scss}line{font-family:\0000352}}
 .editor header.main .project-controls .icons:hover {
   cursor: pointer;
   color: #ccc;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_editor\.scss}line{font-family:\0000361}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_editor\.scss}line{font-family:\0000361}}
 .editor header.label-title {
   height: 40px;
   line-height: 40px;
@@ -574,52 +574,78 @@ ul {
   font-size: 15px;
   border-bottom: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_editor\.scss}line{font-family:\0000368}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_editor\.scss}line{font-family:\0000368}}
 .editor header.label-title .add-screen {
   float: right;
   font-size: 22px;
   line-height: 40px;
   cursor: pointer;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_editor\.scss}line{font-family:\0000376}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_editor\.scss}line{font-family:\0000376}}
 .editor header.sub-label {
   background-color: #d26961;
   padding: 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_editor\.scss}line{font-family:\0000380}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_editor\.scss}line{font-family:\0000380}}
 .editor header.sub-label:hover {
   background-color: #bd4b45;
   cursor: pointer;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_editor\.scss}line{font-family:\0000386}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_editor\.scss}line{font-family:\0000386}}
 .editor header a {
   text-decoration: none;
   color: #ccc;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_editor\.scss}line{font-family:\0000392}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_editor\.scss}line{font-family:\0000392}}
 .editor .sidebar {
   float: left;
   width: 20%;
   border-right: 1px solid #ddd;
   height: calc(100% - 58px);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_editor\.scss}line{font-family:\0000398}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_editor\.scss}line{font-family:\0000398}}
 .editor .sidebar aside {
   height: 50%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_editor\.scss}line{font-family:\00003102}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_editor\.scss}line{font-family:\00003102}}
 .editor .sidebar ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_editor\.scss}line{font-family:\00003111}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_editor\.scss}line{font-family:\00003108}}
+.editor .sidebar .canvasToggle {
+  background-color: rgba(225, 82, 59, 0.85);
+  padding: 10px 0px 0px 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_editor\.scss}line{font-family:\00003112}}
+.editor .sidebar .canvasToggle button {
+  display: inline-block;
+  background-color: #eeeeee;
+  height: 40px;
+  margin-bottom: 10px;
+  padding: 10px;
+  color: #696969;
+  text-decoration: none;
+  border-radius: 5px 5px 5px 5px;
+  border: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_editor\.scss}line{font-family:\00003123}}
+.editor .sidebar .canvasToggle button:hover {
+  background-color: #eee4e4;
+  cursor: pointer;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_editor\.scss}line{font-family:\00003128}}
+.editor .sidebar .canvasToggle button.active {
+  background-color: #f7f7f7;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_editor\.scss}line{font-family:\00003137}}
 .editor .workspace {
   width: 80%;
   height: calc(100% - 58px);
   float: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_editor\.scss}line{font-family:\00003116}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_editor\.scss}line{font-family:\00003142}}
 .editor .workspace footer {
   height: 7%;
   width: 100%;
@@ -627,7 +653,7 @@ ul {
   text-align: right;
   background-color: #ddd;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_editor\.scss}line{font-family:\00003123}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_editor\.scss}line{font-family:\00003149}}
 .editor .workspace footer button {
   display: inline-block;
   background-color: #eeeeee;
@@ -639,79 +665,79 @@ ul {
   border-radius: 0 0 5px 5px;
   border: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_editor\.scss}line{font-family:\00003134}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_editor\.scss}line{font-family:\00003160}}
 .editor .workspace footer button:hover {
   background-color: #eee4e4;
   cursor: pointer;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_editor\.scss}line{font-family:\00003139}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_editor\.scss}line{font-family:\00003165}}
 .editor .workspace footer button.active {
   background-color: #f7f7f7;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_editor\.scss}line{font-family:\00003145}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_editor\.scss}line{font-family:\00003171}}
 .editor .workspace .canvas-workspace {
   float: right;
   width: 100%;
   height: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_editor\.scss}line{font-family:\00003151}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_editor\.scss}line{font-family:\00003177}}
 .editor .workspace .canvas-workspace > .ember-view {
-  height: 100%;
+  height: 93%;
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_editor\.scss}line{font-family:\00003155}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_editor\.scss}line{font-family:\00003181}}
 .editor .workspace .canvas-workspace > .ember-view .canvas-view {
   height: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_editor\.scss}line{font-family:\00003157}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_editor\.scss}line{font-family:\00003183}}
 .editor .workspace .canvas-workspace > .ember-view .canvas-view .canvas {
   height: 99.5%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_editor\.scss}line{font-family:\00003162}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_editor\.scss}line{font-family:\00003188}}
 .editor .workspace .canvas-workspace > .ember-view .code-container {
   width: 100%;
   height: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_editor\.scss}line{font-family:\00003165}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_editor\.scss}line{font-family:\00003191}}
 .editor .workspace .canvas-workspace > .ember-view .code-container .CodeMirror {
   height: 99.5%;
   width: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_editor\.scss}line{font-family:\00003175}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_editor\.scss}line{font-family:\00003201}}
 .editor-button {
   background-color: #f7f7f7;
   border: 1px solid #ddd;
   padding: 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_editor\.scss}line{font-family:\00003180}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_editor\.scss}line{font-family:\00003206}}
 .editor-button:hover {
   background-color: #eee4e4;
   cursor: pointer;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_editor\.scss}line{font-family:\00003185}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_editor\.scss}line{font-family:\00003211}}
 .editor-button.style-selected {
   background-color: #ddd;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_editor\.scss}line{font-family:\00003190}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_editor\.scss}line{font-family:\00003216}}
 .read-only {
   background-color: #d3d3d3;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_property-inspector\.scss}line{font-family:\000031}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_property-inspector\.scss}line{font-family:\000031}}
 .editor aside > div {
   height: 92%;
   overflow: auto;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_property-inspector\.scss}line{font-family:\000039}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_property-inspector\.scss}line{font-family:\000039}}
 .property-inspector header.inspector-tabs {
   padding: 0;
   height: 28px;
   line-height: 28px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_property-inspector\.scss}line{font-family:\0000313}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_property-inspector\.scss}line{font-family:\0000313}}
 .property-inspector header.inspector-tabs .inspector-tab {
   border-radius: 5px 5px 0 0;
   padding: 4px 9px;
@@ -719,81 +745,81 @@ ul {
   height: 100%;
   background-color: #bd4b45;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_property-inspector\.scss}line{font-family:\0000319}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_property-inspector\.scss}line{font-family:\0000319}}
 .property-inspector header.inspector-tabs .inspector-tab:hover {
   background-color: #b85c56;
   cursor: pointer;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_property-inspector\.scss}line{font-family:\0000323}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_property-inspector\.scss}line{font-family:\0000323}}
 .property-inspector header.inspector-tabs .inspector-tab.active {
   background-color: #d26961;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_property-inspector\.scss}line{font-family:\0000330}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_property-inspector\.scss}line{font-family:\0000330}}
 .property-inspector .options-list {
   margin: 0;
   padding: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_property-inspector\.scss}line{font-family:\0000334}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_property-inspector\.scss}line{font-family:\0000334}}
 .property-inspector .options-list .style-button, .property-inspector .options-list button {
   background-color: #f7f7f7;
   border: 1px solid #ddd;
   padding: 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_property-inspector\.scss}line{font-family:\0000339}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_property-inspector\.scss}line{font-family:\0000339}}
 .property-inspector .options-list .style-button:hover, .property-inspector .options-list button:hover {
   background-color: #eee4e4;
   cursor: pointer;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_property-inspector\.scss}line{font-family:\0000344}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_property-inspector\.scss}line{font-family:\0000344}}
 .property-inspector .options-list .style-button.style-selected, .property-inspector .options-list button.style-selected {
   background-color: #ddd;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_property-inspector\.scss}line{font-family:\0000349}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_property-inspector\.scss}line{font-family:\0000349}}
 .property-inspector .options-list li {
   padding: 2px 15px 2px 2px;
   list-style: none;
   background-color: #eee;
   text-align: right;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_property-inspector\.scss}line{font-family:\0000355}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_property-inspector\.scss}line{font-family:\0000355}}
 .property-inspector .options-list li.toggle {
   border-top: 1px solid #ddd;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_property-inspector\.scss}line{font-family:\0000359}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_property-inspector\.scss}line{font-family:\0000359}}
 .property-inspector .options-list li label {
   margin-right: 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_property-inspector\.scss}line{font-family:\0000362}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_property-inspector\.scss}line{font-family:\0000362}}
 .property-inspector .options-list li input {
   border: 1px solid #ddd;
   padding-left: 3px;
   width: 55%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_property-inspector\.scss}line{font-family:\0000367}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_property-inspector\.scss}line{font-family:\0000367}}
 .property-inspector .options-list li select {
   border: 1px solid #ddd;
   width: 55%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_property-inspector\.scss}line{font-family:\0000373}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_property-inspector\.scss}line{font-family:\0000373}}
 .property-inspector .options-list li .inner-toggle .font, .property-inspector .options-list li .inner-toggle .background {
   padding-right: 54%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_property-inspector\.scss}line{font-family:\0000376}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_property-inspector\.scss}line{font-family:\0000376}}
 .property-inspector .options-list li .inner-toggle:hover {
   font-weight: bold;
   cursor: pointer;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_property-inspector\.scss}line{font-family:\0000382}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_property-inspector\.scss}line{font-family:\0000382}}
 .property-inspector .options-list li ul {
   margin: 0;
   padding: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_property-inspector\.scss}line{font-family:\0000385}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_property-inspector\.scss}line{font-family:\0000385}}
 .property-inspector .options-list li ul li {
   padding-right: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_project-tree\.scss}line{font-family:\000035}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_project-tree\.scss}line{font-family:\000035}}
 .project-tree .screens-list > li a {
   text-decoration: none;
   padding: 5px 10px;
@@ -802,61 +828,61 @@ ul {
   border-bottom: 1px solid #ddd;
   background-color: #d26961;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_project-tree\.scss}line{font-family:\0000313}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_project-tree\.scss}line{font-family:\0000313}}
 .project-tree .screens-list > li a.active + .elements-list {
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_project-tree\.scss}line{font-family:\0000318}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_project-tree\.scss}line{font-family:\0000318}}
 .project-tree .screens-list > li a:hover .edit-screen {
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_project-tree\.scss}line{font-family:\0000322}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_project-tree\.scss}line{font-family:\0000322}}
 .project-tree .screens-list > li a .edit-screen {
   display: none;
   float: right;
   padding: 4px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_project-tree\.scss}line{font-family:\0000328}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_project-tree\.scss}line{font-family:\0000328}}
 .project-tree .screens-list > li .elements-list {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_project-tree\.scss}line{font-family:\0000330}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_project-tree\.scss}line{font-family:\0000330}}
 .project-tree .screens-list > li .elements-list > li {
   border-bottom: 1px solid #ddd;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_project-tree\.scss}line{font-family:\0000332}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_project-tree\.scss}line{font-family:\0000332}}
 .project-tree .screens-list > li .elements-list > li > div {
   cursor: pointer;
   padding: 5px 10px;
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_project-tree\.scss}line{font-family:\0000337}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_project-tree\.scss}line{font-family:\0000337}}
 .project-tree .screens-list > li .elements-list > li > div.fa:before {
   margin-right: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_project-tree\.scss}line{font-family:\0000341}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_project-tree\.scss}line{font-family:\0000341}}
 .project-tree .screens-list > li .elements-list > li > div.fa.btn:before {
   content: "\f096";
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_project-tree\.scss}line{font-family:\0000346}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_project-tree\.scss}line{font-family:\0000346}}
 .project-tree .screens-list > li .elements-list > li > div.fa.text:before {
   content: "\f031";
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_project-tree\.scss}line{font-family:\0000351}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_project-tree\.scss}line{font-family:\0000351}}
 .project-tree .screens-list > li .elements-list > li > div.fa.input:before {
   content: "\f035";
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_project-tree\.scss}line{font-family:\0000356}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_project-tree\.scss}line{font-family:\0000356}}
 .project-tree .screens-list > li .elements-list > li > div.fa.panel:before {
   content: "\f0db";
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_project-tree\.scss}line{font-family:\0000363}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_project-tree\.scss}line{font-family:\0000363}}
 .project-tree .screens-list > li .elements-list .info {
   margin: 0;
   padding: 5px 10px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_project-tree\.scss}line{font-family:\0000372}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_project-tree\.scss}line{font-family:\0000372}}
 .button {
   border-radius: 5px;
   -moz-border-radius: 5px;
@@ -869,21 +895,21 @@ ul {
   color: #fff;
   font-size: 14px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_project-tree\.scss}line{font-family:\0000381}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_project-tree\.scss}line{font-family:\0000381}}
 .button:hover {
   background-color: #b85c56;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_project-tree\.scss}line{font-family:\0000385}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_project-tree\.scss}line{font-family:\0000385}}
 .button.gray {
   color: #666;
   background-color: #ddd;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_project-tree\.scss}line{font-family:\0000388}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_project-tree\.scss}line{font-family:\0000388}}
 .button.gray:hover {
   background-color: #eee;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_project-tree\.scss}line{font-family:\0000394}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_project-tree\.scss}line{font-family:\0000394}}
 .screen-modal, .project-modal {
   position: fixed;
   background-color: rgba(0, 0, 0, 0.3);
@@ -893,7 +919,7 @@ ul {
   height: 100%;
   z-index: 2000;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_project-tree\.scss}line{font-family:\00003103}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_project-tree\.scss}line{font-family:\00003103}}
 .screen-modal .modal-frm, .project-modal .modal-frm {
   position: absolute;
   width: 440px;
@@ -905,11 +931,11 @@ ul {
   background-color: #fff;
   margin: auto;
   padding: 10px;
-  -webkit-box-shadow: 0 0 5px 1px #666666;
-  -moz-box-shadow: 0 0 5px 1px #666666;
-  box-shadow: 0 0 5px 1px #666666;
+  -webkit-box-shadow: 0 0 5px 1px #666;
+  -moz-box-shadow: 0 0 5px 1px #666;
+  box-shadow: 0 0 5px 1px #666;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_project-tree\.scss}line{font-family:\00003115}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/NODEjs\/ember-html-prototyping\/app\/styles\/_project-tree\.scss}line{font-family:\00003115}}
 .screen-modal .modal-frm input[type="text"], .project-modal .modal-frm input[type="text"] {
   border: 1px solid #ddd;
   padding: 10px;
