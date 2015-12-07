@@ -107,7 +107,7 @@ $font: "Myriad Pro", Calibri, Helvetica, Arial, sans-serif;
 
     .canvasToggle{
       background-color: rgba(225, 82, 59, 0.85);
-      padding: 10px 0px 0px 10px; 
+      padding: 10px 0px 0px 10px;
 
       button {
         display: inline-block;
@@ -175,7 +175,7 @@ $font: "Myriad Pro", Calibri, Helvetica, Arial, sans-serif;
       //overflow: hidden;
 
       &>.ember-view {
-        height: 93%;
+        height: 100%;
         width: 100%;
 
         .canvas-view {
