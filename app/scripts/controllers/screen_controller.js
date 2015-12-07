@@ -14,7 +14,7 @@ Proto.ScreenController = Ember.ObjectController.extend({
         Ember.run.schedule('afterRender', this, function() {
 
             var elements = self.get('model').get('elements');
-            var canvas = Ember.View.views['document'];
+            var canvas = Ember.View.views.document;
 
             canvas.removeAllChildren();
 
@@ -57,15 +57,15 @@ Proto.ScreenController = Ember.ObjectController.extend({
 
         },
         addRecord: function (params) {
-
+          // console.log('ScreenController addRecord');
             var model = this.get('model');
-
+            // console.log(params);
             model.get('elements').pushObject(params);
             model.save();
 
         },
         updateRecord: function (params) {
-
+          // console.log('ScreenController updateRecord');
             var model = this.get('model');
             var toUpdate;
 
@@ -79,14 +79,18 @@ Proto.ScreenController = Ember.ObjectController.extend({
 
             var elements = model.get('elements');
 
-            $.each(params.attrs, function (key, value) {
+            // $.each(params.attrs, function (key, value) {
+            $.each(params, function (key, value) {
+              // console.log(key);
+              // console.log(value);
+              // console.log(elements[toUpdate]);
                 elements[toUpdate][key] = value;
             });
 
-            console.log('not saved into local storage');
-//            model.set('elements', elements);
+            // console.log('not saved into local storage');
+            model.set('elements', elements);
             // DON'T SAVE IT INTO LS! THERE IS A BUG!
-//            model.save();
+            model.save();
 
         },
         updateRecordEvents: function (params) {
@@ -136,15 +140,16 @@ Proto.ScreenController = Ember.ObjectController.extend({
             var canvas = $('#document');
             var workspace = $('#workspace');
 
+            var height = canvas.height();
+            var width = canvas.width();
+            console.log(height, width);
+
             if (fullscreen) {
                 $('#header').hide();
                 $('#sidebar').hide();
                 $('#footer').hide();
                 $('#toolbar').hide();
 
-                var height = canvas.height();
-                var width = canvas.width();
-                console.log(height, width);
 
                 canvas.css({
                     height: height,
@@ -193,6 +198,17 @@ Proto.ScreenController = Ember.ObjectController.extend({
 
         }
     },
+
+    keypress: function () {
+      var self = this;
+      if(self.get('fullscreen') === true){
+        $(document).keyup(function (e) {
+          if(e.keyCode === 27 && self.get('fullscreen') === true) {
+            self.send('toggleFullscreen');
+          }
+        });
+      }
+    }.observes('fullscreen'),
 
     editCode: false,
     editDesign: true,

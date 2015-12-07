@@ -6,8 +6,9 @@
             <div class="root-options">
                 <span class="or">Choose a project from the list:</span>
                 <ul class="project-list">
-                    {{#each project in projects}}
-                        <li {{action chooseProject project}}><a>{{project.name}}</a></li>
+                    {{#each model}}
+                        <!-- <li {{action chooseProject project}}><a>{{project.name}}</a></li> -->
+                        <li {{ action chooseProject }}>{{#link-to 'editor' this}} {{name}} {{/link-to}}</li>
                     {{/each}}
 
                 </ul>

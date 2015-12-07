@@ -41,59 +41,86 @@ Proto.CodeContainer = Ember.View.extend(Ember.TargetActionSupport, {
                 target: this
             });
         }
+    }.observes('controller.eventType'),
 
+    becameVisible: function () {
+        this.get('editor').refresh();
         if (this.get('initialized')) {
             this.triggerAction({
                 action: 'edit',
                 target: this
             });
         }
-    }.observes('controller.eventType'),
+    },
 
-    becameVisible: function () {
-        this.get('editor').refresh();
+    becameHidden: function(){
+      this.triggerAction({
+          action: 'save',
+          target: this
+      });
     },
 
     actions: {
         save: function () {
-            var oldEvent = this.get('oldEvent');
-            var eventList = this.get('activeElement').get('eventList');
-//            console.log(eventList);
+          console.log('save');
+          var self = this;
+          var text = self.get('editor').getDoc().getValue();
+          var tmpLines = text.split(/\n\$/g);
+          var lines = [];
+          var elements = self.get('controller.elements');
 
-            if (eventList.get) {
-                eventList.set(oldEvent, this.get('editor').getValue());
-            } else {
-                console.log('crashes here');
-                eventList[oldEvent] = this.get('editor').getValue();
-                console.log('told you it crashed there');
+          $.each(tmpLines, function(key, val){
+            lines[key] = val[0] === "$" ? val + "\n" : "$" + val + "\n";
+          });
+
+          $.each(lines, function(key, val){
+            var id = val.match(/((#btn(\d)+)|(#input(\d)+)|(#text(\d)+)|(#panel(\d)+))/gm);
+            var event = val.match(/blur|click|dblclick|focus|mouseout|mouseover|ready/gm);
+            if(id !== null && id !== undefined){
+              $.each(elements, function(key1, val1){
+                if("#"+val1.recordId === id[0]){
+                  val1.eventList[event] = val;
+                  self.get('controller').send('updateRecordEvents', {
+                    recordId: val1.recordId,
+                    eventList: val1.eventList
+                  });
+                }
+              });
             }
-            this.get('activeElement').set('eventList', eventList);
-
-            this.get('controller').send('updateRecordEvents',
-                {
-                    recordId: this.get('activeElement.recordId'),
-                    eventList: this.get('activeElement.eventList')
-                });
+          });
         },
         edit: function () {
-            var eventList = this.get('activeElement.eventList');
-            var elementId = this.get('activeElement.elementId');
+          // console.log('edit');
+          var self = this;
+          var eventMap = [ 'blur', 'click', 'dblclick', 'focus', 'mouseout', 'mouseover', 'ready' ];
+          var elements = self.get('controller.elements');
+          var text = "";
 
-            var eventFunctionCode = eventList[this.get('controller.eventType')] || "";
-            elementId = elementId === "document" ? elementId : "\"#" + this.get('activeElement.recordId') + "\"";
-            var text = eventFunctionCode === "" ? "$(" + elementId + ")." + this.get('controller.eventType') + "(function () {\n" + eventFunctionCode + "\n});" : eventFunctionCode;
+          $.each(elements, function(k, v){
+            var elementId = v.elementId;
+            var activeElement = Ember.View.views[elementId];
+            var eventList = activeElement.eventList;
+            $.each(eventMap, function(key, val){
+              var code = eventList[val] || "";
+              elementId = "\"#" + v.recordId + "\"";
+              text += code === "" ? "$(" + elementId + ")." + val + "(function(){\n" + code + "\n});\n\n" : code;
+            });
+          });
 
-            this.get('editor').getDoc().setValue(text);
-            this.get('editor').getDoc().markText(
-                {line: 0, ch: 0},
-                {line: 0, ch: 100},
+          var jseditor = self.get('editor')
+          jseditor.getDoc().setValue(text);
+
+          var lines = jseditor.getDoc().getValue().split(/\n/g);
+          $.each(lines, function(key, val){
+            if(val.match(/\$|(}\);)/)){
+              jseditor.getDoc().markText(
+                {line: key, ch: 0},
+                {line: key, ch: 100},
                 {readOnly: true, className: 'read-only'}
-            );
-            this.get('editor').getDoc().markText(
-                {line: this.get('editor').getDoc().lastLine(), ch: 0},
-                {line: this.get('editor').getDoc().lastLine(), ch: 100},
-                {readOnly: true, className: 'read-only'}
-            );
+              );
+            }
+            // console.log('edit done');
+          });
         }
     }
 

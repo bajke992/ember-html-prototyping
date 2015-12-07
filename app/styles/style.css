@@ -656,7 +656,7 @@ ul {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_editor\.scss}line{font-family:\00003151}}
 .editor .workspace .canvas-workspace > .ember-view {
-  height: 93%;
+  height: 100%;
   width: 100%;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/proto\/app\/styles\/_editor\.scss}line{font-family:\00003155}}

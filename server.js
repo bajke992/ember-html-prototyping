@@ -25,15 +25,16 @@ app.configure(function () {
 
 var Schema = mongoose.Schema;
 
+var Screens = new Schema({
+    name: String,
+    elements: []
+});
+
 var Project = new Schema({
     name: { type: String, required: true },
     screens: [Screens]
 });
 
-var Screens = new Schema({
-    name: String,
-    elements: []
-});
 
 
 var ProjectModel = mongoose.model('Project', Project);

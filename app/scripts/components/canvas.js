@@ -5,7 +5,7 @@
 Proto.Canvas = Ember.View.extend({
     templateName: 'components/canvas',
     didInsertElement: function () {
-
+      // console.log('Canvas didInsertElement');
         this.$('.toolbar > div').draggable({
             revert: "invalid",
             containment: "document",
@@ -13,12 +13,13 @@ Proto.Canvas = Ember.View.extend({
             cursor: "move"
         });
     },
+
     actions: {
         chooseTheme: function(theme) {
-           console.log('theme', theme);
-            console.log(Ember.View.views['document'].get('theme'));
-           Ember.View.views['document'].set('theme', theme);
-            console.log(Ember.View.views['document'].get('theme'));
+            console.log('theme', theme);
+            // console.log(Ember.View.views['document'].get('theme'));
+            Ember.View.views.document.set('theme', theme);
+            // console.log(Ember.View.views['document'].get('theme'));
         }
     }
 });
@@ -41,7 +42,7 @@ Proto.CanvasContainer = Ember.ContainerView.extend(Ember.TargetActionSupport, {
     },
 
     didInsertElement: function () {
-
+      // console.log('CanvasContainer didInsertElement');
         var self = this;
 
         self.$().selectable({
@@ -111,13 +112,15 @@ Proto.addElement = function (attr, self) {
             }
         });
 
-        recordId = 'cmp-' + (new Date()).getTime();
+        // recordId = 'cmp-' + (new Date()).getTime();
+        var time = (new Date()).getTime();
+        recordId = type + time;
         elementId = null;
     }
 
     var cmpName = 'Canvas' + type.charAt(0).toUpperCase() + type.slice(1) + 'Component';
     var cmp = Proto[cmpName].create({data: {left: left, top: top, insert: attr.insert, recordId: recordId, eventList: eventList || {}, elementId: elementId}});
+    // console.log("Proto.addElement");
     self.pushObject(cmp);
 
 };
-

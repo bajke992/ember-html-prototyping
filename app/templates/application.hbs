@@ -6,19 +6,18 @@
         </h1>
 
         <div class="project-controls">
-            <span class="fa fa-file-o icons" title="New"></span>
-            <span class="fa fa-folder-open-o icons" title="Open" {{ action openOpenProject }}></span>
-            <span class="fa fa-save icons" title="Save" {{action saveProject}}></span>
-            <span class="fa fa-external-link-square icons" title="Export"></span>
-            <span class="fa fa-play icons" title="Run"></span>
+          <span class="fa fa-file-o icons" title="New" {{action 'createProject' }}></span>
+          <span class="fa fa-folder-open-o icons" title="Open" {{ action 'openOpenProject' }}></span>
+          <span class="fa fa-save icons" title="Save" {{ action 'saveProject' }}></span>
+          <span class="fa fa-external-link-square icons" title="Export" {{ action 'exportProject' }}></span>
+          <span class="fa fa-play icons" title="Run" {{ action 'runProject' }}></span>
         </div>
     </header>
 
-    {{ open-modal open=open projects=projects }}
+    {{ open-modal open=open model=projects }}
 
     <!-- # .main -->
 
     {{outlet}}
 
 </div>
-

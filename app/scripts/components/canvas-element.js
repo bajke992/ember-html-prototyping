@@ -15,21 +15,24 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
     setElementId: 'setElementId',
 
     init: function () {
-
+      // console.log('CanvasElementComponent init');
         var data = this.get('data');
 
         var time = new Date().getTime();
         var elementId = (data.elementId !== null) ? data.elementId : 'elem-' + time;
 
         this.set('elementId', elementId);
+        // data.elementId = elementId;
+        // console.log(data);
 
         this._super();
     },
 
     didInsertElement: function() {
-
+      // console.log('CanvasElementComponent didInsertElement');
         var self = this;
         var data = self.get('data');
+        // console.log(data);
         self.set('eventList', {});
         self.set('recordId', data.recordId);
         self.set('eventList', data.eventList);
@@ -80,12 +83,15 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
                 eventList:  {}
             });
 //        } else {
-//            this.sendAction('updateRecord', {
-//                elementId:  this.get('elementId'),
-//                recordId:   this.get('recordId'),
-//                eventList:  this.get('eventList')
-//            });
         }
+        var newData = this.get('data');
+        newData.elementId = this.get('elementId');
+        this.set('data', newData);
+//          this.sendAction('updateRecord', {
+//              elementId:  this.get('elementId'),
+//              recordId:   this.get('recordId'),
+// //                eventList:  this.get('eventList')
+//          });
 
         this.sendAction('editProperty', 'elementId', this.get('elementId'));
 
@@ -147,22 +153,58 @@ Proto.CanvasElementComponent = Ember.Component.extend(Ember.TargetActionSupport,
 
     updateWidth: function () {
         this.$().css('width', this.get('width'));
+        if(this.get('data').elementId !== null){
+          this.sendAction('updateRecord', {
+              elementId:  this.get('elementId'),
+              recordId:   this.get('recordId'),
+              width:      this.get('width')
+          });
+        }
     }.observes('width'),
 
     updateHeight: function () {
         this.$().css('height', this.get('height'));
+        if(this.get('data').elementId !== null){
+          this.sendAction('updateRecord', {
+              elementId:  this.get('elementId'),
+              recordId:   this.get('recordId'),
+              height:      this.get('height')
+          });
+        }
     }.observes('height'),
 
     updateX: function () {
         this.$().css('left', this.get('x_pos') + 'px');
+        // console.log(this.get('data').elementId);
+        if(this.get('data').elementId !== null){
+          this.sendAction('updateRecord', {
+              elementId:  this.get('elementId'),
+              recordId:   this.get('recordId'),
+              x_pos:      this.get('x_pos')
+          });
+        }
     }.observes('x_pos'),
 
     updateY: function () {
         this.$().css('top', this.get('y_pos') + 'px');
+        if(this.get('data').elementId !== null){
+          this.sendAction('updateRecord', {
+              elementId:  this.get('elementId'),
+              recordId:   this.get('recordId'),
+              y_pos:      this.get('y_pos')
+          });
+        }
     }.observes('y_pos'),
 
     updateStack: function () {
         this.$().css('z-index', this.get('stack'));
+        if(this.get('data').elementId !== null){
+          this.sendAction('updateRecord', {
+              elementId:  this.get('elementId'),
+              recordId:   this.get('recordId'),
+              stack:      this.get('stack')
+          });
+        }
     }.observes('stack'),
 
     updateMode: function () {

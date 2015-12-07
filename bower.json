@@ -2,12 +2,14 @@
   "name": "ember-app",
   "version": "0.0.0",
   "dependencies": {
-    "ember": "~1.2",
-    "jquery-ember":"jquery#2.0.3",
-    "ember-data": "~1.0.0-beta.4",
+    "ember": "1.2",
+    "jquery-ember": "jquery#2.0.3",
+    "ember-data": "1.0.0-beta.4",
     "jqueryui": "~1.10.3",
-    "ember-localstorage-adapter": "latest",
-    "font-awesome": "~4.0.3"
+    "ember-localstorage-adapter": "0.2.0",
+    "font-awesome": "~4.0.3",
+    "FileSaver.js": "~0.0.2",
+    "jszip": "Stuk/jszip#~2.5.0"
   },
   "devDependencies": {
     "ember-mocha-adapter": "0.1.2"

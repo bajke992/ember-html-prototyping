@@ -61,6 +61,9 @@ Proto.EditorController = Ember.ObjectController.extend({
         },
         setCodeView: function (elementId, eventType) {
             this.get('controllers.screen').send('setCodeView', elementId, eventType);
+        },
+        setDesignView: function () {
+            this.get('controllers.screen').send('setDesignView');
         }
     }
 
