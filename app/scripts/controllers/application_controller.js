@@ -80,9 +80,9 @@ Proto.ApplicationController = Ember.ArrayController.extend({
                             break;
                         }
                       });
-                      var htmlHead = "\t<head>\n\t\t<link rel=\"stylesheet\" href=\"css/styles.css\">\n\t\t<script src=\"//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js\"></script>\n\t\t<script src=\"js/main.js\"></script>\n\t</head>\n";
-                      var htmlBody = "\t<body>" + self.get('htmlContentBody') + "\n\t</body>\n"
-                      var htmlFile = "<html>\n" + htmlHead + htmlBody + "</html>";
+                      var htmlHead = "\t<head>\n\t\t<link rel=\"stylesheet\" href=\"css/styles.css\">\n\t</head>\n";
+                      var htmlBody = "\t<body>" + self.get('htmlContentBody') + "\n\t\t<script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js\"></script>\n\t\t<script src=\"js/main.js\"></script>\n\t</body>\n"
+                      var htmlFile = "<!DOCTYPE html>\n<html>\n" + htmlHead + htmlBody + "</html>";
 
 
                       zip.file(screen.get('data').name+".html", htmlFile);
